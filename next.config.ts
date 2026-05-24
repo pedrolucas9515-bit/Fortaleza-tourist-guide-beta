@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -49,6 +50,24 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'dynamic-media-cdn.tripadvisor.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media-cdn.tripadvisor.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.3coracoes.com.br',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cms-blog.saipos.com',
         port: '',
         pathname: '/**',
       },

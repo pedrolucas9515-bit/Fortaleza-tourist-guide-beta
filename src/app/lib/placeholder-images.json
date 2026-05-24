@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -56,32 +57,32 @@
     },
     {
       "id": "rest-seafood-1",
-      "description": "Authentic Seafood Platter",
-      "imageUrl": "https://images.unsplash.com/photo-1551731388-51783858712a?auto=format&fit=crop&q=80&w=800&h=600",
-      "imageHint": "seafood dinner"
+      "description": "Coco Bambu Beira Mar",
+      "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/09/70/a7/35/restaurante-coco-bambu.jpg",
+      "imageHint": "seafood restaurant"
     },
     {
       "id": "rest-regional-1",
-      "description": "Regional Brazilian Carne de Sol",
-      "imageUrl": "https://images.unsplash.com/photo-1594041680534-e8c8cdead059?auto=format&fit=crop&q=80&w=800&h=600",
-      "imageHint": "brazilian food"
+      "description": "Cantinho do Faustino",
+      "imageUrl": "https://cms-blog.saipos.com/4Cantinho-do-Faustino-SAIPOS-Sistema-para-Restaurantes.jpg",
+      "imageHint": "regional restaurant"
     },
     {
       "id": "rest-cafe-1",
-      "description": "Artisan Fortaleza Coffee Shop",
-      "imageUrl": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800&h=600",
+      "description": "Santa Clara Café Orgânico",
+      "imageUrl": "https://www.3coracoes.com.br/wp-content/uploads/2019/06/cafeteria-santa-clara-fortaleza-cine-sao-luiz-1024x683.jpg",
       "imageHint": "coffee shop"
     },
     {
       "id": "rest-beach-1",
-      "description": "Fortaleza Luxury Beach Club",
+      "description": "Crocobeach Club",
       "imageUrl": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "beach restaurant"
     },
     {
       "id": "rest-fine-1",
-      "description": "Premium Fine Dining",
-      "imageUrl": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800&h=600",
+      "description": "L'Ô Restaurante",
+      "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/6a/ab/ea/salao-principal.jpg?w=900&h=500&s=1",
       "imageHint": "fine dining"
     },
     {
