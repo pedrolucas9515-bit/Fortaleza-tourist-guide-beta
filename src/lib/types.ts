@@ -3,6 +3,11 @@ export type Category = 'Beaches' | 'Restaurants' | 'Culture' | 'Parks' | 'Histor
 
 export type RestaurantCategory = 'Seafood' | 'Brazilian Food' | 'Cafés' | 'Beach Restaurants' | 'Fine Dining' | 'Fast Food' | 'Italian';
 
+export interface Coords {
+  lat: number;
+  lng: number;
+}
+
 export interface Restaurant {
   id: string;
   name: string;
@@ -14,7 +19,8 @@ export interface Restaurant {
   description: string;
   priceRange: '$' | '$$' | '$$$' | '$$$$';
   category: RestaurantCategory;
-  distance?: string; 
+  distance?: string;
+  coords: Coords;
 }
 
 export interface Attraction {
@@ -26,10 +32,7 @@ export interface Attraction {
   rating: number;
   category: Category;
   imageUrl: string;
-  coords: {
-    lat: number;
-    lng: number;
-  };
+  coords: Coords;
   nearbyRestaurantIds: string[];
 }
 

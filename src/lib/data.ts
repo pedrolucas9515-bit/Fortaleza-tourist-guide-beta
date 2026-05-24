@@ -15,7 +15,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '11:30 - 00:00',
     priceRange: '$$$',
     description: 'The most iconic seafood destination in Fortaleza. Famous for huge platters of shrimp and lobster with a stunning ocean view.',
-    imageUrl: getImg('rest-seafood-1')
+    imageUrl: getImg('rest-seafood-1'),
+    coords: { lat: -3.7258, lng: -38.4905 }
   },
   {
     id: 'crocobeach',
@@ -27,7 +28,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '08:00 - 18:00',
     priceRange: '$$',
     description: 'A massive beach club at Praia do Futuro. Offers the best infrastructure, swimming pools, and the famous Thursday night crab feast.',
-    imageUrl: getImg('rest-beach-1')
+    imageUrl: getImg('rest-beach-1'),
+    coords: { lat: -3.7383, lng: -38.4552 }
   },
   {
     id: 'santa-clara',
@@ -39,7 +41,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '08:00 - 22:00',
     priceRange: '$',
     description: 'Located in the Dragão do Mar cultural center, serving award-winning organic coffee from the mountains of Ceará.',
-    imageUrl: getImg('rest-cafe-1')
+    imageUrl: getImg('rest-cafe-1'),
+    coords: { lat: -3.7219, lng: -38.5209 }
   },
   {
     id: 'lo-restaurante',
@@ -51,7 +54,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '19:00 - 23:30',
     priceRange: '$$$$',
     description: 'One of Fortaleza\'s most sophisticated venues. Features a modern menu with French and Italian influences in a stunning architectural setting.',
-    imageUrl: getImg('rest-fine-1')
+    imageUrl: getImg('rest-fine-1'),
+    coords: { lat: -3.7205, lng: -38.5215 }
   },
   {
     id: 'cantinho-faustino',
@@ -63,7 +67,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '11:00 - 23:00',
     priceRange: '$$',
     description: 'A classic local spot famous for "Carne de Sol" (sun-dried meat) and traditional Brazilian side dishes in a cozy, authentic atmosphere.',
-    imageUrl: getImg('rest-regional-1')
+    imageUrl: getImg('rest-regional-1'),
+    coords: { lat: -3.7285, lng: -38.5085 }
   },
   {
     id: 'burgues-burger',
@@ -75,7 +80,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '17:00 - 01:00',
     priceRange: '$',
     description: 'Handcrafted artisan burgers using high-quality local meats and secret sauces. A favorite among the late-night crowd.',
-    imageUrl: getImg('rest-fast-1')
+    imageUrl: getImg('rest-fast-1'),
+    coords: { lat: -3.7320, lng: -38.4950 }
   },
   {
     id: 'giz-cozinha',
@@ -87,7 +93,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '11:00 - 01:00',
     priceRange: '$$$',
     description: 'Modern bohemian atmosphere with live chorinho music. Specializes in traditional Brazilian "petiscos" and creative cocktails.',
-    imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800',
+    coords: { lat: -3.7345, lng: -38.5005 }
   },
   {
     id: 'marcel',
@@ -99,7 +106,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '12:00 - 15:00, 19:00 - 23:00',
     priceRange: '$$$$',
     description: 'Famous for its traditional French soufflés. Offers an elegant dining experience with views of Praia de Iracema.',
-    imageUrl: 'https://images.unsplash.com/photo-1550966841-3ee3ad3ae447?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1550966841-3ee3ad3ae447?auto=format&fit=crop&q=80&w=800',
+    coords: { lat: -3.7215, lng: -38.5150 }
   },
   {
     id: 'moleskine',
@@ -111,7 +119,8 @@ export const RESTAURANTS: Restaurant[] = [
     openingHours: '17:00 - 01:00',
     priceRange: '$$$',
     description: 'A trendy spot combining a loft-style pub with a rooftop lounge. Innovative menu and extensive wine list.',
-    imageUrl: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800',
+    coords: { lat: -3.7345, lng: -38.4995 }
   }
 ];
 

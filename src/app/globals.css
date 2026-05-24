@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "leaflet/dist/leaflet.css";
+
 @layer base {
   :root {
     --background: 200 20% 7%;
@@ -49,4 +51,42 @@
 
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Leaflet Dark Theme Overrides */
+.leaflet-container {
+  background: #0f1315 !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  @apply glass !important;
+  margin-top: 100px !important;
+  margin-right: 20px !important;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  background: transparent !important;
+  color: white !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.leaflet-bar a:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(20, 26, 29, 0.95) !important;
+  color: white !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(20, 26, 29, 0.95) !important;
 }
