@@ -3,14 +3,17 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
+const APP_ICON_URL = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
+
 export const metadata: Metadata = {
   title: 'Fortaleza Tourist Guide | Your Premium Guide',
   description: 'The ultimate mobile tourism experience for Fortaleza, Ceará.',
-  manifest: '/manifest.json',
   icons: {
-    icon: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
-    shortcut: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
-    apple: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
+    icon: [
+      { url: `${APP_ICON_URL}?v=2`, href: `${APP_ICON_URL}?v=2` },
+    ],
+    shortcut: `${APP_ICON_URL}?v=2`,
+    apple: `${APP_ICON_URL}?v=2`,
   },
   appleWebApp: {
     capable: true,
@@ -36,7 +39,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="icon" href="https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg" />
+        {/* Link direto no Head para máxima compatibilidade e bust de cache */}
+        <link rel="icon" type="image/jpeg" href={`${APP_ICON_URL}?v=2`} />
+        <link rel="shortcut icon" href={`${APP_ICON_URL}?v=2`} />
+        <link rel="apple-touch-icon" href={`${APP_ICON_URL}?v=2`} />
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
