@@ -6,6 +6,8 @@ import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Settings } from 'lucide-react';
+import Link from 'next/link';
 
 // Dynamic import to handle Leaflet's window dependency
 const MapContainer = dynamic(() => import('./MapComponent'), {
@@ -29,9 +31,14 @@ export default function MapPage() {
   return (
     <div className="h-screen relative overflow-hidden bg-[#0f1315]">
       {/* HUD Header */}
-      <div className="absolute top-0 left-0 right-0 z-[1000] px-6 pt-12 pb-8 hud-gradient pointer-events-none">
-        <h1 className="font-headline text-3xl mb-1 text-white">{t.map}</h1>
-        <p className="text-muted-foreground text-xs tracking-widest uppercase">Fortaleza Interactive HUD</p>
+      <div className="absolute top-0 left-0 right-0 z-[1000] px-6 pt-12 pb-8 hud-gradient pointer-events-none flex justify-between items-start">
+        <div>
+          <h1 className="font-headline text-3xl mb-1 text-white">{t.map}</h1>
+          <p className="text-muted-foreground text-xs tracking-widest uppercase">Fortaleza Interactive HUD</p>
+        </div>
+        <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors pointer-events-auto">
+          <Settings className="w-5 h-5 text-white" />
+        </Link>
       </div>
 
       {/* Real Interactive Map Component */}

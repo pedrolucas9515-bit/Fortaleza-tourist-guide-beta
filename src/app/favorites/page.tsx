@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -5,7 +6,7 @@ import { ATTRACTIONS } from '@/lib/data';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Card } from '@/components/ui/card';
-import { Heart, ArrowRight } from 'lucide-react';
+import { Heart, ArrowRight, Settings } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -19,9 +20,14 @@ export default function FavoritesPage() {
 
   return (
     <div className="min-h-screen bg-[#0f1315]">
-      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
-        <h1 className="font-headline text-3xl mb-1 text-white">{t.favorites}</h1>
-        <p className="text-muted-foreground text-xs tracking-widest uppercase">Saved by You</p>
+      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20 flex justify-between items-start">
+        <div>
+          <h1 className="font-headline text-3xl mb-1 text-white">{t.favorites}</h1>
+          <p className="text-muted-foreground text-xs tracking-widest uppercase">Saved by You</p>
+        </div>
+        <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
+          <Settings className="w-5 h-5 text-white" />
+        </Link>
       </header>
 
       <div className="px-6 pb-32">

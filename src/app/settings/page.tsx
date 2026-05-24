@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -5,11 +6,13 @@ import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Language } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
-import { Globe, Shield, Download, Info } from 'lucide-react';
+import { Globe, Shield, Download, Info, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 
 export default function SettingsPage() {
   const { language, updateLanguage, isLoaded } = useVelaStore();
+  const router = useRouter();
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
@@ -23,9 +26,14 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen bg-[#0f1315]">
-      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
-        <h1 className="font-headline text-3xl mb-1 text-white">{t.settings}</h1>
-        <p className="text-muted-foreground text-xs tracking-widest uppercase">System Preferences</p>
+      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20 flex justify-between items-start">
+        <div>
+          <button onClick={() => router.back()} className="mb-4 flex items-center gap-2 text-primary text-[10px] uppercase font-bold tracking-widest hover:opacity-70 transition-opacity">
+            <ArrowLeft className="w-4 h-4" /> Go Back
+          </button>
+          <h1 className="font-headline text-3xl mb-1 text-white">{t.settings}</h1>
+          <p className="text-muted-foreground text-xs tracking-widest uppercase">System Preferences</p>
+        </div>
       </header>
 
       <div className="px-6 space-y-8 pb-32">

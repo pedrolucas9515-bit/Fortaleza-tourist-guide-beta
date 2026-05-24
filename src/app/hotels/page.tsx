@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -8,7 +9,7 @@ import BottomNav from '@/components/BottomNav';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { Search, Star, MapPin, Building, Bed } from 'lucide-react';
+import { Search, Star, MapPin, Building, Bed, Settings } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -41,8 +42,15 @@ export default function HotelsPage() {
   return (
     <div className="min-h-screen bg-[#0f1315]">
       <header className="sticky top-0 z-40 px-6 pt-12 pb-6 hud-gradient backdrop-blur-md">
-        <h1 className="font-headline text-4xl mb-1 text-white">{t.hotels}</h1>
-        <p className="text-muted-foreground text-sm tracking-widest uppercase">Premium Stays in Fortaleza</p>
+        <div className="flex justify-between items-start">
+          <div>
+            <h1 className="font-headline text-4xl mb-1 text-white">{t.hotels}</h1>
+            <p className="text-muted-foreground text-sm tracking-widest uppercase">Premium Stays in Fortaleza</p>
+          </div>
+          <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
+            <Settings className="w-5 h-5 text-white" />
+          </Link>
+        </div>
         
         <div className="relative mt-6">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
