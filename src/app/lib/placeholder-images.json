@@ -1,0 +1,71 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "iracema",
+      "description": "Praia de Iracema Sunset",
+      "imageUrl": "https://picsum.photos/seed/iracema/800/600",
+      "imageHint": "praia iracema sunset"
+    },
+    {
+      "id": "futuro",
+      "description": "Praia do Futuro beach",
+      "imageUrl": "https://picsum.photos/seed/futuro/800/600",
+      "imageHint": "praia futuro fortaleza"
+    },
+    {
+      "id": "beiramar",
+      "description": "Beira Mar Avenue",
+      "imageUrl": "https://picsum.photos/seed/beiramar/800/600",
+      "imageHint": "fortaleza beira mar"
+    },
+    {
+      "id": "mercado",
+      "description": "Mercado Central Fortaleza",
+      "imageUrl": "https://picsum.photos/seed/mercado/800/600",
+      "imageHint": "fortaleza market"
+    },
+    {
+      "id": "dragao",
+      "description": "Centro Dragão do Mar",
+      "imageUrl": "https://picsum.photos/seed/dragao/800/600",
+      "imageHint": "dragao do mar center"
+    },
+    {
+      "id": "ponte",
+      "description": "Ponte dos Ingleses",
+      "imageUrl": "https://picsum.photos/seed/ponte/800/600",
+      "imageHint": "bridge sunset"
+    },
+    {
+      "id": "coco",
+      "description": "Parque do Cocó",
+      "imageUrl": "https://picsum.photos/seed/coco/800/600",
+      "imageHint": "tropical park"
+    },
+    {
+      "id": "catedral",
+      "description": "Catedral Metropolitana",
+      "imageUrl": "https://picsum.photos/seed/catedral/800/600",
+      "imageHint": "metropolitan cathedral"
+    },
+    {
+      "id": "fortaleza",
+      "description": "Fortaleza de Nossa Senhora da Assunção",
+      "imageUrl": "https://picsum.photos/seed/fortaleza/800/600",
+      "imageHint": "old fortress"
+    },
+    {
+      "id": "restaurant-1",
+      "description": "Coco Bambu Restaurant",
+      "imageUrl": "https://picsum.photos/seed/rest1/600/400",
+      "imageHint": "seafood restaurant"
+    },
+    {
+      "id": "restaurant-2",
+      "description": "Canteiros Restaurant",
+      "imageUrl": "https://picsum.photos/seed/rest2/600/400",
+      "imageHint": "brazilian food"
+    }
+  ]
+}

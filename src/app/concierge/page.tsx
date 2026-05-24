@@ -1,0 +1,105 @@
+
+'use client';
+
+import { useState } from 'react';
+import { useVelaStore } from '@/lib/store';
+import { TRANSLATIONS } from '@/lib/i18n';
+import { aiPersonalConcierge, AiPersonalConciergeOutput } from '@/ai/flows/ai-personal-concierge';
+import BottomNav from '@/components/BottomNav';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Sparkles, Send, User, Bot, MapPin, Utensils } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
+
+export default function ConciergePage() {
+  const { language, isLoaded } = useVelaStore();
+  const [mood, setMood] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<AiPersonalConciergeOutput | null>(null);
+
+  if (!isLoaded) return null;
+  const t = TRANSLATIONS[language];
+
+  const getRecommendations = async () => {
+    if (!mood.trim()) return;
+    setLoading(true);
+    try {
+      const output = await aiPersonalConcierge({ mood });
+      setResult(output);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#0f1315]">
+      {/* HUD Header */}
+      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
+        <h1 className="font-headline text-3xl mb-1 text-white flex items-center gap-3">
+          {t.concierge} <Sparkles className="w-6 h-6 text-primary animate-pulse" />
+        </h1>
+        <p className="text-muted-foreground text-xs tracking-widest uppercase">Fortaleza AI Personal Guide</p>
+      </header>
+
+      <div className="px-6 space-y-8 pb-32">
+        {/* Chat-like Input */}
+        <div className="space-y-4">
+           <div className="flex items-center gap-3">
+             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
+               <Bot className="w-6 h-6" />
+             </div>
+             <Card className="flex-1 glass border-white/10 p-4 rounded-2xl rounded-tl-none">
+               <p className="text-sm text-white/90">{t.aiPrompt}</p>
+             </Card>
+           </div>
+
+           <div className="relative mt-8">
+             <Input 
+                placeholder={t.aiPlaceholder}
+                className="pr-16 h-14 bg-white/5 border-white/10 rounded-2xl focus:ring-primary text-white"
+                value={mood}
+                onChange={(e) => setMood(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && getRecommendations()}
+                disabled={loading}
+             />
+             <Button 
+               onClick={getRecommendations}
+               disabled={loading || !mood.trim()}
+               className="absolute right-2 top-2 h-10 w-10 p-0 rounded-xl bg-primary hover:bg-primary/90"
+             >
+               {loading ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Send className="w-4 h-4" />}
+             </Button>
+           </div>
+        </div>
+
+        {/* Results Area */}
+        {result && (
+          <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+             <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80">Tailored Suggestions</h3>
+             {result.recommendations.map((rec, i) => (
+               <Card key={i} className="glass border-white/10 p-5 rounded-2xl group transition-all hover:border-primary/30">
+                  <div className="flex items-start justify-between mb-3">
+                    <Badge className="bg-white/5 text-white/50 border-white/10 uppercase text-[8px] tracking-tighter">
+                      {rec.category}
+                    </Badge>
+                    {rec.type === 'dish' ? <Utensils className="w-4 h-4 text-primary" /> : <MapPin className="w-4 h-4 text-secondary" />}
+                  </div>
+                  <h4 className="font-headline text-2xl mb-2 text-white">{rec.name}</h4>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{rec.description}</p>
+                  <div className="bg-primary/5 p-3 rounded-xl border border-primary/10">
+                    <p className="text-xs italic text-primary/80">" {rec.reason} "</p>
+                  </div>
+               </Card>
+             ))}
+          </div>
+        )}
+      </div>
+
+      <BottomNav lang={language} />
+    </div>
+  );
+}
