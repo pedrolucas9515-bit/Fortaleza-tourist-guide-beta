@@ -3,92 +3,92 @@
   "placeholderImages": [
     {
       "id": "iracema",
-      "description": "Praia de Iracema Sunset and Statue",
-      "imageUrl": "https://picsum.photos/seed/iracema_fortaleza/800/600",
+      "description": "Praia de Iracema Sunset and Statue Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1596561139413-5dbd80918c0c?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "iracema statue"
     },
     {
       "id": "futuro",
-      "description": "Praia do Futuro beach",
-      "imageUrl": "https://picsum.photos/seed/futuro_beach/800/600",
+      "description": "Praia do Futuro beach huts Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "fortaleza beach"
     },
     {
       "id": "beiramar",
-      "description": "Beira Mar Avenue Promenade",
-      "imageUrl": "https://picsum.photos/seed/beiramar_promenade/800/600",
+      "description": "Beira Mar Avenue Promenade Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1627915598501-83c9d7470659?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "beira mar"
     },
     {
       "id": "mercado",
-      "description": "Mercado Central Fortaleza",
-      "imageUrl": "https://picsum.photos/seed/mercado_central/800/600",
+      "description": "Mercado Central de Fortaleza Crafts",
+      "imageUrl": "https://images.unsplash.com/photo-1582213776866-33927429177a?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "central market"
     },
     {
       "id": "dragao",
       "description": "Centro Dragão do Mar de Arte e Cultura",
-      "imageUrl": "https://picsum.photos/seed/dragao_mar/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "dragao mar"
     },
     {
       "id": "ponte",
-      "description": "Ponte dos Ingleses Sunset",
-      "imageUrl": "https://picsum.photos/seed/ponte_ingleses/800/600",
+      "description": "Ponte dos Ingleses Sunset Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1516750484197-6b28d10c91ea?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "ocean bridge"
     },
     {
       "id": "coco",
-      "description": "Parque do Cocó Mangroves",
-      "imageUrl": "https://picsum.photos/seed/coco_park/800/600",
+      "description": "Parque do Cocó Mangroves Nature",
+      "imageUrl": "https://images.unsplash.com/photo-1502082559145-866a8e5cc8?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "mangrove forest"
     },
     {
       "id": "catedral",
-      "description": "Catedral Metropolitana de Fortaleza",
-      "imageUrl": "https://picsum.photos/seed/catedral_fortaleza/800/600",
+      "description": "Catedral Metropolitana de Fortaleza Architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "gothic cathedral"
     },
     {
       "id": "fortaleza",
-      "description": "Fortaleza de Nossa Senhora da Assunção",
-      "imageUrl": "https://picsum.photos/seed/fortaleza_assuncao/800/600",
+      "description": "Fortaleza de Nossa Senhora da Assunção Military",
+      "imageUrl": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&q=80&w=800&h=600",
       "imageHint": "old fortress"
     },
     {
       "id": "rest-seafood-1",
-      "description": "Premium Seafood Dish",
-      "imageUrl": "https://picsum.photos/seed/seafood_coco/600/400",
+      "description": "Authentic Seafood Platter",
+      "imageUrl": "https://images.unsplash.com/photo-1551731388-51783858712a?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "seafood platter"
     },
     {
       "id": "rest-regional-1",
-      "description": "Regional Brazilian Carne de Sol",
-      "imageUrl": "https://picsum.photos/seed/brazil_regional/600/400",
+      "description": "Regional Brazilian Carne de Sol Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1594041680534-e8c8cdead059?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "brazilian steak"
     },
     {
       "id": "rest-cafe-1",
-      "description": "Artisan Coffee",
-      "imageUrl": "https://picsum.photos/seed/fortaleza_coffee/600/400",
+      "description": "Artisan Fortaleza Coffee Shop",
+      "imageUrl": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "espresso coffee"
     },
     {
       "id": "rest-beach-1",
-      "description": "Luxury Beach Club",
-      "imageUrl": "https://picsum.photos/seed/beach_club_fort/600/400",
+      "description": "Fortaleza Luxury Beach Club Setting",
+      "imageUrl": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "beach resort"
     },
     {
       "id": "rest-fine-1",
-      "description": "Fine Dining Restaurant",
-      "imageUrl": "https://picsum.photos/seed/fine_dining_ceara/600/400",
+      "description": "Premium Fine Dining Restaurant Atmosphere",
+      "imageUrl": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "fine dining"
     },
     {
       "id": "rest-fast-1",
-      "description": "Gourmet Burger",
-      "imageUrl": "https://picsum.photos/seed/gourmet_burger_f/600/400",
+      "description": "Gourmet Artisan Burger Fortaleza",
+      "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=600&h=400",
       "imageHint": "juicy burger"
     }
   ]
