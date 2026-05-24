@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -7,6 +6,7 @@ import BottomNav from '@/components/BottomNav';
 import { Language } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Globe, Shield, Download, Info } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function SettingsPage() {
   const { language, updateLanguage, isLoaded } = useVelaStore();

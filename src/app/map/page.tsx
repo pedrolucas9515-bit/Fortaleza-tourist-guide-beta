@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -7,9 +6,11 @@ import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { MapPin, Info, Navigation } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export default function MapPage() {
   const { language, isLoaded } = useVelaStore();
