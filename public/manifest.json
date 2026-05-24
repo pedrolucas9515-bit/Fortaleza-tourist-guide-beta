@@ -1,4 +1,3 @@
-
 {
   "name": "Fortaleza Tourist Guide",
   "short_name": "Fortaleza Guide",
@@ -10,9 +9,21 @@
   "icons": [
     {
       "src": "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
     }
   ]
 }
