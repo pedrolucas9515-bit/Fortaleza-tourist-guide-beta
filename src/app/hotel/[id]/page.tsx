@@ -68,7 +68,8 @@ export default function HotelDetail() {
           </h3>
           <p className="text-white/80 leading-relaxed text-sm">
             {hotel.description[language]}
-          </p> section>
+          </p>
+        </section>
 
         <section>
           <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-4 flex items-center gap-2">
