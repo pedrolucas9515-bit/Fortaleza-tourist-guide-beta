@@ -1,6 +1,6 @@
-
 'use client';
 
+import { useEffect } from 'react';
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { ArrowLeft, Smartphone, Share, PlusSquare, Info } from 'lucide-react';
@@ -11,6 +11,19 @@ import { Card } from '@/components/ui/card';
 export default function DownloadPage() {
   const { language, isLoaded } = useVelaStore();
   const router = useRouter();
+
+  // Redirect to home if the app is opened as a PWA (standalone mode)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches 
+                         || (window.navigator as any).standalone 
+                         || document.referrer.includes('android-app://');
+      
+      if (isStandalone) {
+        router.push('/');
+      }
+    }
+  }, [router]);
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
@@ -43,7 +56,7 @@ export default function DownloadPage() {
               <div>
                 <h3 className="text-white font-bold text-lg mb-1">Como Instalar</h3>
                 <p className="text-muted-foreground text-xs leading-relaxed">
-                  Para ter este guia sempre com você, não é necessário baixar um APK. Siga os passos abaixo:
+                  Para ter este guia sempre com você, siga os passos abaixo para fixar o ícone na sua tela inicial:
                 </p>
               </div>
             </div>
@@ -59,7 +72,7 @@ export default function DownloadPage() {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-primary">3</div>
-                <p className="text-xs text-white/80">Pronto! O ícone do guia aparecerá na sua tela inicial como um aplicativo nativo.</p>
+                <p className="text-xs text-white/80">O app será instalado e sempre abrirá na <strong>página inicial</strong>.</p>
               </div>
             </div>
           </Card>
@@ -69,7 +82,7 @@ export default function DownloadPage() {
               <Info className="w-5 h-5 text-primary" />
             </div>
             <p className="text-[10px] text-white/60 leading-relaxed italic">
-              Este é um protótipo de alta fidelidade desenvolvido para a web. A instalação via PWA garante que você tenha a experiência de tela cheia sem as barras do navegador.
+              Esta configuração garante que o app abra corretamente na raiz (/) sempre que você o iniciar pela tela inicial.
             </p>
           </Card>
         </div>
