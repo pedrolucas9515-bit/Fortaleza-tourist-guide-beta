@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -33,25 +32,31 @@ export default function FavoritesPage() {
           </div>
         ) : (
           <div className="grid gap-4">
-            {favoriteAttractions.map(attraction => (
-              <Link key={attraction.id} href={`/attraction/${attraction.id}`}>
-                <Card className="flex h-32 overflow-hidden glass border-white/10 rounded-2xl group transition-all hover:border-primary/50">
-                  <div className="relative w-32 h-full overflow-hidden">
-                    <Image src={attraction.imageUrl} alt="" fill className="object-cover group-hover:scale-110 transition-transform" />
-                  </div>
-                  <div className="flex-1 p-4 flex flex-col justify-between">
-                    <div>
-                      <Badge className="mb-1 text-[8px] tracking-widest bg-primary/20 text-primary border-0 font-bold uppercase">{attraction.category}</Badge>
-                      <h3 className="font-headline text-xl text-white truncate">{attraction.title}</h3>
+            {favoriteAttractions.map(attraction => {
+              const catKey = attraction.category.toLowerCase().replace(' ', '');
+              const translatedCategory = (t as any)[catKey] || attraction.category;
+              return (
+                <Link key={attraction.id} href={`/attraction/${attraction.id}`}>
+                  <Card className="flex h-32 overflow-hidden glass border-white/10 rounded-2xl group transition-all hover:border-primary/50">
+                    <div className="relative w-32 h-full overflow-hidden">
+                      <Image src={attraction.imageUrl} alt="" fill className="object-cover group-hover:scale-110 transition-transform" />
                     </div>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground uppercase tracking-widest">
-                       <span>Explore Spot</span>
-                       <ArrowRight className="w-4 h-4 text-primary" />
+                    <div className="flex-1 p-4 flex flex-col justify-between">
+                      <div>
+                        <Badge className="mb-1 text-[8px] tracking-widest bg-primary/20 text-primary border-0 font-bold uppercase">
+                          {translatedCategory}
+                        </Badge>
+                        <h3 className="font-headline text-xl text-white truncate">{attraction.title[language]}</h3>
+                      </div>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground uppercase tracking-widest">
+                         <span>Explore Spot</span>
+                         <ArrowRight className="w-4 h-4 text-primary" />
+                      </div>
                     </div>
-                  </div>
-                </Card>
-              </Link>
-            ))}
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>

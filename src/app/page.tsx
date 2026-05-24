@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -27,7 +26,7 @@ export default function HomePage() {
 
   const filteredAttractions = ATTRACTIONS.filter(a => {
     const matchesCategory = activeCategory === 'All' || a.category === activeCategory;
-    const matchesSearch = a.title.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = a.title[language].toLowerCase().includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -35,18 +34,25 @@ export default function HomePage() {
     return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'fortaleza tourism';
   };
 
+  const categoryMap: Record<string, string> = {
+    'All': t.all,
+    'Beaches': t.beaches,
+    'Culture': t.culture,
+    'Historical Places': t.historicalPlaces,
+    'Parks': t.parks
+  };
+
   return (
     <div className="min-h-screen">
-      {/* HUD Header */}
       <header className="sticky top-0 z-40 px-6 pt-12 pb-6 hud-gradient backdrop-blur-md">
-        <h1 className="font-headline text-4xl mb-1">{t.welcome}</h1>
+        <h1 className="font-headline text-4xl mb-1 text-white">{t.welcome}</h1>
         <p className="text-muted-foreground text-sm tracking-widest uppercase">{t.subtitle}</p>
         
         <div className="relative mt-6">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input 
             placeholder={t.search}
-            className="pl-10 h-12 bg-white/5 border-white/10 rounded-xl focus:ring-primary"
+            className="pl-10 h-12 bg-white/5 border-white/10 rounded-xl focus:ring-primary text-white"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -58,27 +64,29 @@ export default function HomePage() {
               key={cat}
               variant={activeCategory === cat ? "default" : "outline"}
               className={cn(
-                "cursor-pointer px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all",
-                activeCategory === cat ? "bg-primary text-primary-foreground" : "bg-white/5 border-white/10 hover:bg-white/10"
+                "cursor-pointer px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all whitespace-nowrap",
+                activeCategory === cat ? "bg-primary text-primary-foreground border-primary" : "bg-white/5 border-white/10 text-white hover:bg-white/10"
               )}
               onClick={() => setActiveCategory(cat)}
             >
-              {cat}
+              {categoryMap[cat]}
             </Badge>
           ))}
         </div>
       </header>
 
-      {/* Attractions Grid */}
-      <section className="px-6 grid gap-6 pb-24">
+      <section className="px-6 grid gap-6 pb-24 mt-4">
         {filteredAttractions.map((attraction) => {
           const isFav = favorites.includes(attraction.id);
+          const catKey = attraction.category.toLowerCase().replace(' ', '');
+          const translatedCategory = (t as any)[catKey] || attraction.category;
+
           return (
             <Card key={attraction.id} className="group relative overflow-hidden border-0 bg-transparent rounded-3xl h-[400px]">
               <Link href={`/attraction/${attraction.id}`} className="absolute inset-0 z-0">
                 <Image
                   src={attraction.imageUrl}
-                  alt={attraction.title}
+                  alt={attraction.title[language]}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -96,9 +104,9 @@ export default function HomePage() {
 
               <div className="absolute bottom-0 left-0 right-0 p-6 z-10 pointer-events-none">
                 <Badge className="mb-2 bg-primary/20 text-primary backdrop-blur-sm border-0 font-bold tracking-widest text-[10px] uppercase">
-                  {attraction.category}
+                  {translatedCategory}
                 </Badge>
-                <h2 className="font-headline text-3xl text-white mb-2">{attraction.title}</h2>
+                <h2 className="font-headline text-3xl text-white mb-2">{attraction.title[language]}</h2>
                 <div className="flex items-center gap-4 text-white/80 text-sm">
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500 fill-current" /> {attraction.rating}</span>
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Fortaleza</span>

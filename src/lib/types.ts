@@ -1,3 +1,4 @@
+export type Language = 'en' | 'pt' | 'es' | 'fr';
 
 export type Category = 'Beaches' | 'Restaurants' | 'Culture' | 'Parks' | 'Historical Places' | 'Nightlife';
 
@@ -10,30 +11,27 @@ export interface Coords {
 
 export interface Restaurant {
   id: string;
-  name: string;
-  cuisine: string;
+  name: Record<Language, string>;
+  cuisine: Record<Language, string>;
   rating: number;
-  address: string;
+  address: Record<Language, string>;
   imageUrl: string;
-  openingHours: string;
-  description: string;
+  openingHours: Record<Language, string>;
+  description: Record<Language, string>;
   priceRange: '$' | '$$' | '$$$' | '$$$$';
   category: RestaurantCategory;
-  distance?: string;
   coords: Coords;
 }
 
 export interface Attraction {
   id: string;
-  title: string;
-  description: string;
-  address: string;
-  openingHours: string;
+  title: Record<Language, string>;
+  description: Record<Language, string>;
+  address: Record<Language, string>;
+  openingHours: Record<Language, string>;
   rating: number;
   category: Category;
   imageUrl: string;
   coords: Coords;
   nearbyRestaurantIds: string[];
 }
-
-export type Language = 'en' | 'pt' | 'es' | 'fr';
