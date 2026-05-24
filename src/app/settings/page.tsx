@@ -5,9 +5,10 @@ import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Language } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
-import { Globe, Shield, Download, Info, ArrowLeft } from 'lucide-react';
+import { Globe, Shield, Download, Info, ArrowLeft, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function SettingsPage() {
   const { language, updateLanguage, isLoaded } = useVelaStore();
@@ -57,6 +58,21 @@ export default function SettingsPage() {
               </button>
             ))}
           </div>
+        </section>
+
+        <section>
+          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 flex items-center gap-2">
+            <Smartphone className="w-4 h-4" /> Application
+          </h3>
+          <Link href="/download">
+            <div className="flex items-center justify-between p-4 glass border-primary/30 bg-primary/5 rounded-2xl hover:bg-primary/10 transition-colors">
+              <div>
+                <h4 className="text-sm font-bold text-white uppercase tracking-widest">{t.downloadApp}</h4>
+                <p className="text-xs text-muted-foreground">{t.downloadDesc}</p>
+              </div>
+              <Download className="w-4 h-4 text-primary animate-bounce" />
+            </div>
+          </Link>
         </section>
 
         <section>

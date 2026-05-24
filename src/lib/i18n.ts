@@ -48,6 +48,11 @@ export const TRANSLATIONS = {
     beachfront: "Beachfront",
     business: "Business",
     budget: "Budget",
+    downloadApp: "Download App",
+    android: "Android",
+    ios: "iOS",
+    comingSoon: "Coming Soon",
+    downloadDesc: "Get the full mobile experience on your device.",
   },
   pt: {
     welcome: "Descubra Fortaleza",
@@ -96,6 +101,11 @@ export const TRANSLATIONS = {
     beachfront: "Beira Mar",
     business: "Executivo",
     budget: "Econômico",
+    downloadApp: "Baixar App",
+    android: "Android",
+    ios: "iOS",
+    comingSoon: "Em breve",
+    downloadDesc: "Tenha a experiência completa do guia no seu celular.",
   },
   es: {
     welcome: "Descubre Fortaleza",
@@ -144,6 +154,11 @@ export const TRANSLATIONS = {
     beachfront: "Frente al Mar",
     business: "Ejecutivo",
     budget: "Económico",
+    downloadApp: "Descargar App",
+    android: "Android",
+    ios: "iOS",
+    comingSoon: "Próximamente",
+    downloadDesc: "Obtén la experiencia móvil completa en tu dispositivo.",
   },
   fr: {
     welcome: "Découvrez Fortaleza",
@@ -192,5 +207,10 @@ export const TRANSLATIONS = {
     beachfront: "Front de Mer",
     business: "Affaires",
     budget: "Économique",
+    downloadApp: "Télécharger l'App",
+    android: "Android",
+    ios: "iOS",
+    comingSoon: "Bientôt",
+    downloadDesc: "Obtenez l'expérience mobile complète sur votre appareil.",
   }
 };
