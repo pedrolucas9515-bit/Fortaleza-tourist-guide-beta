@@ -9,9 +9,10 @@ import BottomNav from '@/components/BottomNav';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Sparkles, Send, User, Bot, MapPin, Utensils } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Sparkles, Send, Bot, MapPin, Utensils, Settings } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ConciergePage() {
   const { language, isLoaded } = useVelaStore();
@@ -21,6 +22,7 @@ export default function ConciergePage() {
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
+  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   const getRecommendations = async () => {
     if (!mood.trim()) return;
@@ -38,11 +40,21 @@ export default function ConciergePage() {
   return (
     <div className="min-h-screen bg-[#0f1315]">
       {/* HUD Header */}
-      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
-        <h1 className="font-headline text-3xl mb-1 text-white flex items-center gap-3">
-          {t.concierge} <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-        </h1>
-        <p className="text-muted-foreground text-xs tracking-widest uppercase">Fortaleza AI Personal Guide</p>
+      <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20 flex justify-between items-start">
+        <div className="flex items-center gap-4">
+          <div className="relative w-12 h-12 rounded-full overflow-hidden border border-primary/30 shadow-lg bg-black/40">
+            <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
+          </div>
+          <div>
+            <h1 className="font-headline text-3xl mb-0.5 text-white flex items-center gap-3">
+              {t.concierge} <Sparkles className="w-5 h-5 text-primary animate-pulse" />
+            </h1>
+            <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Personal Guide</p>
+          </div>
+        </div>
+        <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
+          <Settings className="w-5 h-5 text-white" />
+        </Link>
       </header>
 
       <div className="px-6 space-y-8 pb-32">

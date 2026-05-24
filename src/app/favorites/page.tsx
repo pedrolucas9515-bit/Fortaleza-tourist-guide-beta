@@ -17,13 +17,19 @@ export default function FavoritesPage() {
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
   const favoriteAttractions = ATTRACTIONS.filter(a => favorites.includes(a.id));
+  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="min-h-screen bg-[#0f1315]">
       <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20 flex justify-between items-start">
-        <div>
-          <h1 className="font-headline text-3xl mb-1 text-white">{t.favorites}</h1>
-          <p className="text-muted-foreground text-xs tracking-widest uppercase">Saved by You</p>
+        <div className="flex items-center gap-4">
+          <div className="relative w-12 h-12 rounded-full overflow-hidden border border-primary/30 shadow-lg bg-black/40">
+            <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
+          </div>
+          <div>
+            <h1 className="font-headline text-3xl mb-0.5 text-white">{t.favorites}</h1>
+            <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Saved by You</p>
+          </div>
         </div>
         <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
           <Settings className="w-5 h-5 text-white" />
