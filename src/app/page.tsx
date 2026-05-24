@@ -13,6 +13,7 @@ import { Search, Star, MapPin, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import placeholderData from '@/app/lib/placeholder-images.json';
 
 export default function HomePage() {
   const { language, favorites, toggleFavorite, isLoaded } = useVelaStore();
@@ -29,6 +30,10 @@ export default function HomePage() {
     const matchesSearch = a.title.toLowerCase().includes(search.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const getHint = (url: string) => {
+    return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'attraction';
+  };
 
   return (
     <div className="min-h-screen">
@@ -77,7 +82,7 @@ export default function HomePage() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  data-ai-hint="attraction photo"
+                  data-ai-hint={getHint(attraction.imageUrl)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f1315] via-transparent to-transparent opacity-80" />
               </Link>
