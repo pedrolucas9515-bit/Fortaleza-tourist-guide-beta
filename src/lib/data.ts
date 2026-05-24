@@ -69,6 +69,70 @@ export const HOTELS: Hotel[] = [
     coords: { lat: -3.7255, lng: -38.4985 }
   },
   {
+    id: 'quality-fortaleza',
+    name: {
+      en: 'Quality Hotel Fortaleza',
+      pt: 'Quality Hotel Fortaleza',
+      es: 'Quality Hotel Fortaleza',
+      fr: 'Quality Hotel Fortaleza'
+    },
+    category: 'Business',
+    rating: 4.5,
+    pricePerNight: 320,
+    address: {
+      en: '1310 Beira Mar Avenue, Meireles',
+      pt: 'Av. Beira Mar, 1310, Meireles',
+      es: 'Avenida Beira Mar, 1310, Meireles',
+      fr: 'Avenue Beira Mar, 1310, Meireles'
+    },
+    description: {
+      en: 'A premier choice for business travelers, featuring modern meeting facilities and a strategic location in the heart of the business district.',
+      pt: 'Uma escolha premium para viajantes de negócios, com instalações modernas para reuniões e localização estratégica no coração do distrito empresarial.',
+      es: 'Una opción de primer nivel para viajeros de negocios, con modernas instalaciones para reuniones y una ubicación estratégica en el corazón del distrito de negocios.',
+      fr: 'Un choix de premier ordre pour les voyageurs d\'affaires, doté d\'installations de réunion modernes et d\'un emplacement stratégique au cœur du quartier des affaires.'
+    },
+    amenities: {
+      en: ['Business Center', 'High-Speed Wi-Fi', 'Meeting Rooms', 'Gym'],
+      pt: ['Centro de Negócios', 'Wi-Fi de Alta Velocidade', 'Salas de Reunião', 'Academia'],
+      es: ['Centro de Negocios', 'Wi-Fi de Alta Velocidad', 'Salas de Reunión', 'Gimnasio'],
+      fr: ['Centre d\'affaires', 'Wi-Fi haut débit', 'Salles de réunion', 'Salle de sport']
+    },
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c7/e9/8b/quality-hotel-fortaleza.jpg?w=1200&h=-1&s=1',
+    coords: { lat: -3.7315, lng: -38.4815 }
+  },
+  {
+    id: 'stop-way-fortaleza',
+    name: {
+      en: 'Stop Way Hotel Fortaleza',
+      pt: 'Stop Way Hotel Fortaleza',
+      es: 'Stop Way Hotel Fortaleza',
+      fr: 'Stop Way Hotel Fortaleza'
+    },
+    category: 'Budget',
+    rating: 4.2,
+    pricePerNight: 210,
+    address: {
+      en: '1500 Monsenhor Tabosa Avenue, Iracema',
+      pt: 'Av. Monsenhor Tabosa, 1500, Iracema',
+      es: 'Avenida Monsenhor Tabosa, 1500, Iracema',
+      fr: 'Avenue Monsenhor Tabosa, 1500, Iracema'
+    },
+    description: {
+      en: 'Practical and affordable accommodation near Praia de Iracema. Perfect for budget-conscious travelers looking for comfort and location.',
+      pt: 'Acomodação prática e acessível perto da Praia de Iracema. Perfeito para viajantes focados em custo-benefício que buscam conforto e localização.',
+      es: 'Alojamiento práctico y asequible cerca de Praia de Iracema. Perfecto para viajeros que cuidan su presupuesto y buscan comodidad y ubicación.',
+      fr: 'Hébergement pratique et abordable à proximité de Praia de Iracema. Parfait pour les voyageurs soucieux de leur budget à la recherche de confort et d\'emplacement.'
+    },
+    amenities: {
+      en: ['Free Wi-Fi', 'Air Conditioning', 'Breakfast Included'],
+      pt: ['Wi-Fi Grátis', 'Ar Condicionado', 'Café da Manhã Incluso'],
+      es: ['Wi-Fi Gratis', 'Aire Acondicionado', 'Desayuno Incluido'],
+      fr: ['Wi-Fi gratuit', 'Climatisation', 'Petit-déjeuner inclus']
+    },
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/37/e5/75/fachada.jpg?w=1200&h=-1&s=1',
+    coords: { lat: -3.7235, lng: -38.5115 }
+  },
+  {
     id: 'seara-praia',
     name: {
       en: 'Seara Praia Hotel',
