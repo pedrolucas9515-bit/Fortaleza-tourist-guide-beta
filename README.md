@@ -1,36 +1,28 @@
+
 # Fortaleza Tourist Guide | Premium Mobile Guide
 
 The ultimate mobile tourism experience for Fortaleza, Ceará. This application is designed specifically for mobile devices with a high-end "HUD" aesthetic.
 
-## 📱 How to test on your phone
+## 📱 Como testar no seu celular (Instalação PWA)
 
-Since this project is running in a cloud environment, you can access it directly on your mobile device:
+Como este é um projeto Next.js, a melhor forma de usá-lo no celular é através da tecnologia **PWA (Progressive Web App)**:
 
-1. **Start the Dev Server**: Ensure the terminal is running `npm run dev`.
-2. **Open Web Preview**: Click the **Web Preview** button in the top right of your workspace.
-3. **Share the Link**: Copy the URL of the preview tab.
-4. **Access on Mobile**: Send this URL to your phone (via email, messaging, or a QR code generator).
-5. **Install as App**: Open the link on your phone and select **"Add to Home Screen"** in your browser menu (Safari on iOS or Chrome on Android) for the full-screen premium experience.
+1. **Abra o Web Preview**: Clique no botão **Web Preview** no canto superior direito do seu editor.
+2. **Obtenha a URL**: Copie o endereço que abriu no navegador (ex: `https://9002-....cloudworkstations.dev`).
+3. **Acesse no Celular**: Envie esse link para o seu celular ou gere um QR Code e escaneie-o.
+4. **Instale como App**: No navegador do celular:
+   - **iOS (Safari)**: Clique em "Compartilhar" (quadrado com seta) e selecione **"Adicionar à Tela de Início"**.
+   - **Android (Chrome)**: Clique nos três pontos e selecione **"Instalar Aplicativo"** ou **"Adicionar à Tela Inicial"**.
 
-## 📦 Direct App Downloads
+Isso criará o ícone da **Fortaleza Tourist Guide** na sua tela inicial, permitindo que você use o guia em tela cheia, sem as barras do navegador, exatamente como um aplicativo nativo.
 
-To enable direct downloads for Android (APK) and iOS (IPA):
+## ✨ Principais Funcionalidades
 
-1. Create a folder named `public/downloads/` in the root of the project.
-2. Upload your `fortaleza-guide.apk` file to this folder.
-3. Upload your `fortaleza-guide.ipa` file to this folder.
-
-The app is configured to fetch these files directly from those paths.
-
-## ✨ Key Features
-
-- **Interactive Map HUD**: Explore Fortaleza with an embedded, dark-themed interactive map.
-- **AI Itinerary Planner**: Get a custom schedule based on your interests and available time.
-- **AI Personal Concierge**: Chat with a local AI expert for personalized dining and attraction tips.
-- **Multilingual Content**: Full support for English, Portuguese, Spanish, and French.
-- **Gastronomy Guide**: A dedicated section for the best restaurants in the city.
-- **Hotels Guide**: A dedicated section for premium stays in the city.
-- **Offline Favorites**: Save your must-visit spots locally.
+- **Interactive Map HUD**: Explore Fortaleza com um mapa interativo com tema escuro.
+- **AI Itinerary Planner**: Obtenha um cronograma personalizado baseado nos seus interesses.
+- **AI Personal Concierge**: Converse com um especialista local de IA para dicas de gastronomia.
+- **Multilingual Content**: Suporte para Inglês, Português, Espanhol e Francês.
+- **Gastronomy & Hotel Guide**: Seções dedicadas para os melhores lugares da cidade.
 
 ## 🛠 Tech Stack
 
@@ -38,4 +30,3 @@ The app is configured to fetch these files directly from those paths.
 - **AI Engine**: Genkit + Gemini 2.5 Flash
 - **Styling**: Tailwind CSS + ShadCN UI
 - **Maps**: Leaflet (React Leaflet)
-- **State**: Custom Zustand-like store with LocalStorage persistence

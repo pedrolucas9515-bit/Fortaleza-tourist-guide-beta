@@ -1,50 +1,20 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
-import { ArrowLeft, Apple, Download, FileType, Info } from 'lucide-react';
+import { ArrowLeft, Smartphone, Share, PlusSquare, Info } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
 
 export default function DownloadPage() {
   const { language, isLoaded } = useVelaStore();
   const router = useRouter();
-  const { toast } = useToast();
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
   const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
-
-  const handleAndroidDownload = () => {
-    toast({
-      title: "Download Started",
-      description: "Checking for 'fortaleza-guide.apk' in the public/downloads folder.",
-    });
-    
-    const link = document.createElement('a');
-    link.href = '/downloads/fortaleza-guide.apk';
-    link.setAttribute('download', 'fortaleza-guide.apk');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleIOSDownload = () => {
-    toast({
-      title: "Download Started",
-      description: "Checking for 'fortaleza-guide.ipa' in the public/downloads folder.",
-    });
-
-    const link = document.createElement('a');
-    link.href = '/downloads/fortaleza-guide.ipa';
-    link.setAttribute('download', 'fortaleza-guide.ipa');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <div className="min-h-screen bg-[#0f1315] flex flex-col">
@@ -60,52 +30,49 @@ export default function DownloadPage() {
         </div>
 
         <div className="text-center space-y-2">
-          <h1 className="font-headline text-4xl text-white tracking-tight">{t.downloadApp}</h1>
-          <p className="text-muted-foreground text-sm uppercase tracking-[0.2em] font-bold">{t.downloadDesc}</p>
+          <h1 className="font-headline text-4xl text-white tracking-tight">Instalar App</h1>
+          <p className="text-muted-foreground text-sm uppercase tracking-[0.1em] font-bold">Experiência Mobile Completa</p>
         </div>
 
-        <div className="w-full max-w-sm space-y-4">
-          <Button 
-            onClick={handleAndroidDownload}
-            className="w-full h-24 bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl flex items-center justify-start px-6 gap-4 group transition-all"
-          >
-            <div className="bg-green-500/20 p-4 rounded-2xl group-hover:scale-110 transition-transform">
-              <svg className="w-8 h-8 text-green-500 fill-current" viewBox="0 0 24 24">
-                <path d="M17.523 15.3414C17.523 14.8814 17.896 14.5084 18.356 14.5084C18.816 14.5084 19.189 14.8814 19.189 15.3414C19.189 15.8014 18.816 16.1744 18.356 16.1744C17.896 16.1744 17.523 15.8014 17.523 15.3414ZM5.644 15.3414C5.644 14.8814 6.017 14.5084 6.477 14.5084C6.937 14.5084 7.31 14.8814 7.31 15.3414C7.31 15.8014 6.937 16.1744 6.477 16.1744C6.017 16.1744 5.644 15.8014 5.644 15.3414ZM17.92 10.1414L19.86 6.78138C20.01 6.52138 19.92 6.19138 19.66 6.04138C19.4 5.89138 19.07 5.98138 18.92 6.24138L16.96 9.63138C15.53 8.98138 13.84 8.61138 12 8.61138C10.16 8.61138 8.47 8.98138 7.04 9.63138L5.08 6.24138C4.93 5.98138 4.6 5.89138 4.34 6.04138C4.08 6.19138 3.99 6.52138 4.14 6.78138L6.08 10.1414C3.01 11.8514 1 14.9814 1 18.6114H23C23 14.9814 20.99 11.8514 17.92 10.1414Z"/>
-              </svg>
+        <div className="w-full max-w-sm space-y-6">
+          <Card className="glass border-white/10 p-6 rounded-2xl space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="bg-primary/20 p-3 rounded-xl">
+                <Smartphone className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-lg mb-1">Como Instalar</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Para ter este guia sempre com você, não é necessário baixar um APK. Siga os passos abaixo:
+                </p>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Download Direct</p>
-              <p className="text-2xl font-headline text-white">Android APK</p>
-            </div>
-            <Download className="ml-auto w-6 h-6 text-primary animate-pulse" />
-          </Button>
 
-          <Button 
-            onClick={handleIOSDownload}
-            className="w-full h-24 bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl flex items-center justify-start px-6 gap-4 group transition-all"
-          >
-            <div className="bg-white/10 p-4 rounded-2xl group-hover:scale-110 transition-transform">
-              <Apple className="w-8 h-8 text-white" />
+            <div className="space-y-4 pt-4 border-t border-white/5">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-primary">1</div>
+                <p className="text-xs text-white/80">No navegador do seu celular, clique no ícone de <strong>Compartilhar</strong> <Share className="w-3 h-3 inline" /> (iOS) ou nos <strong>três pontos</strong> (Android).</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-primary">2</div>
+                <p className="text-xs text-white/80">Selecione a opção <strong>"Adicionar à Tela de Início"</strong> <PlusSquare className="w-3 h-3 inline" />.</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-xs font-bold text-primary">3</div>
+                <p className="text-xs text-white/80">Pronto! O ícone do guia aparecerá na sua tela inicial como um aplicativo nativo.</p>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Download Direct</p>
-              <p className="text-2xl font-headline text-white">iOS IPA</p>
+          </Card>
+
+          <Card className="glass border-primary/20 p-4 text-center">
+            <div className="flex justify-center mb-2">
+              <Info className="w-5 h-5 text-primary" />
             </div>
-            <div className="ml-auto flex flex-col items-end">
-               <FileType className="w-6 h-6 text-white/20" />
-            </div>
-          </Button>
+            <p className="text-[10px] text-white/60 leading-relaxed italic">
+              Este é um protótipo de alta fidelidade desenvolvido para a web. A instalação via PWA garante que você tenha a experiência de tela cheia sem as barras do navegador.
+            </p>
+          </Card>
         </div>
-
-        <Card className="max-w-xs glass border-primary/20 p-5 text-center">
-          <div className="flex justify-center mb-3">
-            <Info className="w-6 h-6 text-primary" />
-          </div>
-          <p className="text-[11px] text-white/70 leading-relaxed italic">
-            "Para que os downloads funcionem, o desenvolvedor deve colocar os arquivos .apk e .ipa na pasta <strong>public/downloads</strong> do projeto."
-          </p>
-        </Card>
       </div>
     </div>
   );
