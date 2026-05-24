@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'Fortaleza Guide',
   },
   icons: {
+    icon: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
     apple: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
   },
 };
