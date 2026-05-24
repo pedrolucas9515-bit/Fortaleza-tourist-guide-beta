@@ -8,6 +8,10 @@ export interface Restaurant {
   rating: number;
   address: string;
   imageUrl: string;
+  openingHours: string;
+  description: string;
+  priceRange: '$' | '$$' | '$$$' | '$$$$';
+  distance?: string; // Distance from a specific attraction
 }
 
 export interface Attraction {
@@ -23,7 +27,7 @@ export interface Attraction {
     lat: number;
     lng: number;
   };
-  nearbyRestaurants: Restaurant[];
+  nearbyRestaurantIds: string[]; // Reference by ID to avoid duplication
 }
 
 export type Language = 'en' | 'pt' | 'es' | 'fr';

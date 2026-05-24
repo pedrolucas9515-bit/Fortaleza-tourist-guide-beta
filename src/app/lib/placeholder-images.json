@@ -56,16 +56,40 @@
       "imageHint": "old fortress"
     },
     {
-      "id": "restaurant-1",
+      "id": "rest-seafood-1",
       "description": "Coco Bambu Restaurant",
-      "imageUrl": "https://picsum.photos/seed/rest1/600/400",
-      "imageHint": "seafood restaurant"
+      "imageUrl": "https://picsum.photos/seed/restseafood1/600/400",
+      "imageHint": "seafood dinner"
     },
     {
-      "id": "restaurant-2",
-      "description": "Canteiros Restaurant",
-      "imageUrl": "https://picsum.photos/seed/rest2/600/400",
+      "id": "rest-regional-1",
+      "description": "Cantinho do Faustino",
+      "imageUrl": "https://picsum.photos/seed/restregional1/600/400",
       "imageHint": "brazilian food"
+    },
+    {
+      "id": "rest-cafe-1",
+      "description": "Santa Clara Coffee",
+      "imageUrl": "https://picsum.photos/seed/restcafe1/600/400",
+      "imageHint": "coffee shop"
+    },
+    {
+      "id": "rest-beach-1",
+      "description": "Crocobeach Club",
+      "imageUrl": "https://picsum.photos/seed/restbeach1/600/400",
+      "imageHint": "beach club"
+    },
+    {
+      "id": "rest-fine-1",
+      "description": "L'Ô Restaurant",
+      "imageUrl": "https://picsum.photos/seed/restfine1/600/400",
+      "imageHint": "fine dining"
+    },
+    {
+      "id": "rest-fast-1",
+      "description": "Burguês Burger",
+      "imageUrl": "https://picsum.photos/seed/restfast1/600/400",
+      "imageHint": "gourmet burger"
     }
   ]
 }

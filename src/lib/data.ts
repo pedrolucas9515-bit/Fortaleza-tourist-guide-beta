@@ -1,25 +1,75 @@
 
-import { Attraction } from './types';
+import { Attraction, Restaurant } from './types';
 import placeholderData from '@/app/lib/placeholder-images.json';
 
 const getImg = (id: string) => placeholderData.placeholderImages.find(img => img.id === id)?.imageUrl || '';
 
-const baseRestaurants = [
+export const RESTAURANTS: Restaurant[] = [
   {
-    id: 'res-1',
+    id: 'coco-bambu',
     name: 'Coco Bambu Beira Mar',
     cuisine: 'Seafood',
     rating: 4.8,
     address: 'Av. Beira Mar, 3698',
-    imageUrl: getImg('restaurant-1')
+    openingHours: '11:30 - 00:00',
+    priceRange: '$$$',
+    description: 'The most famous seafood restaurant in Fortaleza, known for its generous portions and beautiful view of the Atlantic.',
+    imageUrl: getImg('rest-seafood-1')
   },
   {
-    id: 'res-2',
-    name: 'Canteiros',
-    cuisine: 'Brazilian Regional',
+    id: 'crocobeach',
+    name: 'Crocobeach',
+    cuisine: 'Beach Food & Seafood',
+    rating: 4.7,
+    address: 'Av. Clóvis Arrais Maia, 3125',
+    openingHours: '08:00 - 18:00',
+    priceRange: '$$',
+    description: 'A massive beach club at Praia do Futuro offering swimming pools, live shows, and local delicacies like crab.',
+    imageUrl: getImg('rest-beach-1')
+  },
+  {
+    id: 'santa-clara',
+    name: 'Santa Clara Café Orgânico',
+    cuisine: 'Café',
+    rating: 4.9,
+    address: 'R. Dragão do Mar, 81',
+    openingHours: '08:00 - 22:00',
+    priceRange: '$',
+    description: 'Premium organic coffee from Ceará served in a cozy atmosphere inside the Dragão do Mar cultural center.',
+    imageUrl: getImg('rest-cafe-1')
+  },
+  {
+    id: 'lo-restaurante',
+    name: "L'Ô Restaurant",
+    cuisine: 'Fine Dining / French-Italian',
+    rating: 4.9,
+    address: 'Av. Pessoa Anta, 217',
+    openingHours: '19:00 - 23:30',
+    priceRange: '$$$$',
+    description: 'Sophisticated dining with modern European influences. Perfect for a romantic evening or special celebration.',
+    imageUrl: getImg('rest-fine-1')
+  },
+  {
+    id: 'cantinho-faustino',
+    name: 'Cantinho do Faustino',
+    cuisine: 'Regional Brazilian',
     rating: 4.6,
-    address: 'Rua Carlos Vasconcelos, 747',
-    imageUrl: getImg('restaurant-2')
+    address: 'R. Tibúrcio Cavalcante, 736',
+    openingHours: '11:00 - 23:00',
+    priceRange: '$$',
+    description: 'Classic Fortaleza restaurant specializing in local flavors like sun-dried meat (carne de sol) and seafood.',
+    imageUrl: getImg('rest-regional-1')
+  },
+  {
+    id: 'burgues-burger',
+    name: 'Burguês Burger',
+    cuisine: 'Fast Food / Gourmet Burgers',
+    rating: 4.5,
+    address: 'Various Locations',
+    openingHours: '17:00 - 01:00',
+    priceRange: '$',
+    description: 'Voted one of the best burgers in the city, using high-quality local ingredients and artisan buns.',
+    imageUrl: getImg('rest-fast-1')
   }
 ];
 
@@ -34,7 +84,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: getImg('iracema'),
     coords: { lat: -3.7208, lng: -38.5173 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['lo-restaurante', 'cantinho-faustino', 'burgues-burger']
   },
   {
     id: 'futuro',
@@ -46,7 +96,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: getImg('futuro'),
     coords: { lat: -3.7383, lng: -38.4552 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['crocobeach', 'burgues-burger']
   },
   {
     id: 'beiramar',
@@ -58,7 +108,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: getImg('beiramar'),
     coords: { lat: -3.7251, lng: -38.4988 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['coco-bambu', 'cantinho-faustino']
   },
   {
     id: 'mercado',
@@ -70,7 +120,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Culture',
     imageUrl: getImg('mercado'),
     coords: { lat: -3.7231, lng: -38.5255 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['santa-clara', 'lo-restaurante']
   },
   {
     id: 'dragao',
@@ -82,7 +132,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Culture',
     imageUrl: getImg('dragao'),
     coords: { lat: -3.7219, lng: -38.5209 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['santa-clara', 'lo-restaurante', 'burgues-burger']
   },
   {
     id: 'ponte',
@@ -94,7 +144,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Historical Places',
     imageUrl: getImg('ponte'),
     coords: { lat: -3.7198, lng: -38.5178 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['lo-restaurante', 'santa-clara']
   },
   {
     id: 'coco',
@@ -106,7 +156,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Parks',
     imageUrl: getImg('coco'),
     coords: { lat: -3.7468, lng: -38.4835 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['cantinho-faustino', 'burgues-burger']
   },
   {
     id: 'catedral',
@@ -118,7 +168,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Historical Places',
     imageUrl: getImg('catedral'),
     coords: { lat: -3.7239, lng: -38.5264 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['santa-clara', 'lo-restaurante']
   },
   {
     id: 'fortaleza',
@@ -130,6 +180,6 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Historical Places',
     imageUrl: getImg('fortaleza'),
     coords: { lat: -3.7225, lng: -38.5250 },
-    nearbyRestaurants: baseRestaurants
+    nearbyRestaurantIds: ['santa-clara', 'lo-restaurante']
   }
 ];

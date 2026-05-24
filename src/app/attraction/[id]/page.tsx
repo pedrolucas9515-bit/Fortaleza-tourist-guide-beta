@@ -1,16 +1,18 @@
+
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
 import { useVelaStore } from '@/lib/store';
-import { ATTRACTIONS } from '@/lib/data';
+import { ATTRACTIONS, RESTAURANTS } from '@/lib/data';
 import { TRANSLATIONS } from '@/lib/i18n';
-import { ArrowLeft, MapPin, Clock, Star, Navigation, Heart } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, Star, Navigation, Heart, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function AttractionDetail() {
   const { id } = useParams();
@@ -24,6 +26,7 @@ export default function AttractionDetail() {
   if (!attraction) return <div className="p-10 text-center">Not found</div>;
 
   const isFav = favorites.includes(attraction.id);
+  const nearbyRestaurants = RESTAURANTS.filter(r => attraction.nearbyRestaurantIds.includes(r.id));
 
   const openInMaps = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${attraction.coords.lat},${attraction.coords.lng}`;
@@ -65,8 +68,12 @@ export default function AttractionDetail() {
       <div className="px-6 mt-8">
         <Tabs defaultValue="about" className="w-full">
           <TabsList className="grid w-full grid-cols-2 bg-white/5 border-white/10 h-12 p-1 rounded-xl">
-            <TabsTrigger value="about" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg uppercase text-[10px] font-bold tracking-widest">{t.explore}</TabsTrigger>
-            <TabsTrigger value="dining" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg uppercase text-[10px] font-bold tracking-widest">{t.nearbyRestaurants}</TabsTrigger>
+            <TabsTrigger value="about" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg uppercase text-[10px] font-bold tracking-widest">
+              {t.explore}
+            </TabsTrigger>
+            <TabsTrigger value="dining" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg uppercase text-[10px] font-bold tracking-widest">
+              {t.nearbyRestaurants} ({nearbyRestaurants.length})
+            </TabsTrigger>
           </TabsList>
           
           <TabsContent value="about" className="mt-8 animate-in fade-in duration-500">
@@ -84,7 +91,7 @@ export default function AttractionDetail() {
               </div>
 
               <div>
-                <h3 className="text-xl font-headline mb-3 flex items-center gap-2"><MapPin className="w-5 h-5 text-primary" /> Address</h3>
+                <h3 className="text-xl font-headline mb-3 flex items-center gap-2"><MapPin className="w-5 h-5 text-primary" /> {t.address}</h3>
                 <p className="text-muted-foreground text-sm italic">{attraction.address}</p>
               </div>
 
@@ -96,22 +103,36 @@ export default function AttractionDetail() {
 
           <TabsContent value="dining" className="mt-8 animate-in fade-in duration-500">
             <div className="grid gap-4">
-              {attraction.nearbyRestaurants.map((res) => (
-                <Card key={res.id} className="flex overflow-hidden bg-white/5 border-white/10 rounded-2xl h-32 p-0">
-                  <div className="relative w-32 h-full">
-                    <Image src={res.imageUrl} alt={res.name} fill className="object-cover" />
-                  </div>
-                  <div className="flex-1 p-4 flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-bold text-white truncate">{res.name}</h4>
-                      <p className="text-xs text-muted-foreground uppercase tracking-wider">{res.cuisine}</p>
+              {nearbyRestaurants.map((res) => (
+                <Link key={res.id} href={`/restaurant/${res.id}`}>
+                  <Card className="flex overflow-hidden bg-white/5 border-white/10 rounded-2xl h-36 p-0 group transition-all hover:border-primary/50">
+                    <div className="relative w-36 h-full shrink-0">
+                      <Image src={res.imageUrl} alt={res.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute top-2 left-2">
+                        <Badge className="bg-black/60 backdrop-blur-md border-0 text-[8px] tracking-tighter">
+                          {res.priceRange}
+                        </Badge>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs flex items-center gap-1 font-bold text-primary"><Star className="w-3 h-3 fill-current" /> {res.rating}</span>
-                      <Button variant="ghost" size="sm" className="h-8 text-[10px] uppercase font-bold text-white/50 border border-white/10">View</Button>
+                    <div className="flex-1 p-4 flex flex-col justify-between min-w-0">
+                      <div>
+                        <div className="flex justify-between items-start">
+                           <h4 className="font-bold text-white truncate text-base">{res.name}</h4>
+                           <span className="text-[10px] flex items-center gap-0.5 font-bold text-primary"><Star className="w-3 h-3 fill-current" /> {res.rating}</span>
+                        </div>
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1 truncate">{res.cuisine}</p>
+                        <div className="flex items-center gap-1 text-[10px] text-white/40">
+                          <Clock className="w-3 h-3" />
+                          <span>{res.openingHours}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mt-2">
+                        <span className="text-[10px] text-primary/80 font-medium">Near Attraction</span>
+                        <ChevronRight className="w-4 h-4 text-primary" />
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </Link>
               ))}
             </div>
           </TabsContent>
