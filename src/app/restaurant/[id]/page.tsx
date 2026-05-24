@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import placeholderData from '@/app/lib/placeholder-images.json';
 
 export default function RestaurantDetail() {
   const { id } = useParams();
@@ -28,6 +29,10 @@ export default function RestaurantDetail() {
     window.open(url, '_blank');
   };
 
+  const getHint = (url: string) => {
+    return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'restaurant food';
+  };
+
   return (
     <div className="min-h-screen bg-[#0f1315] pb-24">
       {/* Header Overlay */}
@@ -43,6 +48,7 @@ export default function RestaurantDetail() {
           fill
           className="object-cover"
           priority
+          data-ai-hint={getHint(restaurant.imageUrl)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1315] via-transparent to-black/20" />
         

@@ -3,93 +3,93 @@
   "placeholderImages": [
     {
       "id": "iracema",
-      "description": "Praia de Iracema Sunset",
-      "imageUrl": "https://picsum.photos/seed/iracema1/800/600",
-      "imageHint": "iracema sunset"
+      "description": "Praia de Iracema Sunset and Statue",
+      "imageUrl": "https://picsum.photos/seed/iracema_fortaleza/800/600",
+      "imageHint": "iracema statue"
     },
     {
       "id": "futuro",
       "description": "Praia do Futuro beach",
-      "imageUrl": "https://picsum.photos/seed/futuro1/800/600",
-      "imageHint": "futuro beach"
+      "imageUrl": "https://picsum.photos/seed/futuro_beach/800/600",
+      "imageHint": "fortaleza beach"
     },
     {
       "id": "beiramar",
-      "description": "Beira Mar Avenue",
-      "imageUrl": "https://picsum.photos/seed/beiramar1/800/600",
+      "description": "Beira Mar Avenue Promenade",
+      "imageUrl": "https://picsum.photos/seed/beiramar_promenade/800/600",
       "imageHint": "beira mar"
     },
     {
       "id": "mercado",
       "description": "Mercado Central Fortaleza",
-      "imageUrl": "https://picsum.photos/seed/mercado1/800/600",
-      "imageHint": "fortaleza market"
+      "imageUrl": "https://picsum.photos/seed/mercado_central/800/600",
+      "imageHint": "central market"
     },
     {
       "id": "dragao",
-      "description": "Centro Dragão do Mar",
-      "imageUrl": "https://picsum.photos/seed/dragao1/800/600",
-      "imageHint": "cultural center"
+      "description": "Centro Dragão do Mar de Arte e Cultura",
+      "imageUrl": "https://picsum.photos/seed/dragao_mar/800/600",
+      "imageHint": "dragao mar"
     },
     {
       "id": "ponte",
-      "description": "Ponte dos Ingleses",
-      "imageUrl": "https://picsum.photos/seed/ponte1/800/600",
+      "description": "Ponte dos Ingleses Sunset",
+      "imageUrl": "https://picsum.photos/seed/ponte_ingleses/800/600",
       "imageHint": "ocean bridge"
     },
     {
       "id": "coco",
-      "description": "Parque do Cocó",
-      "imageUrl": "https://picsum.photos/seed/coco1/800/600",
-      "imageHint": "tropical park"
+      "description": "Parque do Cocó Mangroves",
+      "imageUrl": "https://picsum.photos/seed/coco_park/800/600",
+      "imageHint": "mangrove forest"
     },
     {
       "id": "catedral",
-      "description": "Catedral Metropolitana",
-      "imageUrl": "https://picsum.photos/seed/catedral1/800/600",
-      "imageHint": "metropolitan cathedral"
+      "description": "Catedral Metropolitana de Fortaleza",
+      "imageUrl": "https://picsum.photos/seed/catedral_fortaleza/800/600",
+      "imageHint": "gothic cathedral"
     },
     {
       "id": "fortaleza",
       "description": "Fortaleza de Nossa Senhora da Assunção",
-      "imageUrl": "https://picsum.photos/seed/fortaleza1/800/600",
+      "imageUrl": "https://picsum.photos/seed/fortaleza_assuncao/800/600",
       "imageHint": "old fortress"
     },
     {
       "id": "rest-seafood-1",
-      "description": "Coco Bambu Restaurant",
-      "imageUrl": "https://picsum.photos/seed/seafood1/600/400",
-      "imageHint": "seafood dinner"
+      "description": "Premium Seafood Dish",
+      "imageUrl": "https://picsum.photos/seed/seafood_coco/600/400",
+      "imageHint": "seafood platter"
     },
     {
       "id": "rest-regional-1",
-      "description": "Cantinho do Faustino",
-      "imageUrl": "https://picsum.photos/seed/brazilfood1/600/400",
-      "imageHint": "brazilian food"
+      "description": "Regional Brazilian Carne de Sol",
+      "imageUrl": "https://picsum.photos/seed/brazil_regional/600/400",
+      "imageHint": "brazilian steak"
     },
     {
       "id": "rest-cafe-1",
-      "description": "Santa Clara Coffee",
-      "imageUrl": "https://picsum.photos/seed/coffee1/600/400",
-      "imageHint": "coffee shop"
+      "description": "Artisan Coffee",
+      "imageUrl": "https://picsum.photos/seed/fortaleza_coffee/600/400",
+      "imageHint": "espresso coffee"
     },
     {
       "id": "rest-beach-1",
-      "description": "Crocobeach Club",
-      "imageUrl": "https://picsum.photos/seed/beachclub1/600/400",
-      "imageHint": "beach club"
+      "description": "Luxury Beach Club",
+      "imageUrl": "https://picsum.photos/seed/beach_club_fort/600/400",
+      "imageHint": "beach resort"
     },
     {
       "id": "rest-fine-1",
-      "description": "L'Ô Restaurant",
-      "imageUrl": "https://picsum.photos/seed/finedining1/600/400",
+      "description": "Fine Dining Restaurant",
+      "imageUrl": "https://picsum.photos/seed/fine_dining_ceara/600/400",
       "imageHint": "fine dining"
     },
     {
       "id": "rest-fast-1",
-      "description": "Burguês Burger",
-      "imageUrl": "https://picsum.photos/seed/burger1/600/400",
-      "imageHint": "gourmet burger"
+      "description": "Gourmet Burger",
+      "imageUrl": "https://picsum.photos/seed/gourmet_burger_f/600/400",
+      "imageHint": "juicy burger"
     }
   ]
 }

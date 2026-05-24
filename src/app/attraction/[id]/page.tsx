@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import placeholderData from '@/app/lib/placeholder-images.json';
 
 export default function AttractionDetail() {
   const { id } = useParams();
@@ -33,6 +34,10 @@ export default function AttractionDetail() {
     window.open(url, '_blank');
   };
 
+  const getHint = (url: string) => {
+    return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'attraction spot';
+  };
+
   return (
     <div className="min-h-screen pb-24">
       {/* Hero Header */}
@@ -43,6 +48,7 @@ export default function AttractionDetail() {
           fill
           className="object-cover"
           priority
+          data-ai-hint={getHint(attraction.imageUrl)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30" />
         
@@ -107,7 +113,13 @@ export default function AttractionDetail() {
                 <Link key={res.id} href={`/restaurant/${res.id}`}>
                   <Card className="flex overflow-hidden bg-white/5 border-white/10 rounded-2xl h-36 p-0 group transition-all hover:border-primary/50">
                     <div className="relative w-36 h-full shrink-0">
-                      <Image src={res.imageUrl} alt={res.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <Image 
+                        src={res.imageUrl} 
+                        alt={res.name} 
+                        fill 
+                        className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                        data-ai-hint={getHint(res.imageUrl)}
+                      />
                       <div className="absolute top-2 left-2">
                         <Badge className="bg-black/60 backdrop-blur-md border-0 text-[8px] tracking-tighter">
                           {res.priceRange}

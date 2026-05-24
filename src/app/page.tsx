@@ -32,7 +32,7 @@ export default function HomePage() {
   });
 
   const getHint = (url: string) => {
-    return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'attraction';
+    return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'fortaleza tourism';
   };
 
   return (
@@ -101,7 +101,7 @@ export default function HomePage() {
                 <h2 className="font-headline text-3xl text-white mb-2">{attraction.title}</h2>
                 <div className="flex items-center gap-4 text-white/80 text-sm">
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500 fill-current" /> {attraction.rating}</span>
-                  <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> 2.4 km</span>
+                  <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Fortaleza</span>
                 </div>
               </div>
             </Card>
