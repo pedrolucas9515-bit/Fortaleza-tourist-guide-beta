@@ -33,7 +33,7 @@ export const HOTELS: Hotel[] = [
       es: ['Spa', 'Piscina en la Azotea', 'Gimnasio', 'Vista al Mar'],
       fr: ['Spa', 'Piscine sur le toit', 'Salle de sport', 'Vue sur la mer']
     },
-    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/4a/7f/f3/exterior.jpg?w=1200&h=-1&s=1',
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/da/c7/9f/caption.jpg?w=900&h=500&s=1',
     coords: { lat: -3.7275, lng: -38.4865 }
   },
   {
@@ -65,7 +65,7 @@ export const HOTELS: Hotel[] = [
       es: ['Piscina con Jardín', 'Desayuno Gratis', 'Decoración Colonial'],
       fr: ['Piscine de jardin', 'Petit-déjeuner gratuit', 'Décoration coloniale']
     },
-    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/64/0a/61/fachada.jpg?w=1200&h=-1&s=1',
+    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/345279503.jpg?k=e6f43913031c30c3410ff0618b2084cf292deba04382104d7f9f95a1d95915b9&o=',
     coords: { lat: -3.7255, lng: -38.4985 }
   },
   {
@@ -97,7 +97,7 @@ export const HOTELS: Hotel[] = [
       es: ['Centro de Negocios', 'Wi-Fi de Alta Velocidad', 'Salas de Reunión', 'Gimnasio'],
       fr: ['Centre d\'affaires', 'Wi-Fi haut débit', 'Salles de réunion', 'Salle de sport']
     },
-    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c7/e9/8b/quality-hotel-fortaleza.jpg?w=1200&h=-1&s=1',
+    imageUrl: 'https://www.pacotestravel.com.br/img/pacote/quality-hotel-fortaleza/vista-frontal-156.jpeg',
     coords: { lat: -3.7315, lng: -38.4815 }
   },
   {
@@ -129,7 +129,7 @@ export const HOTELS: Hotel[] = [
       es: ['Wi-Fi Gratis', 'Aire Acondicionado', 'Desayuno Incluido'],
       fr: ['Wi-Fi gratuit', 'Climatisation', 'Petit-déjeuner inclus']
     },
-    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/37/e5/75/fachada.jpg?w=1200&h=-1&s=1',
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/36/60/e9/fachada.jpg?w=900&h=500&s=1',
     coords: { lat: -3.7235, lng: -38.5115 }
   },
   {
@@ -161,7 +161,7 @@ export const HOTELS: Hotel[] = [
       es: ['Piscina', 'Sauna', 'Centro de Negocios', 'Área de Eventos'],
       fr: ['Piscine', 'Sauna', 'Centre d\'affaires', 'Espace événements']
     },
-    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/8c/9d/piscina.jpg?w=1200&h=-1&s=1',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpdzG15hMFNj3kjaiKR2efg8tXel_Ss4h5AQ&s',
     coords: { lat: -3.7248, lng: -38.4955 }
   },
   {
@@ -193,7 +193,7 @@ export const HOTELS: Hotel[] = [
       es: ['Acceso al Club de Playa', 'Piscina al Aire Libre', 'Gimnasio', 'Restaurante'],
       fr: ['Accès au Beach Club', 'Piscine extérieure', 'Salle de sport', 'Restaurant']
     },
-    imageUrl: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=800&h=600',
+    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/737559957.jpg?k=27c0143d05108ee46061dcdb77836d64ab1ebdffc6092e482a85a0febc972b74&o=',
     coords: { lat: -3.7383, lng: -38.4552 }
   }
 ];
