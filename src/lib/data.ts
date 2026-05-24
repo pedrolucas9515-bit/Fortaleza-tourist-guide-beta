@@ -1,7 +1,106 @@
-import { Attraction, Restaurant } from './types';
+import { Attraction, Restaurant, Hotel } from './types';
 import placeholderData from '@/app/lib/placeholder-images.json';
 
 const getImg = (id: string) => placeholderData.placeholderImages.find(img => img.id === id)?.imageUrl || '';
+
+export const HOTELS: Hotel[] = [
+  {
+    id: 'gran-marquise',
+    name: {
+      en: 'Hotel Gran Marquise',
+      pt: 'Hotel Gran Marquise',
+      es: 'Hotel Gran Marquise',
+      fr: 'Hôtel Gran Marquise'
+    },
+    category: 'Luxury',
+    rating: 5.0,
+    pricePerNight: 850,
+    address: {
+      en: '3980 Beira Mar Avenue, Mucuripe',
+      pt: 'Av. Beira Mar, 3980, Mucuripe',
+      es: 'Avenida Beira Mar, 3980, Mucuripe',
+      fr: 'Avenue Beira Mar, 3980, Mucuripe'
+    },
+    description: {
+      en: 'The most prestigious luxury hotel in Fortaleza, located in the elegant Mucuripe area with a stunning rooftop pool.',
+      pt: 'O hotel de luxo mais prestigiado de Fortaleza, localizado na elegante área do Mucuripe, com uma piscina deslumbrante na cobertura.',
+      es: 'El hotel de lujo más prestigioso de Fortaleza, ubicado en la elegante zona de Mucuripe con una impresionante piscina en la azotea.',
+      fr: 'L\'hôtel de luxe le plus prestigieux de Fortaleza, situé dans le quartier élégant de Mucuripe avec une superbe piscine sur le toit.'
+    },
+    amenities: {
+      en: ['Spa', 'Rooftop Pool', 'Fitness Center', 'Ocean View'],
+      pt: ['Spa', 'Piscina na Cobertura', 'Academia', 'Vista Mar'],
+      es: ['Spa', 'Piscina en la Azotea', 'Gimnasio', 'Vista al Mar'],
+      fr: ['Spa', 'Piscine sur le toit', 'Salle de sport', 'Vue sur la mer']
+    },
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/4a/7f/f3/exterior.jpg?w=1200&h=-1&s=1',
+    coords: { lat: -3.7275, lng: -38.4865 }
+  },
+  {
+    id: 'villa-mayor',
+    name: {
+      en: 'Hotel Villa Mayor',
+      pt: 'Hotel Villa Mayor',
+      es: 'Hotel Villa Mayor',
+      fr: 'Hôtel Villa Mayor'
+    },
+    category: 'Boutique',
+    rating: 4.7,
+    pricePerNight: 380,
+    address: {
+      en: '115 Visconde de Mauá Street, Meireles',
+      pt: 'Rua Visconde de Mauá, 115, Meireles',
+      es: 'Calle Visconde de Mauá, 115, Meireles',
+      fr: 'Rue Visconde de Mauá, 115, Meireles'
+    },
+    description: {
+      en: 'A charming historical-style hotel inspired by the architecture of old Fortaleza, located steps away from the Beira Mar.',
+      pt: 'Um charmoso hotel de estilo histórico inspirado na arquitetura da antiga Fortaleza, localizado a poucos passos da Beira Mar.',
+      es: 'Un encantador hotel de estilo histórico inspirado en la arquitectura de la antigua Fortaleza, ubicado a pocos pasos de Beira Mar.',
+      fr: 'Un charmant hôtel de style historique inspiré de l\'architecture du vieux Fortaleza, situé à quelques pas de Beira Mar.'
+    },
+    amenities: {
+      en: ['Garden Pool', 'Free Breakfast', 'Colonial Decor'],
+      pt: ['Piscina com Jardim', 'Café da Manhã Grátis', 'Decoração Colonial'],
+      es: ['Piscina con Jardín', 'Desayuno Gratis', 'Decoración Colonial'],
+      fr: ['Piscine de jardin', 'Petit-déjeuner gratuit', 'Décoration coloniale']
+    },
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/64/0a/61/fachada.jpg?w=1200&h=-1&s=1',
+    coords: { lat: -3.7255, lng: -38.4985 }
+  },
+  {
+    id: 'seara-praia',
+    name: {
+      en: 'Seara Praia Hotel',
+      pt: 'Seara Praia Hotel',
+      es: 'Seara Praia Hotel',
+      fr: 'Hôtel Seara Praia'
+    },
+    category: 'Beachfront',
+    rating: 4.6,
+    pricePerNight: 450,
+    address: {
+      en: '3080 Beira Mar Avenue, Meireles',
+      pt: 'Av. Beira Mar, 3080, Meireles',
+      es: 'Avenida Beira Mar, 3080, Meireles',
+      fr: 'Avenue Beira Mar, 3080, Meireles'
+    },
+    description: {
+      en: 'Modern hotel offering high-quality service, a panoramic rooftop, and easy access to the main tourist promenade.',
+      pt: 'Hotel moderno que oferece serviço de alta qualidade, cobertura panorâmica e fácil acesso ao principal calçadão turístico.',
+      es: 'Hotel moderno que ofrece un servicio de alta calidad, una azotea panorámica y fácil acceso al principal paseo turístico.',
+      fr: 'Hôtel moderne offrant un service de haute qualité, un toit panoramique et un accès facile à la principale promenade touristique.'
+    },
+    amenities: {
+      en: ['Pool', 'Sauna', 'Business Center', 'Events Area'],
+      pt: ['Piscina', 'Sauna', 'Centro de Negócios', 'Área de Eventos'],
+      es: ['Piscina', 'Sauna', 'Centro de Negocios', 'Área de Eventos'],
+      fr: ['Piscine', 'Sauna', 'Centre d\'affaires', 'Espace événements']
+    },
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/8c/9d/piscina.jpg?w=1200&h=-1&s=1',
+    coords: { lat: -3.7248, lng: -38.4955 }
+  }
+];
 
 export const RESTAURANTS: Restaurant[] = [
   {
@@ -39,7 +138,7 @@ export const RESTAURANTS: Restaurant[] = [
       es: 'El destino de mariscos más icónico de Fortaleza. Famoso por sus enormes bandejas de camarones y langostas con una vista impresionante al mar.',
       fr: 'La destination de fruits de mer la plus emblématique de Fortaleza. Célèbre pour ses immenses plateaux de crevettes et de homards avec une vue imprenable sur l\'océan.'
     },
-    imageUrl: getImg('rest-seafood-1'),
+    imageUrl: 'https://media-cdn.tripadvisor.com/media/photo-s/09/70/a7/35/restaurante-coco-bambu.jpg',
     coords: { lat: -3.7258, lng: -38.4905 }
   },
   {
@@ -115,7 +214,7 @@ export const RESTAURANTS: Restaurant[] = [
       es: 'Ubicado en el centro cultural Dragão do Mar, sirve cafés orgánicos galardonados de las montañas de Ceará.',
       fr: 'Situé dans le centre culturel Dragão do Mar, servant un café biologique primé des montagnes du Ceará.'
     },
-    imageUrl: getImg('rest-cafe-1'),
+    imageUrl: 'https://www.3coracoes.com.br/wp-content/uploads/2019/06/cafeteria-santa-clara-fortaleza-cine-sao-luiz-1024x683.jpg',
     coords: { lat: -3.7219, lng: -38.5209 }
   },
   {
@@ -153,7 +252,7 @@ export const RESTAURANTS: Restaurant[] = [
       es: 'Lugar sofisticado con un menú moderno de influencias francesas e italianas en un entorno arquitectónico impresionante.',
       fr: 'Lieu sophistiqué doté d\'un menu moderne aux influences françaises et italiennes dans un cadre architectural époustouflant.'
     },
-    imageUrl: getImg('rest-fine-1'),
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/6a/ab/ea/salao-principal.jpg?w=900&h=500&s=1',
     coords: { lat: -3.7205, lng: -38.5215 }
   },
   {
@@ -191,7 +290,7 @@ export const RESTAURANTS: Restaurant[] = [
       es: 'Un lugar clásico famoso por su Carne de Sol y acompañamientos tradicionales en un ambiente acogedor.',
       fr: 'Un lieu classique célèbre pour sa Carne de Sol et ses accompagnements traditionnels dans une ambiance chaleureuse.'
     },
-    imageUrl: getImg('rest-regional-1'),
+    imageUrl: 'https://cms-blog.saipos.com/4Cantinho-do-Faustino-SAIPOS-Sistema-para-Restaurantes.jpg',
     coords: { lat: -3.7285, lng: -38.5085 }
   }
 ];
@@ -225,7 +324,7 @@ export const ATTRACTIONS: Attraction[] = [
     },
     rating: 4.7,
     category: 'Beaches',
-    imageUrl: getImg('iracema'),
+    imageUrl: 'https://dicasdefortalezaejeri.com.br/wp-content/uploads/sites/29/2021/03/praia-iracema-fortaleza-jpg.webp',
     coords: { lat: -3.7208, lng: -38.5173 },
     nearbyRestaurantIds: ['lo-restaurante', 'marcel', 'burgues-burger']
   },
@@ -257,7 +356,7 @@ export const ATTRACTIONS: Attraction[] = [
     },
     rating: 4.8,
     category: 'Beaches',
-    imageUrl: getImg('futuro'),
+    imageUrl: 'https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/viajandocomamalarosa.com.br/wp-content/uploads/2021/07/whatsapp-image-2021-07-05-at-130852-1-1280x650.jpeg',
     coords: { lat: -3.7383, lng: -38.4552 },
     nearbyRestaurantIds: ['crocobeach', 'burgues-burger']
   },
@@ -289,7 +388,7 @@ export const ATTRACTIONS: Attraction[] = [
     },
     rating: 4.6,
     category: 'Culture',
-    imageUrl: getImg('mercado'),
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Mercado_Central_de_Fortaleza_2025.jpg',
     coords: { lat: -3.7231, lng: -38.5255 },
     nearbyRestaurantIds: ['santa-clara', 'lo-restaurante']
   },
@@ -321,8 +420,136 @@ export const ATTRACTIONS: Attraction[] = [
     },
     rating: 4.7,
     category: 'Parks',
-    imageUrl: getImg('coco'),
+    imageUrl: 'https://semeia.org.br/wp-content/uploads/2025/03/celso-oliveira-sema-ceara-5.jpg',
     coords: { lat: -3.7468, lng: -38.4835 },
     nearbyRestaurantIds: ['giz-cozinha', 'moleskine', 'cantinho-faustino']
+  },
+  {
+    id: 'beiramar',
+    title: {
+      en: 'Beira Mar Avenue',
+      pt: 'Avenida Beira Mar',
+      es: 'Avenida Beira Mar',
+      fr: 'Avenue Beira Mar'
+    },
+    description: {
+      en: 'The most traditional tourist area in Fortaleza, perfect for a walk, craft market, and enjoying the sea breeze.',
+      pt: 'A área turística mais tradicional de Fortaleza, perfeita para uma caminhada, mercado de artesanato e curtir a brisa do mar.',
+      es: 'La zona turística más tradicional de Fortaleza, perfecta para un paseo, mercado de artesanías y disfrutar de la brisa marina.',
+      fr: 'Le quartier touristique le plus traditionnel de Fortaleza, parfait pour une promenade, un marché artisanal et profiter de la brise marine.'
+    },
+    address: {
+      en: 'Beira Mar Avenue, Fortaleza - CE',
+      pt: 'Av. Beira Mar, Fortaleza - CE',
+      es: 'Avenida Beira Mar, Fortaleza - CE',
+      fr: 'Avenue Beira Mar, Fortaleza - CE'
+    },
+    openingHours: {
+      en: 'Open 24h',
+      pt: 'Aberto 24h',
+      es: 'Abierto 24h',
+      fr: 'Ouvert 24h'
+    },
+    rating: 4.8,
+    category: 'Beaches',
+    imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/99/b0/42/beira-mar-avenue-fortaleza.jpg?w=700&h=400&s=1',
+    coords: { lat: -3.7258, lng: -38.4905 },
+    nearbyRestaurantIds: ['coco-bambu']
+  },
+  {
+    id: 'dragao',
+    title: {
+      en: 'Dragão do Mar Center',
+      pt: 'Centro Dragão do Mar',
+      es: 'Centro Dragão do Mar',
+      fr: 'Centre Dragão do Mar'
+    },
+    description: {
+      en: 'A vibrant arts and culture center with museums, a planetarium, and many cafes and bars in a historic setting.',
+      pt: 'Um vibrante centro de arte e cultura com museus, planetário e muitos cafés e bares em um cenário histórico.',
+      es: 'Un vibrante centro de arte y cultura con museos, planetario y muchos cafés y bares en un entorno histórico.',
+      fr: 'Un centre d\'art et de culture dynamique avec des musées, un planétarium et de nombreux cafés et bars dans un cadre historique.'
+    },
+    address: {
+      en: '81 Dragão do Mar Street',
+      pt: 'Rua Dragão do Mar, 81',
+      es: 'Calle Dragão do Mar, 81',
+      fr: 'Rue Dragão do Mar, 81'
+    },
+    openingHours: {
+      en: '09:00 AM - 10:00 PM',
+      pt: '09:00 - 22:00',
+      es: '09:00 - 22:00',
+      fr: '09h00 - 22h00'
+    },
+    rating: 4.7,
+    category: 'Culture',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB-MqSq38gInq_WdNZSQLj2bbZ1EYDjBu5ng&s',
+    coords: { lat: -3.7219, lng: -38.5209 },
+    nearbyRestaurantIds: ['santa-clara', 'lo-restaurante']
+  },
+  {
+    id: 'catedral',
+    title: {
+      en: 'Metropolitan Cathedral',
+      pt: 'Catedral Metropolitana',
+      es: 'Catedral Metropolitana',
+      fr: 'Cathédrale Métropolitaine'
+    },
+    description: {
+      en: 'A stunning neo-gothic cathedral in the heart of the city, inspired by the Cologne Cathedral in Germany.',
+      pt: 'Uma deslumbrante catedral neogótica no coração da cidade, inspirada na Catedral de Colônia, na Alemanha.',
+      es: 'Una impresionante catedral neogótica en el corazón de la ciudad, inspirada en la Catedral de Colonia en Alemania.',
+      fr: 'Une superbe cathédrale néo-gothique au cœur de la ville, inspirée de la cathédrale de Cologne en Allemagne.'
+    },
+    address: {
+      en: 'Metropolitana Square, Centro',
+      pt: 'Praça da Sé, Centro',
+      es: 'Plaza de la Sé, Centro',
+      fr: 'Place de la Sé, Centre'
+    },
+    openingHours: {
+      en: '08:00 AM - 06:00 PM',
+      pt: '08:00 - 18:00',
+      es: '08:00 - 18:00',
+      fr: '08h00 - 18h00'
+    },
+    rating: 4.8,
+    category: 'Historical Places',
+    imageUrl: 'https://comshalom.org/wp-content/uploads/2023/12/catedral-fortaleza.jpg',
+    coords: { lat: -3.7235, lng: -38.5265 },
+    nearbyRestaurantIds: ['mercado']
+  },
+  {
+    id: 'assuncao',
+    title: {
+      en: 'N. S. da Assunção Fortress',
+      pt: 'Fortaleza de N. S. da Assunção',
+      es: 'Fortaleza de N. S. da Assunção',
+      fr: 'Forteresse de N. S. da Assunção'
+    },
+    description: {
+      en: 'The birthplace of the city, this historic fortress is now the headquarters of the 10th Military Region.',
+      pt: 'O berço da cidade, esta fortaleza histórica é hoje a sede da 10ª Região Militar.',
+      es: 'La cuna de la ciudad, esta fortaleza histórica es hoy la sede de la 10ª Región Militar.',
+      fr: 'Berceau de la ville, cette forteresse historique est aujourd\'hui le quartier général de la 10e région militaire.'
+    },
+    address: {
+      en: 'Alberto Nepomuceno Avenue, Centro',
+      pt: 'Av. Alberto Nepomuceno, Centro',
+      es: 'Avenida Alberto Nepomuceno, Centro',
+      fr: 'Avenue Alberto Nepomuceno, Centre'
+    },
+    openingHours: {
+      en: '09:00 AM - 12:00 PM',
+      pt: '09:00 - 12:00',
+      es: '09:00 - 12:00',
+      fr: '09h00 - 12h00'
+    },
+    rating: 4.6,
+    category: 'Historical Places',
+    imageUrl: 'https://www.ipatrimonio.org/wp-content/uploads/2017/04/Fortaleza-de-Nossa-Senhora-da-Assun%C3%A7%C3%A3o-Imagem-Google-Street-View4.jpg',
+    coords: { lat: -3.7225, lng: -38.5245 },
+    nearbyRestaurantIds: ['mercado']
   }
 ];

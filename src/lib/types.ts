@@ -4,6 +4,8 @@ export type Category = 'Beaches' | 'Restaurants' | 'Culture' | 'Parks' | 'Histor
 
 export type RestaurantCategory = 'Seafood' | 'Brazilian Food' | 'Cafés' | 'Beach Restaurants' | 'Fine Dining' | 'Fast Food' | 'Italian';
 
+export type HotelCategory = 'Luxury' | 'Boutique' | 'Beachfront' | 'Business' | 'Budget';
+
 export interface Coords {
   lat: number;
   lng: number;
@@ -20,6 +22,19 @@ export interface Restaurant {
   description: Record<Language, string>;
   priceRange: '$' | '$$' | '$$$' | '$$$$';
   category: RestaurantCategory;
+  coords: Coords;
+}
+
+export interface Hotel {
+  id: string;
+  name: Record<Language, string>;
+  category: HotelCategory;
+  rating: number;
+  pricePerNight: number;
+  address: Record<Language, string>;
+  imageUrl: string;
+  description: Record<Language, string>;
+  amenities: Record<Language, string[]>;
   coords: Coords;
 }
 
