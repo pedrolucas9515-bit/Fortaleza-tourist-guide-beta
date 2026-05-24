@@ -1,11 +1,28 @@
-import type {Metadata} from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Fortaleza Tourist Guide | Your Premium Guide',
   description: 'The ultimate mobile tourism experience for Fortaleza, Ceará.',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Fortaleza Guide',
+  },
+  icons: {
+    apple: 'https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg',
+  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+  themeColor: '#53beec',
 };
 
 export default function RootLayout({
