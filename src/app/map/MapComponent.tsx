@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
-import { ATTRACTIONS, RESTAURANTS } from '@/lib/data';
+import { ATTRACTIONS, RESTAURANTS, HOTELS } from '@/lib/data';
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
-import { MapPin, Utensils } from 'lucide-react';
+import { MapPin, Utensils, Hotel as HotelIcon } from 'lucide-react';
 import { renderToString } from 'react-dom/server';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -30,6 +30,17 @@ const restaurantIcon = L.divIcon({
   html: renderToString(
     <div className="bg-secondary p-2 rounded-full border-2 border-white/20 shadow-xl shadow-secondary/20">
       <Utensils className="w-4 h-4 text-white" />
+    </div>
+  ),
+  className: 'custom-div-icon',
+  iconSize: [28, 28],
+  iconAnchor: [14, 14],
+});
+
+const hotelIcon = L.divIcon({
+  html: renderToString(
+    <div className="bg-orange-500 p-2 rounded-full border-2 border-white/20 shadow-xl shadow-orange-500/20">
+      <HotelIcon className="w-4 h-4 text-white" />
     </div>
   ),
   className: 'custom-div-icon',
@@ -145,6 +156,27 @@ export default function MapComponent() {
                 <p className="text-[10px] text-muted-foreground line-clamp-1 italic mb-3">{r.cuisine[language]}</p>
                 <Button asChild className="w-full h-8 bg-secondary/80 hover:bg-secondary text-[8px] uppercase font-bold rounded-lg">
                   <Link href={`/restaurant/${r.id}`}>Visit Profile</Link>
+                </Button>
+              </div>
+            </Popup>
+          </Marker>
+        );
+      })}
+
+      {HOTELS.map((h) => {
+        const categoryKey = h.category.charAt(0).toLowerCase() + h.category.slice(1);
+        const translatedCategory = (t as any)[categoryKey] || h.category;
+        return (
+          <Marker key={h.id} position={[h.coords.lat, h.coords.lng]} icon={hotelIcon}>
+            <Popup className="premium-popup">
+              <div className="w-48">
+                <Badge className="bg-orange-500/20 text-orange-500 border-0 text-[8px] uppercase tracking-tighter mb-1">
+                  {translatedCategory}
+                </Badge>
+                <h3 className="font-bold text-white mb-1">{h.name[language]}</h3>
+                <p className="text-[10px] text-muted-foreground mb-3">R$ {h.pricePerNight} / night</p>
+                <Button asChild className="w-full h-8 bg-orange-500/80 hover:bg-orange-500 text-[8px] uppercase font-bold rounded-lg border-0">
+                  <Link href={`/hotel/${h.id}`}>Book Now</Link>
                 </Button>
               </div>
             </Popup>

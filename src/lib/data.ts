@@ -99,6 +99,38 @@ export const HOTELS: Hotel[] = [
     },
     imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/8c/9d/piscina.jpg?w=1200&h=-1&s=1',
     coords: { lat: -3.7248, lng: -38.4955 }
+  },
+  {
+    id: 'crocobeach-hotel',
+    name: {
+      en: 'Crocobeach Hotel',
+      pt: 'Crocobeach Hotel',
+      es: 'Crocobeach Hotel',
+      fr: 'Crocobeach Hôtel'
+    },
+    category: 'Beachfront',
+    rating: 4.7,
+    pricePerNight: 350,
+    address: {
+      en: '3125 Clóvis Arrais Maia Avenue, Praia do Futuro',
+      pt: 'Av. Clóvis Arrais Maia, 3125, Praia do Futuro',
+      es: 'Avenida Clóvis Arrais Maia, 3125, Praia do Futuro',
+      fr: 'Avenue Clóvis Arrais Maia, 3125, Praia du Futur'
+    },
+    description: {
+      en: 'Modern beachfront hotel at Praia do Futuro. Offers the best infrastructure, swimming pools, and exclusive access to the Crocobeach club.',
+      pt: 'Hotel moderno à beira-mar na Praia do Futuro. Oferece a melhor infraestrutura, piscinas e acesso exclusivo ao clube Crocobeach.',
+      es: 'Hotel moderno frente al mar en Praia do Futuro. Ofrece la mejor infraestructura, piscinas y acceso exclusivo al club Crocobeach.',
+      fr: 'Hôtel moderne en bord de mer à Praia do Futuro. Offre la meilleure infrastructure, des piscines et un accès exclusif au club Crocobeach.'
+    },
+    amenities: {
+      en: ['Beach Club Access', 'Outdoor Pool', 'Gym', 'Restaurant'],
+      pt: ['Acesso ao Clube de Praia', 'Piscina Externa', 'Academia', 'Restaurante'],
+      es: ['Acceso al Club de Playa', 'Piscina al Aire Libre', 'Gimnasio', 'Restaurante'],
+      fr: ['Accès au Beach Club', 'Piscine extérieure', 'Salle de sport', 'Restaurant']
+    },
+    imageUrl: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=800&h=600',
+    coords: { lat: -3.7383, lng: -38.4552 }
   }
 ];
 
@@ -140,44 +172,6 @@ export const RESTAURANTS: Restaurant[] = [
     },
     imageUrl: 'https://media-cdn.tripadvisor.com/media/photo-s/09/70/a7/35/restaurante-coco-bambu.jpg',
     coords: { lat: -3.7258, lng: -38.4905 }
-  },
-  {
-    id: 'crocobeach',
-    name: {
-      en: 'Crocobeach',
-      pt: 'Crocobeach',
-      es: 'Crocobeach',
-      fr: 'Crocobeach'
-    },
-    cuisine: {
-      en: 'Regional & Seafood',
-      pt: 'Regional e Frutos do Mar',
-      es: 'Regional y Mariscos',
-      fr: 'Régional et Fruits de mer'
-    },
-    category: 'Beach Restaurants',
-    rating: 4.7,
-    address: {
-      en: '3125 Clóvis Arrais Maia Avenue',
-      pt: 'Av. Clóvis Arrais Maia, 3125',
-      es: 'Avenida Clóvis Arrais Maia, 3125',
-      fr: 'Avenue Clóvis Arrais Maia, 3125'
-    },
-    openingHours: {
-      en: '08:00 AM - 06:00 PM',
-      pt: '08:00 - 18:00',
-      es: '08:00 - 18:00',
-      fr: '08h00 - 18h00'
-    },
-    priceRange: '$$',
-    description: {
-      en: 'A massive beach club at Praia do Futuro. Offers the best infrastructure, swimming pools, and the famous Thursday night crab feast.',
-      pt: 'Um enorme clube de praia na Praia do Futuro. Oferece a melhor infraestrutura, piscinas e a famosa caranguejada de quinta-feira à noite.',
-      es: 'Un enorme club de playa en Praia do Futuro. Ofrece la mejor infraestructura, piscinas y la famosa fiesta del cangrejo de los jueves por la noche.',
-      fr: 'Un immense club de plage à Praia do Futuro. Offre la meilleure infrastructure, des piscines et la célèbre fête du crabe le jeudi soir.'
-    },
-    imageUrl: getImg('rest-beach-1'),
-    coords: { lat: -3.7383, lng: -38.4552 }
   },
   {
     id: 'santa-clara',
@@ -326,7 +320,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: 'https://dicasdefortalezaejeri.com.br/wp-content/uploads/sites/29/2021/03/praia-iracema-fortaleza-jpg.webp',
     coords: { lat: -3.7208, lng: -38.5173 },
-    nearbyRestaurantIds: ['lo-restaurante', 'marcel', 'burgues-burger']
+    nearbyRestaurantIds: ['lo-restaurante', 'santa-clara']
   },
   {
     id: 'futuro',
@@ -358,7 +352,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: 'https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/viajandocomamalarosa.com.br/wp-content/uploads/2021/07/whatsapp-image-2021-07-05-at-130852-1-1280x650.jpeg',
     coords: { lat: -3.7383, lng: -38.4552 },
-    nearbyRestaurantIds: ['crocobeach', 'burgues-burger']
+    nearbyRestaurantIds: []
   },
   {
     id: 'mercado',
@@ -422,7 +416,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Parks',
     imageUrl: 'https://semeia.org.br/wp-content/uploads/2025/03/celso-oliveira-sema-ceara-5.jpg',
     coords: { lat: -3.7468, lng: -38.4835 },
-    nearbyRestaurantIds: ['giz-cozinha', 'moleskine', 'cantinho-faustino']
+    nearbyRestaurantIds: ['cantinho-faustino']
   },
   {
     id: 'beiramar',
