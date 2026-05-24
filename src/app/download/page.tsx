@@ -48,7 +48,7 @@ export default function DownloadPage() {
           <p className="text-muted-foreground text-sm uppercase tracking-[0.1em] font-bold">Experiência Mobile Completa</p>
         </div>
 
-        <div className="w-full max-max-w-sm space-y-6">
+        <div className="w-full max-w-sm space-y-6">
           <Card className="glass border-white/10 p-6 rounded-2xl space-y-6">
             <div className="flex items-start gap-4">
               <div className="bg-primary/20 p-3 rounded-xl">

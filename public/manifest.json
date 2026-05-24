@@ -2,11 +2,12 @@
 {
   "name": "Fortaleza Tourist Guide",
   "short_name": "Fortaleza Guide",
-  "description": "The ultimate mobile tourism experience for Fortaleza, Ceará.",
+  "description": "O guia premium para turistas em Fortaleza, Ceará.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f1315",
   "theme_color": "#53beec",
+  "orientation": "portrait",
   "scope": "/",
   "icons": [
     {
