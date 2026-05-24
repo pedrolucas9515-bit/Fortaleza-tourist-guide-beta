@@ -12,6 +12,16 @@ Since this project is running in a cloud environment, you can access it directly
 4. **Access on Mobile**: Send this URL to your phone (via email, messaging, or a QR code generator).
 5. **Install as App**: Open the link on your phone and select **"Add to Home Screen"** in your browser menu (Safari on iOS or Chrome on Android) for the full-screen premium experience.
 
+## 📦 Direct App Downloads
+
+To enable direct downloads for Android (APK) and iOS (IPA):
+
+1. Create a folder named `public/downloads/` in the root of the project.
+2. Upload your `fortaleza-guide.apk` file to this folder.
+3. Upload your `fortaleza-guide.ipa` file to this folder.
+
+The app is configured to fetch these files directly from those paths.
+
 ## ✨ Key Features
 
 - **Interactive Map HUD**: Explore Fortaleza with an embedded, dark-themed interactive map.

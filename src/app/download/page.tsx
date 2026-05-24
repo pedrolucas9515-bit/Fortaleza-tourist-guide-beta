@@ -2,7 +2,7 @@
 
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
-import { ArrowLeft, Smartphone, Apple, Download, FileType } from 'lucide-react';
+import { ArrowLeft, Apple, Download, FileType, Info } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -18,18 +18,14 @@ export default function DownloadPage() {
   const t = TRANSLATIONS[language];
   const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
-  // Note: These URLs should point to the actual hosted APK/IPA files
-  const APK_URL = '/downloads/fortaleza-guide.apk';
-  const IPA_URL = '/downloads/fortaleza-guide.ipa';
-
   const handleAndroidDownload = () => {
     toast({
-      title: "Downloading APK",
-      description: "Starting direct download of the Android installation file.",
+      title: "Download Started",
+      description: "Checking for 'fortaleza-guide.apk' in the public/downloads folder.",
     });
-    // In a real scenario, this initiates a direct file download
+    
     const link = document.createElement('a');
-    link.href = APK_URL;
+    link.href = '/downloads/fortaleza-guide.apk';
     link.setAttribute('download', 'fortaleza-guide.apk');
     document.body.appendChild(link);
     link.click();
@@ -37,24 +33,13 @@ export default function DownloadPage() {
   };
 
   const handleIOSDownload = () => {
-    // Fallback logic for iOS IPA
-    const ipaAvailable = false; // Set to true when the file is hosted
-
-    if (!ipaAvailable) {
-      toast({
-        variant: "destructive",
-        title: "IPA Not Available",
-        description: "The direct iOS installation file is currently being prepared.",
-      });
-      return;
-    }
-
     toast({
-      title: "Downloading IPA",
-      description: "Starting direct download of the iOS installation file.",
+      title: "Download Started",
+      description: "Checking for 'fortaleza-guide.ipa' in the public/downloads folder.",
     });
+
     const link = document.createElement('a');
-    link.href = IPA_URL;
+    link.href = '/downloads/fortaleza-guide.ipa';
     link.setAttribute('download', 'fortaleza-guide.ipa');
     document.body.appendChild(link);
     link.click();
@@ -108,17 +93,17 @@ export default function DownloadPage() {
               <p className="text-2xl font-headline text-white">iOS IPA</p>
             </div>
             <div className="ml-auto flex flex-col items-end">
-               <FileType className="w-6 h-6 text-white/20 mb-1" />
-               <span className="text-[8px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full uppercase tracking-widest">
-                {t.comingSoon}
-              </span>
+               <FileType className="w-6 h-6 text-white/20" />
             </div>
           </Button>
         </div>
 
-        <Card className="max-w-xs glass border-white/5 p-5 text-center">
-          <p className="text-[11px] text-white/50 leading-relaxed italic">
-            "Direct installation files allow you to bypass app stores and install Fortaleza Tourist Guide instantly on your mobile device."
+        <Card className="max-w-xs glass border-primary/20 p-5 text-center">
+          <div className="flex justify-center mb-3">
+            <Info className="w-6 h-6 text-primary" />
+          </div>
+          <p className="text-[11px] text-white/70 leading-relaxed italic">
+            "Para que os downloads funcionem, o desenvolvedor deve colocar os arquivos .apk e .ipa na pasta <strong>public/downloads</strong> do projeto."
           </p>
         </Card>
       </div>
