@@ -1,6 +1,8 @@
 
 export type Category = 'Beaches' | 'Restaurants' | 'Culture' | 'Parks' | 'Historical Places' | 'Nightlife';
 
+export type RestaurantCategory = 'Seafood' | 'Brazilian Food' | 'Cafés' | 'Beach Restaurants' | 'Fine Dining' | 'Fast Food' | 'Italian';
+
 export interface Restaurant {
   id: string;
   name: string;
@@ -11,7 +13,8 @@ export interface Restaurant {
   openingHours: string;
   description: string;
   priceRange: '$' | '$$' | '$$$' | '$$$$';
-  distance?: string; // Distance from a specific attraction
+  category: RestaurantCategory;
+  distance?: string; 
 }
 
 export interface Attraction {
@@ -27,7 +30,7 @@ export interface Attraction {
     lat: number;
     lng: number;
   };
-  nearbyRestaurantIds: string[]; // Reference by ID to avoid duplication
+  nearbyRestaurantIds: string[];
 }
 
 export type Language = 'en' | 'pt' | 'es' | 'fr';

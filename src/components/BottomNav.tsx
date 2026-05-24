@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Map, MessageSquare, Heart, Settings } from 'lucide-react';
+import { Home, Map, Utensils, Heart, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { Language } from '@/lib/types';
@@ -15,7 +15,7 @@ export default function BottomNav({ lang }: { lang: Language }) {
   const items = [
     { href: '/', icon: Home, label: t.explore },
     { href: '/map', icon: Map, label: t.map },
-    { href: '/concierge', icon: MessageSquare, label: t.concierge },
+    { href: '/restaurants', icon: Utensils, label: t.restaurants },
     { href: '/favorites', icon: Heart, label: t.favorites },
     { href: '/settings', icon: Settings, label: t.settings },
   ];

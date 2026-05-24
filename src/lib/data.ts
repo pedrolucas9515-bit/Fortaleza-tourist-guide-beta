@@ -9,67 +9,109 @@ export const RESTAURANTS: Restaurant[] = [
     id: 'coco-bambu',
     name: 'Coco Bambu Beira Mar',
     cuisine: 'Seafood',
+    category: 'Seafood',
     rating: 4.8,
     address: 'Av. Beira Mar, 3698',
     openingHours: '11:30 - 00:00',
     priceRange: '$$$',
-    description: 'The most famous seafood restaurant in Fortaleza, known for its generous portions and beautiful view of the Atlantic.',
+    description: 'The most iconic seafood destination in Fortaleza. Famous for huge platters of shrimp and lobster with a stunning ocean view.',
     imageUrl: getImg('rest-seafood-1')
   },
   {
     id: 'crocobeach',
     name: 'Crocobeach',
-    cuisine: 'Beach Food & Seafood',
+    cuisine: 'Ceará Regional & Seafood',
+    category: 'Beach Restaurants',
     rating: 4.7,
     address: 'Av. Clóvis Arrais Maia, 3125',
     openingHours: '08:00 - 18:00',
     priceRange: '$$',
-    description: 'A massive beach club at Praia do Futuro offering swimming pools, live shows, and local delicacies like crab.',
+    description: 'A massive beach club at Praia do Futuro. Offers the best infrastructure, swimming pools, and the famous Thursday night crab feast.',
     imageUrl: getImg('rest-beach-1')
   },
   {
     id: 'santa-clara',
     name: 'Santa Clara Café Orgânico',
-    cuisine: 'Café',
+    cuisine: 'Specialty Coffee & Snacks',
+    category: 'Cafés',
     rating: 4.9,
     address: 'R. Dragão do Mar, 81',
     openingHours: '08:00 - 22:00',
     priceRange: '$',
-    description: 'Premium organic coffee from Ceará served in a cozy atmosphere inside the Dragão do Mar cultural center.',
+    description: 'Located in the Dragão do Mar cultural center, serving award-winning organic coffee from the mountains of Ceará.',
     imageUrl: getImg('rest-cafe-1')
   },
   {
     id: 'lo-restaurante',
     name: "L'Ô Restaurant",
-    cuisine: 'Fine Dining / French-Italian',
+    cuisine: 'Contemporary European',
+    category: 'Fine Dining',
     rating: 4.9,
     address: 'Av. Pessoa Anta, 217',
     openingHours: '19:00 - 23:30',
     priceRange: '$$$$',
-    description: 'Sophisticated dining with modern European influences. Perfect for a romantic evening or special celebration.',
+    description: 'One of Fortaleza\'s most sophisticated venues. Features a modern menu with French and Italian influences in a stunning architectural setting.',
     imageUrl: getImg('rest-fine-1')
   },
   {
     id: 'cantinho-faustino',
     name: 'Cantinho do Faustino',
     cuisine: 'Regional Brazilian',
+    category: 'Brazilian Food',
     rating: 4.6,
     address: 'R. Tibúrcio Cavalcante, 736',
     openingHours: '11:00 - 23:00',
     priceRange: '$$',
-    description: 'Classic Fortaleza restaurant specializing in local flavors like sun-dried meat (carne de sol) and seafood.',
+    description: 'A classic local spot famous for "Carne de Sol" (sun-dried meat) and traditional Brazilian side dishes in a cozy, authentic atmosphere.',
     imageUrl: getImg('rest-regional-1')
   },
   {
     id: 'burgues-burger',
     name: 'Burguês Burger',
-    cuisine: 'Fast Food / Gourmet Burgers',
+    cuisine: 'Gourmet Burgers',
+    category: 'Fast Food',
     rating: 4.5,
-    address: 'Various Locations',
+    address: 'Av. Dom Luís, 1200',
     openingHours: '17:00 - 01:00',
     priceRange: '$',
-    description: 'Voted one of the best burgers in the city, using high-quality local ingredients and artisan buns.',
+    description: 'Handcrafted artisan burgers using high-quality local meats and secret sauces. A favorite among the late-night crowd.',
     imageUrl: getImg('rest-fast-1')
+  },
+  {
+    id: 'giz-cozinha',
+    name: 'Giz Cozinha Boêmia',
+    cuisine: 'Brazilian / Tapas',
+    category: 'Brazilian Food',
+    rating: 4.8,
+    address: 'R. Professor Dias da Rocha, 579',
+    openingHours: '11:00 - 01:00',
+    priceRange: '$$$',
+    description: 'Modern bohemian atmosphere with live chorinho music. Specializes in traditional Brazilian "petiscos" and creative cocktails.',
+    imageUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'marcel',
+    name: 'Marcel Restaurante',
+    cuisine: 'French Fine Dining',
+    category: 'Fine Dining',
+    rating: 4.7,
+    address: 'Av. Historiador Raimundo Girão, 800',
+    openingHours: '12:00 - 15:00, 19:00 - 23:00',
+    priceRange: '$$$$',
+    description: 'Famous for its traditional French soufflés. Offers an elegant dining experience with views of Praia de Iracema.',
+    imageUrl: 'https://images.unsplash.com/photo-1550966841-3ee3ad3ae447?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'moleskine',
+    name: 'Moleskine Gastropub',
+    cuisine: 'Modern Fusion',
+    category: 'Fine Dining',
+    rating: 4.6,
+    address: 'R. Professor Dias da Rocha, 578',
+    openingHours: '17:00 - 01:00',
+    priceRange: '$$$',
+    description: 'A trendy spot combining a loft-style pub with a rooftop lounge. Innovative menu and extensive wine list.',
+    imageUrl: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
@@ -84,7 +126,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Beaches',
     imageUrl: getImg('iracema'),
     coords: { lat: -3.7208, lng: -38.5173 },
-    nearbyRestaurantIds: ['lo-restaurante', 'cantinho-faustino', 'burgues-burger']
+    nearbyRestaurantIds: ['lo-restaurante', 'marcel', 'burgues-burger']
   },
   {
     id: 'futuro',
@@ -144,7 +186,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Historical Places',
     imageUrl: getImg('ponte'),
     coords: { lat: -3.7198, lng: -38.5178 },
-    nearbyRestaurantIds: ['lo-restaurante', 'santa-clara']
+    nearbyRestaurantIds: ['lo-restaurante', 'marcel', 'santa-clara']
   },
   {
     id: 'coco',
@@ -156,7 +198,7 @@ export const ATTRACTIONS: Attraction[] = [
     category: 'Parks',
     imageUrl: getImg('coco'),
     coords: { lat: -3.7468, lng: -38.4835 },
-    nearbyRestaurantIds: ['cantinho-faustino', 'burgues-burger']
+    nearbyRestaurantIds: ['giz-cozinha', 'moleskine', 'cantinho-faustino']
   },
   {
     id: 'catedral',
