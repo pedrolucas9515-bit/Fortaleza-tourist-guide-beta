@@ -45,13 +45,13 @@
     {
       "id": "catedral",
       "description": "Catedral Metropolitana Fortaleza",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Catedral_Metropolitana_Fortaleza.jpg",
+      "imageUrl": "https://comshalom.org/wp-content/uploads/2023/12/catedral-fortaleza.jpg",
       "imageHint": "gothic cathedral"
     },
     {
       "id": "fortaleza",
       "description": "Fortaleza de Nossa Senhora da Assunção",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Fortaleza_de_Nossa_Senhora_da_Assuncao.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Fortaleza_Nossa_Senhora_da_Assuncao_03.jpg/1280px-Fortaleza_Nossa_Senhora_da_Assuncao_03.jpg",
       "imageHint": "old fortress"
     },
     {
