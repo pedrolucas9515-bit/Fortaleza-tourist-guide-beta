@@ -1,10 +1,9 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Vela Fortaleza | Your Premium Guide',
+  title: 'Fortaleza Tourist Guide | Your Premium Guide',
   description: 'The ultimate mobile tourism experience for Fortaleza, Ceará.',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover',
 };

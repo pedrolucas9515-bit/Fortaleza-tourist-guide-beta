@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -51,7 +50,7 @@ export default function HomePage() {
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg shadow-primary/10 bg-black/40">
-              <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
+              <Image src={APP_LOGO} alt="Fortaleza Tourist Guide Logo" fill className="object-cover" />
             </div>
             <div>
               <h1 className="font-headline text-3xl mb-0.5 text-white leading-tight">{t.welcome}</h1>
@@ -121,7 +120,7 @@ export default function HomePage() {
                 <Badge className="mb-2 bg-primary/20 text-primary backdrop-blur-sm border-0 font-bold tracking-widest text-[10px] uppercase">
                   {translatedCategory}
                 </Badge>
-                <h2 className="font-headline text-3xl text-white mb-2">{attraction.title[language]}</h2>
+                <h2 className="font-headline text-3xl text-white mb-2">{translatedCategory === t.beaches ? attraction.title[language] : attraction.title[language]}</h2>
                 <div className="flex items-center gap-4 text-white/80 text-sm">
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500 fill-current" /> {attraction.rating}</span>
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Fortaleza</span>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -83,7 +82,7 @@ export default function SettingsPage() {
         </section>
 
         <section className="pt-8 border-t border-white/5 text-center">
-           <h2 className="font-headline text-2xl text-white/20">Vela Fortaleza</h2>
+           <h2 className="font-headline text-2xl text-white/20">Fortaleza Tourist Guide</h2>
            <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase mt-2">v1.0.4 Premium Core</p>
         </section>
       </div>

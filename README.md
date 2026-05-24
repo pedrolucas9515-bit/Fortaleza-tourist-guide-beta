@@ -1,4 +1,4 @@
-# Vela Fortaleza | Premium Mobile Guide
+# Fortaleza Tourist Guide | Premium Mobile Guide
 
 The ultimate mobile tourism experience for Fortaleza, Ceará. This application is designed specifically for mobile devices with a high-end "HUD" aesthetic.
 
@@ -19,6 +19,7 @@ Since this project is running in a cloud environment, you can access it directly
 - **AI Personal Concierge**: Chat with a local AI expert for personalized dining and attraction tips.
 - **Multilingual Content**: Full support for English, Portuguese, Spanish, and French.
 - **Gastronomy Guide**: A dedicated section for the best restaurants in the city.
+- **Hotels Guide**: A dedicated section for premium stays in the city.
 - **Offline Favorites**: Save your must-visit spots locally.
 
 ## 🛠 Tech Stack

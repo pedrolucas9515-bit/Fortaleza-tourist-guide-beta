@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -47,7 +46,7 @@ export default function HotelsPage() {
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
             <div className="relative w-12 h-12 rounded-full overflow-hidden border border-primary/30 shadow-lg bg-black/40">
-              <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
+              <Image src={APP_LOGO} alt="Fortaleza Tourist Guide Logo" fill className="object-cover" />
             </div>
             <div>
               <h1 className="font-headline text-3xl mb-0.5 text-white">{t.hotels}</h1>
