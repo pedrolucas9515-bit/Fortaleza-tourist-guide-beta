@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
 import { ATTRACTIONS, RESTAURANTS, HOTELS } from '@/lib/data';
@@ -72,7 +72,7 @@ function MapHandler({ userCoords }: { userCoords: [number, number] | null }) {
 
 export default function MapComponent() {
   const { language } = useVelaStore();
-  const t = TRANSLATIONS[language];
+  const t = useMemo(() => TRANSLATIONS[language], [language]);
   const [userCoords, setUserCoords] = useState<[number, number] | null>(null);
 
   useEffect(() => {
@@ -85,7 +85,78 @@ export default function MapComponent() {
     }
   }, []);
 
-  const defaultCenter: [number, number] = [-3.725, -38.5];
+  const defaultCenter: [number, number] = useMemo(() => [-3.725, -38.5], []);
+
+  const attractionMarkers = useMemo(() => ATTRACTIONS.map((a) => {
+    const catKey = a.category.toLowerCase().replace(' ', '');
+    const translatedCategory = (t as any)[catKey] || a.category;
+    return (
+      <Marker key={a.id} position={[a.coords.lat, a.coords.lng]} icon={attractionIcon}>
+        <Popup className="premium-popup">
+          <div className="w-56 overflow-hidden rounded-xl">
+            <img src={a.imageUrl} alt="" className="w-full h-24 object-cover mb-3" loading="lazy" />
+            <Badge className="bg-primary/20 text-primary border-0 text-[8px] uppercase tracking-tighter mb-1">
+              {translatedCategory}
+            </Badge>
+            <h3 className="font-headline text-lg text-white mb-2 leading-tight">{a.title[language]}</h3>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <Button asChild className="h-8 bg-white/10 hover:bg-white/20 text-[8px] uppercase font-bold rounded-lg border-0">
+                <Link href={`/attraction/${a.id}`}>Details</Link>
+              </Button>
+              <Button 
+                onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${a.coords.lat},${a.coords.lng}`, '_blank')}
+                className="h-8 bg-primary text-primary-foreground text-[8px] uppercase font-bold rounded-lg"
+              >
+                Go
+              </Button>
+            </div>
+          </div>
+        </Popup>
+      </Marker>
+    );
+  }), [t, language]);
+
+  const restaurantMarkers = useMemo(() => RESTAURANTS.map((r) => {
+    const categoryKey = r.category.charAt(0).toLowerCase() + r.category.slice(1).replace(' ', '');
+    const translatedCategory = (t as any)[categoryKey] || r.category;
+    return (
+      <Marker key={r.id} position={[r.coords.lat, r.coords.lng]} icon={restaurantIcon}>
+        <Popup className="premium-popup">
+          <div className="w-48">
+            <Badge className="bg-secondary/20 text-secondary border-0 text-[8px] uppercase tracking-tighter mb-1">
+              {translatedCategory}
+            </Badge>
+            <h3 className="font-bold text-white mb-1">{r.name[language]}</h3>
+            <p className="text-[10px] text-muted-foreground line-clamp-1 italic mb-3">{r.cuisine[language]}</p>
+            <Button asChild className="w-full h-8 bg-secondary/80 hover:bg-secondary text-[8px] uppercase font-bold rounded-lg">
+              <Link href={`/restaurant/${r.id}`}>Visit Profile</Link>
+            </Button>
+          </div>
+        </Popup>
+      </Marker>
+    );
+  }), [t, language]);
+
+  const hotelMarkers = useMemo(() => HOTELS.map((h) => {
+    const categoryKey = h.category.charAt(0).toLowerCase() + h.category.slice(1);
+    const translatedCategory = (t as any)[categoryKey] || h.category;
+    return (
+      <Marker key={h.id} position={[h.coords.lat, h.coords.lng]} icon={hotelIcon}>
+        <Popup className="premium-popup">
+          <div className="w-48">
+            <Badge className="bg-orange-500/20 text-orange-500 border-0 text-[8px] uppercase tracking-tighter mb-1">
+              {translatedCategory}
+            </Badge>
+            <h3 className="font-bold text-white mb-1">{h.name[language]}</h3>
+            <p className="text-[10px] text-muted-foreground mb-3">R$ {h.pricePerNight} / night</p>
+            <Button asChild className="w-full h-8 bg-orange-500/80 hover:bg-orange-500 text-[8px] uppercase font-bold rounded-lg border-0">
+              <Link href={`/hotel/${h.id}`}>Book Now</Link>
+            </Button>
+          </div>
+        </Popup>
+      </Marker>
+    );
+  }), [t, language]);
 
   return (
     <MapContainer 
@@ -113,76 +184,9 @@ export default function MapComponent() {
         </Marker>
       )}
 
-      {ATTRACTIONS.map((a) => {
-        const catKey = a.category.toLowerCase().replace(' ', '');
-        const translatedCategory = (t as any)[catKey] || a.category;
-        return (
-          <Marker key={a.id} position={[a.coords.lat, a.coords.lng]} icon={attractionIcon}>
-            <Popup className="premium-popup">
-              <div className="w-56 overflow-hidden rounded-xl">
-                <img src={a.imageUrl} alt="" className="w-full h-24 object-cover mb-3" />
-                <Badge className="bg-primary/20 text-primary border-0 text-[8px] uppercase tracking-tighter mb-1">
-                  {translatedCategory}
-                </Badge>
-                <h3 className="font-headline text-lg text-white mb-2 leading-tight">{a.title[language]}</h3>
-                <div className="grid grid-cols-2 gap-2 mt-2">
-                  <Button asChild className="h-8 bg-white/10 hover:bg-white/20 text-[8px] uppercase font-bold rounded-lg border-0">
-                    <Link href={`/attraction/${a.id}`}>Details</Link>
-                  </Button>
-                  <Button 
-                    onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${a.coords.lat},${a.coords.lng}`, '_blank')}
-                    className="h-8 bg-primary text-primary-foreground text-[8px] uppercase font-bold rounded-lg"
-                  >
-                    Go
-                  </Button>
-                </div>
-              </div>
-            </Popup>
-          </Marker>
-        );
-      })}
-
-      {RESTAURANTS.map((r) => {
-        const categoryKey = r.category.charAt(0).toLowerCase() + r.category.slice(1).replace(' ', '');
-        const translatedCategory = (t as any)[categoryKey] || r.category;
-        return (
-          <Marker key={r.id} position={[r.coords.lat, r.coords.lng]} icon={restaurantIcon}>
-            <Popup className="premium-popup">
-              <div className="w-48">
-                <Badge className="bg-secondary/20 text-secondary border-0 text-[8px] uppercase tracking-tighter mb-1">
-                  {translatedCategory}
-                </Badge>
-                <h3 className="font-bold text-white mb-1">{r.name[language]}</h3>
-                <p className="text-[10px] text-muted-foreground line-clamp-1 italic mb-3">{r.cuisine[language]}</p>
-                <Button asChild className="w-full h-8 bg-secondary/80 hover:bg-secondary text-[8px] uppercase font-bold rounded-lg">
-                  <Link href={`/restaurant/${r.id}`}>Visit Profile</Link>
-                </Button>
-              </div>
-            </Popup>
-          </Marker>
-        );
-      })}
-
-      {HOTELS.map((h) => {
-        const categoryKey = h.category.charAt(0).toLowerCase() + h.category.slice(1);
-        const translatedCategory = (t as any)[categoryKey] || h.category;
-        return (
-          <Marker key={h.id} position={[h.coords.lat, h.coords.lng]} icon={hotelIcon}>
-            <Popup className="premium-popup">
-              <div className="w-48">
-                <Badge className="bg-orange-500/20 text-orange-500 border-0 text-[8px] uppercase tracking-tighter mb-1">
-                  {translatedCategory}
-                </Badge>
-                <h3 className="font-bold text-white mb-1">{h.name[language]}</h3>
-                <p className="text-[10px] text-muted-foreground mb-3">R$ {h.pricePerNight} / night</p>
-                <Button asChild className="w-full h-8 bg-orange-500/80 hover:bg-orange-500 text-[8px] uppercase font-bold rounded-lg border-0">
-                  <Link href={`/hotel/${h.id}`}>Book Now</Link>
-                </Button>
-              </div>
-            </Popup>
-          </Marker>
-        );
-      })}
+      {attractionMarkers}
+      {restaurantMarkers}
+      {hotelMarkers}
     </MapContainer>
   );
 }

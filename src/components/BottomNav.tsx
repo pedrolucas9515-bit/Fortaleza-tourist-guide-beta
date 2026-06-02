@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Map, Utensils, Heart, Info, Building } from 'lucide-react';
@@ -7,18 +8,18 @@ import { cn } from '@/lib/utils';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { Language } from '@/lib/types';
 
-export default function BottomNav({ lang }: { lang: Language }) {
+const BottomNav = React.memo(({ lang }: { lang: Language }) => {
   const pathname = usePathname();
   const t = TRANSLATIONS[lang];
 
-  const items = [
+  const items = useMemo(() => [
     { href: '/', icon: Home, label: t.explore },
     { href: '/map', icon: Map, label: t.map },
     { href: '/guide', icon: Info, label: t.guide },
     { href: '/restaurants', icon: Utensils, label: t.restaurants },
     { href: '/hotels', icon: Building, label: t.hotels },
     { href: '/favorites', icon: Heart, label: t.favorites },
-  ];
+  ], [t.explore, t.map, t.guide, t.restaurants, t.hotels, t.favorites]);
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-2xl border-t border-border/50 safe-bottom">
@@ -42,4 +43,8 @@ export default function BottomNav({ lang }: { lang: Language }) {
       </div>
     </nav>
   );
-}
+});
+
+BottomNav.displayName = 'BottomNav';
+
+export default BottomNav;

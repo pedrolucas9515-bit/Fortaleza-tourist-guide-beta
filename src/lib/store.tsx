@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import { Language } from './types';
 
 interface VelaContextType {
@@ -28,21 +28,31 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
     setIsLoaded(true);
   }, []);
 
-  const toggleFavorite = (id: string) => {
-    const newFavs = favorites.includes(id)
-      ? favorites.filter(favId => favId !== id)
-      : [...favorites, id];
-    setFavorites(newFavs);
-    localStorage.setItem('vela_favorites', JSON.stringify(newFavs));
-  };
+  const toggleFavorite = useCallback((id: string) => {
+    setFavorites(prev => {
+      const newFavs = prev.includes(id)
+        ? prev.filter(favId => favId !== id)
+        : [...prev, id];
+      localStorage.setItem('vela_favorites', JSON.stringify(newFavs));
+      return newFavs;
+    });
+  }, []);
 
-  const updateLanguage = (lang: Language) => {
+  const updateLanguage = useCallback((lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('vela_language', lang);
-  };
+  }, []);
+
+  const contextValue = useMemo(() => ({
+    favorites,
+    toggleFavorite,
+    language,
+    updateLanguage,
+    isLoaded
+  }), [favorites, toggleFavorite, language, updateLanguage, isLoaded]);
 
   return (
-    <VelaContext.Provider value={{ favorites, toggleFavorite, language, updateLanguage, isLoaded }}>
+    <VelaContext.Provider value={contextValue}>
       {children}
     </VelaContext.Provider>
   );
