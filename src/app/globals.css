@@ -1,4 +1,3 @@
-
 @import "leaflet/dist/leaflet.css";
 @tailwind base;
 @tailwind components;
@@ -26,6 +25,31 @@
     --input: 200 20% 20%;
     --ring: 198 83% 62%;
     --radius: 1rem;
+  }
+
+  .theme-ocean {
+    --primary: 221 83% 53%;
+    --ring: 221 83% 53%;
+  }
+
+  .theme-emerald {
+    --primary: 142 76% 36%;
+    --ring: 142 76% 36%;
+  }
+
+  .theme-purple {
+    --primary: 262 83% 58%;
+    --ring: 262 83% 58%;
+  }
+
+  .theme-sunset {
+    --primary: 0 72% 51%;
+    --ring: 0 72% 51%;
+  }
+
+  .theme-tropical {
+    --primary: 24 94% 50%;
+    --ring: 24 94% 50%;
   }
 }
 

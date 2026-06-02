@@ -74,6 +74,14 @@ export const TRANSLATIONS = {
     fact2: "Many restaurants participate in the traditional 'Crab Thursday' (Quinta do Caranguejo).",
     fact3: "Fortaleza is known as the 'Land of Humor' because many famous Brazilian comedians started their careers in Ceará.",
     history: "History",
+    theme: "Theme",
+    themeDesc: "Customize the app colors",
+    ocean: "Ocean Blue",
+    emerald: "Emerald Green",
+    purple: "Purple Night",
+    sunset: "Sunset Red",
+    tropical: "Tropical Orange",
+    dark: "Classic Dark"
   },
   pt: {
     welcome: "Descubra Fortaleza",
@@ -148,6 +156,14 @@ export const TRANSLATIONS = {
     fact2: "Muitos restaurantes participam da tradicional 'Quinta do Caranguejo'.",
     fact3: "Fortaleza é conhecida como a 'Terra do Humor' porque muitos comediantes brasileiros famosos começaram suas carreiras no Ceará.",
     history: "História",
+    theme: "Tema",
+    themeDesc: "Personalize as cores do app",
+    ocean: "Azul Oceano",
+    emerald: "Verde Esmeralda",
+    purple: "Noite Roxa",
+    sunset: "Vermelho Pôr do Sol",
+    tropical: "Laranja Tropical",
+    dark: "Escuro Clássico"
   },
   es: {
     welcome: "Descubre Fortaleza",
@@ -222,6 +238,14 @@ export const TRANSLATIONS = {
     fact2: "Muchos restaurantes participan en el tradicional 'Jueves del Cangrejo' (Quinta do Caranguejo).",
     fact3: "Fortaleza es conocida como la 'Tierra del Humor' porque muchos comediantes brasileños famosos comenzaron sus carreras en Ceará.",
     history: "Historia",
+    theme: "Tema",
+    themeDesc: "Personaliza los colores de la aplicación",
+    ocean: "Azul Océano",
+    emerald: "Verde Esmeralda",
+    purple: "Noche Púrpura",
+    sunset: "Rojo Atardecer",
+    tropical: "Naranja Tropical",
+    dark: "Oscuro Clásico"
   },
   fr: {
     welcome: "Découvrez Fortaleza",
@@ -296,5 +320,13 @@ export const TRANSLATIONS = {
     fact2: "De nombreux restaurants participent au traditionnel 'Jeudi du Crabe' (Quinta do Caranguejo).",
     fact3: "Fortaleza est connue comme la 'Terre de l'Humour' car de nombreux comédiens brésiliens célèbres ont commencé leur carrière au Ceará.",
     history: "Histoire",
+    theme: "Thème",
+    themeDesc: "Personnalisez les couleurs de l'application",
+    ocean: "Bleu Océan",
+    emerald: "Vert Émeraude",
+    purple: "Nuit Pourpre",
+    sunset: "Rouge Coucher de Soleil",
+    tropical: "Orange Tropical",
+    dark: "Sombre Classique"
   }
 };

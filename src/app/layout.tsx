@@ -1,7 +1,7 @@
-
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { VelaProvider } from '@/lib/store';
 
 const APP_ICON_URL = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
@@ -40,10 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="font-body antialiased bg-background text-foreground">
-        <main className="min-h-screen pb-20">
-          {children}
-        </main>
-        <Toaster />
+        <VelaProvider>
+          <main className="min-h-screen pb-20">
+            {children}
+          </main>
+          <Toaster />
+        </VelaProvider>
       </body>
     </html>
   );
