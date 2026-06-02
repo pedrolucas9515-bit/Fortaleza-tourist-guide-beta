@@ -81,7 +81,7 @@ export const TRANSLATIONS = {
     purple: "Purple Night",
     sunset: "Sunset Red",
     tropical: "Tropical Orange",
-    dark: "Classic Dark"
+    dark: "Dark Black"
   },
   pt: {
     welcome: "Descubra Fortaleza",
@@ -163,7 +163,7 @@ export const TRANSLATIONS = {
     purple: "Noite Roxa",
     sunset: "Vermelho Pôr do Sol",
     tropical: "Laranja Tropical",
-    dark: "Escuro Clássico"
+    dark: "Preto Dark"
   },
   es: {
     welcome: "Descubre Fortaleza",
@@ -227,7 +227,7 @@ export const TRANSLATIONS = {
     factsDesc: "Historias y datos interesantes",
     cultureDesc: "El corazón cultural de la ciudad",
     safetyTitle: "Consejos de Seguridad en Fortaleza",
-    safetyIntro: "Fortaleza es una ciudad turística vibrante con hermosas playas, cultura y atracciones. Para ayudar a los visitantes a disfrutar de su viaje de forma segura, ofrecemos las siguientes recomendaciones.",
+    safetyIntro: "Fortaleza es una ciudad turística vibrante con hermosas playas, cultura y atrações. Para ayudar a los visitantes a disfrutar de su viaje de forma segura, ofrecemos las siguientes recomendaciones.",
     safetyTip1: "Evite caminar por el centro de Fortaleza después de las 17:00 siempre que sea posible.",
     safetyTip2: "Prefiera áreas bien iluminadas y concurridas.",
     safetyTip3: "Evite usar su teléfono abiertamente en lugares concurridos o cerca de las ventanas de los autobuses.",
@@ -245,7 +245,7 @@ export const TRANSLATIONS = {
     purple: "Noche Púrpura",
     sunset: "Rojo Atardecer",
     tropical: "Naranja Tropical",
-    dark: "Oscuro Clásico"
+    dark: "Negro Dark"
   },
   fr: {
     welcome: "Découvrez Fortaleza",
@@ -327,6 +327,6 @@ export const TRANSLATIONS = {
     purple: "Nuit Pourpre",
     sunset: "Rouge Coucher de Soleil",
     tropical: "Orange Tropical",
-    dark: "Sombre Classique"
+    dark: "Noir Dark"
   }
 };

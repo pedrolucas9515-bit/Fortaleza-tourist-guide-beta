@@ -11,9 +11,9 @@
     --card-foreground: 0 0% 100%;
     --popover: 200 20% 7%;
     --popover-foreground: 0 0% 100%;
-    --primary: 198 83% 62%; /* #53beec */
+    --primary: 198 83% 62%; /* Default HUD Cyan */
     --primary-foreground: 200 20% 7%;
-    --secondary: 240 100% 77%; /* #8c8cff */
+    --secondary: 240 100% 77%; /* Soft Purple */
     --secondary-foreground: 0 0% 100%;
     --muted: 200 20% 15%;
     --muted-foreground: 200 10% 70%;
@@ -26,31 +26,43 @@
     --ring: 198 83% 62%;
     --radius: 1rem;
   }
+}
 
-  .theme-ocean {
-    --primary: 221 83% 53%;
-    --ring: 221 83% 53%;
-  }
+/* Global Theme Classes for High Specificity */
+.theme-dark {
+  --primary: 198 83% 62%;
+  --ring: 198 83% 62%;
+  --secondary: 240 100% 77%;
+}
 
-  .theme-emerald {
-    --primary: 142 76% 36%;
-    --ring: 142 76% 36%;
-  }
+.theme-ocean {
+  --primary: 221 83% 53%;
+  --ring: 221 83% 53%;
+  --secondary: 214 95% 60%;
+}
 
-  .theme-purple {
-    --primary: 262 83% 58%;
-    --ring: 262 83% 58%;
-  }
+.theme-emerald {
+  --primary: 142 76% 45%;
+  --ring: 142 76% 45%;
+  --secondary: 161 94% 30%;
+}
 
-  .theme-sunset {
-    --primary: 0 72% 51%;
-    --ring: 0 72% 51%;
-  }
+.theme-purple {
+  --primary: 262 83% 58%;
+  --ring: 262 83% 58%;
+  --secondary: 270 95% 75%;
+}
 
-  .theme-tropical {
-    --primary: 24 94% 50%;
-    --ring: 24 94% 50%;
-  }
+.theme-sunset {
+  --primary: 0 72% 51%;
+  --ring: 0 72% 51%;
+  --secondary: 10 90% 65%;
+}
+
+.theme-tropical {
+  --primary: 24 94% 50%;
+  --ring: 24 94% 50%;
+  --secondary: 35 95% 60%;
 }
 
 @layer base {

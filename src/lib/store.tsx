@@ -35,7 +35,6 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (isLoaded) {
-      // Apply theme class to root element for CSS variable scoping
       const root = document.documentElement;
       const themeClasses = ['theme-dark', 'theme-ocean', 'theme-emerald', 'theme-purple', 'theme-sunset', 'theme-tropical'];
       root.classList.remove(...themeClasses);
