@@ -81,7 +81,10 @@ export const TRANSLATIONS = {
     purple: "Purple Night",
     sunset: "Sunset Red",
     tropical: "Tropical Orange",
-    dark: "Dark Black"
+    dark: "Dark Black",
+    feedback: "Feedback",
+    feedbackDesc: "Help us improve the Fortaleza Tourism App by sharing your opinion, suggestions and experiences.",
+    sendFeedback: "Send Feedback"
   },
   pt: {
     welcome: "Descubra Fortaleza",
@@ -163,7 +166,10 @@ export const TRANSLATIONS = {
     purple: "Noite Roxa",
     sunset: "Vermelho Pôr do Sol",
     tropical: "Laranja Tropical",
-    dark: "Preto Dark"
+    dark: "Preto Dark",
+    feedback: "Feedback",
+    feedbackDesc: "Ajude-nos a melhorar o Guia de Fortaleza compartilhando sua opinião, sugestões e experiências.",
+    sendFeedback: "Enviar Feedback"
   },
   es: {
     welcome: "Descubre Fortaleza",
@@ -245,7 +251,10 @@ export const TRANSLATIONS = {
     purple: "Noche Púrpura",
     sunset: "Rojo Atardecer",
     tropical: "Naranja Tropical",
-    dark: "Negro Dark"
+    dark: "Negro Dark",
+    feedback: "Feedback",
+    feedbackDesc: "Ayúdanos a mejorar la App de Turismo de Fortaleza compartiendo tu opinión, sugerencias y experiencias.",
+    sendFeedback: "Enviar Comentarios"
   },
   fr: {
     welcome: "Découvrez Fortaleza",
@@ -327,6 +336,9 @@ export const TRANSLATIONS = {
     purple: "Nuit Pourpre",
     sunset: "Rouge Coucher de Soleil",
     tropical: "Orange Tropical",
-    dark: "Noir Dark"
+    dark: "Noir Dark",
+    feedback: "Feedback",
+    feedbackDesc: "Aidez-nous à améliorer l'application touristique de Fortaleza en partageant votre opinion, vos suggestions et vos expériences.",
+    sendFeedback: "Envoyer des commentaires"
   }
 };

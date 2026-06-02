@@ -4,7 +4,7 @@ import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Card } from '@/components/ui/card';
-import { Car, ShieldAlert, Sparkles, Music, ChevronRight, Settings } from 'lucide-react';
+import { Car, ShieldAlert, Sparkles, Music, ChevronRight, Settings, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,6 +47,14 @@ export default function GuidePage() {
       desc: t.factsDesc,
       color: 'text-yellow-400',
       bg: 'bg-yellow-400/10'
+    },
+    {
+      href: '/feedback',
+      icon: MessageSquare,
+      title: t.feedback,
+      desc: t.feedbackDesc,
+      color: 'text-primary',
+      bg: 'bg-primary/10'
     }
   ];
 
@@ -71,12 +79,12 @@ export default function GuidePage() {
         {guideSections.map((section, idx) => (
           <Link key={idx} href={section.href}>
             <Card className="glass border-border p-6 rounded-3xl flex items-center gap-6 group hover:border-primary/50 transition-all">
-              <div className={`p-4 rounded-2xl ${section.bg}`}>
+              <div className={`p-4 rounded-2xl ${section.bg} shrink-0`}>
                 <section.icon className={`w-8 h-8 ${section.color}`} />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-headline text-foreground mb-1">{section.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed font-medium">{section.desc}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed font-medium line-clamp-2">{section.desc}</p>
               </div>
               <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </Card>
