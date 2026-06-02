@@ -110,54 +110,54 @@ export default function TransportationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f1315] pb-24">
+    <div className="min-h-screen bg-background pb-24">
       <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
         <button onClick={() => router.back()} className="mb-4 flex items-center gap-2 text-primary text-[10px] uppercase font-bold tracking-widest">
           <ArrowLeft className="w-4 h-4" /> {t.guide}
         </button>
-        <h1 className="font-headline text-3xl text-white">{t.transportation}</h1>
+        <h1 className="font-headline text-3xl text-foreground">{t.transportation}</h1>
       </header>
 
       <div className="px-6 space-y-6">
         {transportData.map((item, idx) => (
-          <Card key={idx} className="glass border-white/5 p-6 rounded-3xl overflow-hidden relative">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <item.icon className="w-16 h-16 text-white" />
+          <Card key={idx} className="glass border-border p-6 rounded-3xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 p-4 opacity-5">
+              <item.icon className="w-16 h-16 text-foreground" />
             </div>
             
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 p-2 rounded-xl">
                 <item.icon className="w-5 h-5 text-primary" />
               </div>
-              <h2 className="text-xl font-headline text-white">{item.name}</h2>
+              <h2 className="text-xl font-headline text-foreground">{item.name}</h2>
             </div>
 
-            <p className="text-sm text-white/70 mb-6 leading-relaxed">
+            <p className="text-sm text-foreground/70 mb-6 leading-relaxed">
               {item.desc[language]}
             </p>
 
             <div className="grid gap-4">
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mb-1">{t.advantages}</p>
-                  <p className="text-xs text-white/80">{item.pros[language]}</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/30 mb-1">{t.advantages}</p>
+                  <p className="text-xs text-foreground/80">{item.pros[language]}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <DollarSign className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mb-1">{t.cost}</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/30 mb-1">{t.cost}</p>
                   <p className="text-xs font-bold text-primary">{item.cost}</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Lightbulb className="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" />
+                <Lightbulb className="w-4 h-4 text-yellow-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/30 mb-1">{t.tips}</p>
-                  <p className="text-xs text-white/80 italic">"{item.tips[language]}"</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/30 mb-1">{t.tips}</p>
+                  <p className="text-xs text-foreground/80 italic">"{item.tips[language]}"</p>
                 </div>
               </div>
             </div>

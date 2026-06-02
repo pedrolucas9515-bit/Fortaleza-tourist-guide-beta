@@ -20,7 +20,7 @@ export default function BottomNav({ lang }: { lang: Language }) {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-t border-border safe-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-2xl border-t border-border/50 safe-bottom">
       <div className="flex justify-around items-center h-16 max-w-lg mx-auto">
         {items.map((item) => {
           const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));

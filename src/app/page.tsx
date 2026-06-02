@@ -49,7 +49,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-40 px-6 pt-12 pb-6 hud-gradient backdrop-blur-md">
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg shadow-primary/10 bg-black/40">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg shadow-primary/10 bg-card">
               <Image src={APP_LOGO} alt="Fortaleza Tourist Guide Logo" fill className="object-cover" />
             </div>
             <div>
@@ -66,7 +66,7 @@ export default function HomePage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input 
             placeholder={t.search}
-            className="pl-10 h-12 bg-card/40 border-border rounded-xl focus:ring-primary text-foreground"
+            className="pl-10 h-12 bg-card/60 border-border rounded-xl focus:ring-primary text-foreground"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -79,7 +79,7 @@ export default function HomePage() {
               variant={activeCategory === cat ? "default" : "outline"}
               className={cn(
                 "cursor-pointer px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all whitespace-nowrap",
-                activeCategory === cat ? "bg-primary text-primary-foreground border-primary" : "bg-card/40 border-border text-foreground hover:bg-primary/10"
+                activeCategory === cat ? "bg-primary text-primary-foreground border-primary" : "bg-card border-border text-foreground hover:bg-primary/10"
               )}
               onClick={() => setActiveCategory(cat)}
             >
@@ -113,15 +113,15 @@ export default function HomePage() {
                 onClick={(e) => { e.preventDefault(); toggleFavorite(attraction.id); }}
                 className="absolute top-4 right-4 z-10 glass p-3 rounded-full hover:scale-110 transition-transform active:scale-95"
               >
-                <Heart className={cn("w-5 h-5", isFav ? "fill-primary text-primary" : "text-white")} />
+                <Heart className={cn("w-5 h-5", isFav ? "fill-primary text-primary" : "text-foreground")} />
               </button>
 
               <div className="absolute bottom-0 left-0 right-0 p-6 z-10 pointer-events-none">
                 <Badge className="mb-2 bg-primary/20 text-primary backdrop-blur-sm border-0 font-bold tracking-widest text-[10px] uppercase">
                   {translatedCategory}
                 </Badge>
-                <h2 className="font-headline text-3xl text-white mb-2 leading-tight">{attraction.title[language]}</h2>
-                <div className="flex items-center gap-4 text-white/80 text-sm">
+                <h2 className="font-headline text-3xl text-foreground mb-2 leading-tight">{attraction.title[language]}</h2>
+                <div className="flex items-center gap-4 text-foreground/80 text-sm">
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500 fill-current" /> {attraction.rating}</span>
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Fortaleza</span>
                 </div>

@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    /* Default Dark Black Variables */
+    /* Dark Black (Default) */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 0 0% 7%;
@@ -92,16 +92,6 @@
     --accent: 25 95% 53%;
     --ring: 25 95% 53%;
   }
-
-  .theme-dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 7%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --border: 0 0% 15%;
-    --accent: 0 0% 100%;
-  }
 }
 
 @layer base {
@@ -110,26 +100,24 @@
   }
   body {
     @apply bg-background text-foreground font-body overflow-x-hidden;
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 .glass {
-  @apply bg-card/40 backdrop-blur-lg border border-border/50;
+  @apply bg-card/60 backdrop-blur-xl border border-border/50;
 }
 
 .hud-gradient {
-  background: linear-gradient(180deg, hsl(var(--background) / 0.95) 0%, hsl(var(--background) / 0) 100%);
+  background: linear-gradient(180deg, hsl(var(--background)) 0%, hsla(var(--background), 0) 100%);
 }
 
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Leaflet HUD Theme Overrides */
 .leaflet-container {
   background: hsl(var(--background)) !important;
-  outline: none;
 }
 
 .leaflet-tile-pane {
@@ -142,31 +130,14 @@
   filter: invert(0%) !important;
 }
 
-.leaflet-control-zoom {
-  border: none !important;
+.premium-popup .leaflet-popup-content-wrapper {
   @apply glass !important;
-  margin-top: 100px !important;
-  margin-right: 20px !important;
-}
-
-.leaflet-control-zoom-in, .leaflet-control-zoom-out {
-  background: transparent !important;
   color: hsl(var(--foreground)) !important;
-  border-bottom: 1px solid hsl(var(--border)) !important;
-}
-
-.leaflet-popup-content-wrapper {
-  background: hsl(var(--card)) !important;
-  color: hsl(var(--foreground)) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid hsl(var(--border));
   border-radius: 1rem !important;
-  padding: 0 !important;
-  overflow: hidden;
 }
 
-.leaflet-popup-tip {
-  background: hsl(var(--card)) !important;
+.premium-popup .leaflet-popup-tip {
+  @apply bg-card !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
