@@ -1,4 +1,3 @@
-
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -8,8 +7,12 @@ const APP_ICON_URL = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 export const metadata: Metadata = {
   title: 'Fortaleza Tourist Guide | Your Premium Guide',
-  description: 'The ultimate mobile tourism experience for Fortaleza, Ceará.',
+  description: 'The ultimate mobile tourism experience for Fortaleza, Ceará. Explore beaches, culture, and gastronomy with AI-powered tips.',
   manifest: '/manifest.json',
+  metadataBase: new URL('https://fortaleza-tourist-guide.app'),
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       { url: APP_ICON_URL, href: APP_ICON_URL },
@@ -19,12 +22,18 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
+    statusBarStyle: 'black-translucent',
     title: 'Fortaleza Guide',
   },
   applicationName: 'Fortaleza Guide',
   authors: [{ name: 'Fortaleza Tourist Guide Team' }],
-  keywords: ['Fortaleza', 'Tourism', 'Guide', 'Brazil', 'Ceará', 'Travel'],
+  keywords: ['Fortaleza', 'Tourism', 'Guide', 'Brazil', 'Ceará', 'Travel', 'PWA'],
+  openGraph: {
+    title: 'Fortaleza Tourist Guide',
+    description: 'Explore the land of light with our premium mobile guide.',
+    images: [APP_ICON_URL],
+    type: 'website',
+  },
 };
 
 export const viewport: Viewport = {
@@ -43,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="font-body antialiased bg-background text-foreground">
+      <body className="font-body antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <VelaProvider>
           <main className="min-h-screen">
             {children}
