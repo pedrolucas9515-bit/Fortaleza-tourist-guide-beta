@@ -24,6 +24,8 @@ export default function SettingsPage() {
     { code: 'fr', label: 'Français' },
   ];
 
+  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
+
   return (
     <div className="min-h-screen bg-background">
       <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20">
@@ -63,7 +65,7 @@ export default function SettingsPage() {
             <MessageSquare className="w-4 h-4" /> User Experience
           </h3>
           <Link href="/feedback">
-            <div className="flex items-center justify-between p-5 glass border-primary/30 bg-primary/5 rounded-[1.5rem] hover:bg-primary/10 transition-colors">
+            <div className="flex items-center justify-between p-5 glass border-border bg-card/40 rounded-[1.5rem] hover:bg-primary/10 transition-colors">
               <div className="flex-1 pr-4">
                 <h4 className="text-sm font-bold text-foreground uppercase tracking-widest">{t.feedback}</h4>
                 <p className="text-xs text-muted-foreground font-medium line-clamp-1">{t.feedbackDesc}</p>
@@ -90,7 +92,10 @@ export default function SettingsPage() {
 
         <section className="pt-8 border-t border-border text-center">
            <h2 className="font-headline text-2xl text-foreground/20">Fortaleza Tourist Guide</h2>
-           <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase mt-2 font-bold">v1.3.0 Core</p>
+           <div className="relative w-12 h-12 mx-auto mt-4 opacity-20 grayscale">
+              <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover rounded-xl" />
+           </div>
+           <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase mt-2 font-bold">v1.3.5 Core</p>
         </section>
       </div>
 

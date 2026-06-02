@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Map, Utensils, Heart, Info, Building, MessageSquare } from 'lucide-react';
+import { Home, Map, Utensils, Heart, Info, Building } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { Language } from '@/lib/types';
@@ -18,7 +18,6 @@ export default function BottomNav({ lang }: { lang: Language }) {
     { href: '/restaurants', icon: Utensils, label: t.restaurants },
     { href: '/hotels', icon: Building, label: t.hotels },
     { href: '/favorites', icon: Heart, label: t.favorites },
-    { href: '/feedback', icon: MessageSquare, label: t.feedback },
   ];
 
   return (
