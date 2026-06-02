@@ -56,40 +56,82 @@
       "imageHint": "old fortress"
     },
     {
-      "id": "rest-seafood-1",
-      "description": "Coco Bambu Beira Mar",
-      "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/09/70/a7/35/restaurante-coco-bambu.jpg",
-      "imageHint": "seafood restaurant"
+      "id": "porto-dunas",
+      "description": "Praia Porto das Dunas",
+      "imageUrl": "https://picsum.photos/seed/dunas/800/600",
+      "imageHint": "dunes beach"
     },
     {
-      "id": "rest-regional-1",
-      "description": "Cantinho do Faustino",
-      "imageUrl": "https://cms-blog.saipos.com/4Cantinho-do-Faustino-SAIPOS-Sistema-para-Restaurantes.jpg",
-      "imageHint": "regional restaurant"
+      "id": "meireles",
+      "description": "Praia do Meireles",
+      "imageUrl": "https://picsum.photos/seed/meireles/800/600",
+      "imageHint": "modern beach"
     },
     {
-      "id": "rest-cafe-1",
-      "description": "Santa Clara Café Orgânico",
-      "imageUrl": "https://www.3coracoes.com.br/wp-content/uploads/2019/06/cafeteria-santa-clara-fortaleza-cine-sao-luiz-1024x683.jpg",
-      "imageHint": "coffee shop"
+      "id": "mucuripe",
+      "description": "Praia do Mucuripe",
+      "imageUrl": "https://picsum.photos/seed/mucuripe/800/600",
+      "imageHint": "fishing boats"
     },
     {
-      "id": "rest-beach-1",
-      "description": "Crocobeach Club",
-      "imageUrl": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=800&h=600",
-      "imageHint": "beach restaurant"
+      "id": "sabiaguaba",
+      "description": "Praia da Sabiaguaba",
+      "imageUrl": "https://picsum.photos/seed/sabia/800/600",
+      "imageHint": "river beach"
     },
     {
-      "id": "rest-fine-1",
-      "description": "L'Ô Restaurante",
-      "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/6a/ab/ea/salao-principal.jpg?w=900&h=500&s=1",
-      "imageHint": "fine dining"
+      "id": "abreulandia",
+      "description": "Praia da Abreulândia",
+      "imageUrl": "https://picsum.photos/seed/abre/800/600",
+      "imageHint": "wild beach"
     },
     {
-      "id": "rest-fast-1",
-      "description": "Gourmet Artisan Burger",
-      "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=800&h=600",
-      "imageHint": "gourmet burger"
+      "id": "museu-foto",
+      "description": "Museu da Fotografia",
+      "imageUrl": "https://picsum.photos/seed/foto/800/600",
+      "imageHint": "modern museum"
+    },
+    {
+      "id": "museu-ceara",
+      "description": "Museu do Ceará",
+      "imageUrl": "https://picsum.photos/seed/mceara/800/600",
+      "imageHint": "palace building"
+    },
+    {
+      "id": "mis-ce",
+      "description": "Museu da Imagem e do Som",
+      "imageUrl": "https://picsum.photos/seed/mis/800/600",
+      "imageHint": "digital arts"
+    },
+    {
+      "id": "passeio-publico",
+      "description": "Passeio Público",
+      "imageUrl": "https://picsum.photos/seed/passeio/800/600",
+      "imageHint": "historic square"
+    },
+    {
+      "id": "iracema-guardia",
+      "description": "Estátua Iracema Guardiã",
+      "imageUrl": "https://picsum.photos/seed/guardia/800/600",
+      "imageHint": "warrior statue"
+    },
+    {
+      "id": "jardim-japones",
+      "description": "Jardim Japonês",
+      "imageUrl": "https://picsum.photos/seed/japones/800/600",
+      "imageHint": "zen garden"
+    },
+    {
+      "id": "rest-generic",
+      "description": "Restaurante Fortaleza",
+      "imageUrl": "https://picsum.photos/seed/rest/800/600",
+      "imageHint": "gastronomy table"
+    },
+    {
+      "id": "hotel-generic",
+      "description": "Hotel Fortaleza",
+      "imageUrl": "https://picsum.photos/seed/hotel/800/600",
+      "imageHint": "luxury room"
     }
   ]
 }
