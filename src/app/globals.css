@@ -5,64 +5,86 @@
 
 @layer base {
   :root {
-    --background: 200 20% 7%;
+    /* Default Dark Black Variables */
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-    --card: 200 20% 10%;
+    --card: 0 0% 7%;
     --card-foreground: 0 0% 100%;
-    --popover: 200 20% 7%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 100%;
-    --primary: 198 83% 62%; /* Default HUD Cyan */
-    --primary-foreground: 200 20% 7%;
-    --secondary: 240 100% 77%; /* Soft Purple */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 200 20% 15%;
-    --muted-foreground: 200 10% 70%;
-    --accent: 240 100% 77%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 200 20% 20%;
-    --input: 200 20% 20%;
-    --ring: 198 83% 62%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
     --radius: 1rem;
   }
-}
 
-/* Global Theme Classes for High Specificity */
-.theme-dark {
-  --primary: 198 83% 62%;
-  --ring: 198 83% 62%;
-  --secondary: 240 100% 77%;
-}
+  .theme-ocean {
+    --background: 217 63% 7%;
+    --card: 211 53% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 217 91% 60%;
+    --border: 217 50% 20%;
+    --accent: 217 91% 60%;
+  }
 
-.theme-ocean {
-  --primary: 221 83% 53%;
-  --ring: 221 83% 53%;
-  --secondary: 214 95% 60%;
-}
+  .theme-emerald {
+    --background: 147 50% 5%;
+    --card: 144 35% 10%;
+    --primary: 159 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 159 84% 39%;
+    --border: 159 50% 20%;
+    --accent: 159 84% 39%;
+  }
 
-.theme-emerald {
-  --primary: 142 76% 45%;
-  --ring: 142 76% 45%;
-  --secondary: 161 94% 30%;
-}
+  .theme-purple {
+    --background: 268 53% 7%;
+    --card: 263 43% 11%;
+    --primary: 259 94% 66%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 259 94% 66%;
+    --border: 259 50% 20%;
+    --accent: 259 94% 66%;
+  }
 
-.theme-purple {
-  --primary: 262 83% 58%;
-  --ring: 262 83% 58%;
-  --secondary: 270 95% 75%;
-}
+  .theme-sunset {
+    --background: 0 45% 7%;
+    --card: 0 38% 10%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 0 84% 60%;
+    --border: 0 50% 20%;
+    --accent: 0 84% 60%;
+  }
 
-.theme-sunset {
-  --primary: 0 72% 51%;
-  --ring: 0 72% 51%;
-  --secondary: 10 90% 65%;
-}
+  .theme-tropical {
+    --background: 30 43% 7%;
+    --card: 28 44% 11%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 25 95% 53%;
+    --border: 25 50% 20%;
+    --accent: 25 95% 53%;
+  }
 
-.theme-tropical {
-  --primary: 24 94% 50%;
-  --ring: 24 94% 50%;
-  --secondary: 35 95% 60%;
+  .theme-dark {
+    /* Standardized Dark Black */
+    --background: 0 0% 0%;
+    --card: 0 0% 7%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+  }
 }
 
 @layer base {
@@ -71,17 +93,16 @@
   }
   body {
     @apply bg-background text-foreground font-body overflow-x-hidden;
-    background: radial-gradient(circle at 50% 0%, #1a2226 0%, #0f1315 100%);
-    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 .glass {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  @apply bg-card/40 backdrop-blur-lg border border-white/5;
 }
 
 .hud-gradient {
-  background: linear-gradient(180deg, rgba(15, 19, 21, 0.8) 0%, rgba(15, 19, 21, 0) 100%);
+  background: linear-gradient(180deg, hsl(var(--background) / 0.9) 0%, hsl(var(--background) / 0) 100%);
 }
 
 .safe-bottom {
@@ -90,16 +111,14 @@
 
 /* Leaflet HUD Theme Overrides */
 .leaflet-container {
-  background: #0f1315 !important;
+  background: hsl(var(--background)) !important;
   outline: none;
 }
 
-/* Transform standard tiles into a high-end dark theme */
 .leaflet-tile-pane {
   filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
 }
 
-/* Reverse the inversion for markers and popups so they stay vibrant */
 .leaflet-marker-pane,
 .leaflet-popup-pane,
 .leaflet-overlay-pane {
@@ -115,31 +134,22 @@
 
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {
   background: transparent !important;
-  color: white !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-.leaflet-bar a:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
+  color: hsl(var(--foreground)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
 }
 
 .leaflet-popup-content-wrapper {
-  background: rgba(20, 26, 29, 0.95) !important;
-  color: white !important;
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid hsl(var(--border));
   border-radius: 1rem !important;
   padding: 0 !important;
   overflow: hidden;
 }
 
-.leaflet-popup-content {
-  margin: 0 !important;
-  width: auto !important;
-}
-
 .leaflet-popup-tip {
-  background: rgba(20, 26, 29, 0.95) !important;
+  background: hsl(var(--card)) !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
