@@ -5,7 +5,7 @@ import { ATTRACTIONS } from '@/lib/data';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Card } from '@/components/ui/card';
-import { Heart, ArrowRight, Settings } from 'lucide-react';
+import { Heart, ArrowRight, Settings, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -30,9 +30,14 @@ export default function FavoritesPage() {
             <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Saved by You</p>
           </div>
         </div>
-        <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
-          <Settings className="w-5 h-5 text-foreground" />
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link href="/feedback" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+            <MessageSquare className="w-5 h-5 text-foreground" />
+          </Link>
+          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+            <Settings className="w-5 h-5 text-foreground" />
+          </Link>
+        </div>
       </header>
 
       <div className="px-6 pb-32">

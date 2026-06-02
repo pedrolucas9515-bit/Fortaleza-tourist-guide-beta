@@ -8,7 +8,7 @@ import BottomNav from '@/components/BottomNav';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { Search, Star, MapPin, Building, Bed, Settings } from 'lucide-react';
+import { Search, Star, MapPin, Building, Bed, Settings, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -53,9 +53,14 @@ export default function HotelsPage() {
               <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Premium Stays</p>
             </div>
           </div>
-          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
-            <Settings className="w-5 h-5 text-foreground" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/feedback" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <MessageSquare className="w-5 h-5 text-foreground" />
+            </Link>
+            <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+              <Settings className="w-5 h-5 text-foreground" />
+            </Link>
+          </div>
         </div>
         
         <div className="relative mt-6">

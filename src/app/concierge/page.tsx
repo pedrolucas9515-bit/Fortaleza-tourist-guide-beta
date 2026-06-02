@@ -8,7 +8,7 @@ import BottomNav from '@/components/BottomNav';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Sparkles, Send, Bot, MapPin, Utensils, Settings } from 'lucide-react';
+import { Sparkles, Send, Bot, MapPin, Utensils, Settings, MessageSquare } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -51,9 +51,14 @@ export default function ConciergePage() {
             <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Personal Guide</p>
           </div>
         </div>
-        <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
-          <Settings className="w-5 h-5 text-foreground" />
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link href="/feedback" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+            <MessageSquare className="w-5 h-5 text-foreground" />
+          </Link>
+          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+            <Settings className="w-5 h-5 text-foreground" />
+          </Link>
+        </div>
       </header>
 
       <div className="px-6 space-y-8 pb-32">

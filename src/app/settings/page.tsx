@@ -4,7 +4,7 @@ import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Language } from '@/lib/types';
-import { Globe, ArrowLeft, Download, Smartphone, MessageSquare, ExternalLink } from 'lucide-react';
+import { Globe, ArrowLeft, Download, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -58,21 +58,6 @@ export default function SettingsPage() {
               </button>
             ))}
           </div>
-        </section>
-
-        <section>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 flex items-center gap-2">
-            <MessageSquare className="w-4 h-4" /> User Experience
-          </h3>
-          <Link href="/feedback">
-            <div className="flex items-center justify-between p-5 glass border-border bg-card/40 rounded-[1.5rem] hover:bg-primary/10 transition-colors">
-              <div className="flex-1 pr-4">
-                <h4 className="text-sm font-bold text-foreground uppercase tracking-widest">{t.feedback}</h4>
-                <p className="text-xs text-muted-foreground font-medium line-clamp-1">{t.feedbackDesc}</p>
-              </div>
-              <ExternalLink className="w-5 h-5 text-primary" />
-            </div>
-          </Link>
         </section>
 
         <section>
