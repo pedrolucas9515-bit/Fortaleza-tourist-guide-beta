@@ -1,4 +1,3 @@
-
 'use client';
 
 import dynamic from 'next/dynamic';
@@ -13,7 +12,7 @@ import Image from 'next/image';
 const MapContainer = dynamic(() => import('./MapComponent'), {
   ssr: false,
   loading: () => (
-    <div className="h-screen w-full flex items-center justify-center bg-[#0f1315]">
+    <div className="h-screen w-full flex items-center justify-center bg-background">
       <div className="text-center space-y-4">
         <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
         <p className="text-muted-foreground animate-pulse font-bold tracking-[0.2em] uppercase text-[10px]">Initializing HUD</p>
@@ -30,7 +29,7 @@ export default function MapPage() {
   const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
-    <div className="h-screen relative overflow-hidden bg-[#0f1315]">
+    <div className="h-screen relative overflow-hidden bg-background">
       {/* HUD Header */}
       <div className="absolute top-0 left-0 right-0 z-[1000] px-6 pt-12 pb-8 hud-gradient pointer-events-none flex justify-between items-start">
         <div className="flex items-center gap-4">
@@ -38,12 +37,12 @@ export default function MapPage() {
             <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
           </div>
           <div>
-            <h1 className="font-headline text-2xl mb-0.5 text-white">{t.map}</h1>
+            <h1 className="font-headline text-2xl mb-0.5 text-foreground">{t.map}</h1>
             <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Interactive HUD</p>
           </div>
         </div>
-        <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors pointer-events-auto">
-          <Settings className="w-5 h-5 text-white" />
+        <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors pointer-events-auto">
+          <Settings className="w-5 h-5 text-foreground" />
         </Link>
       </div>
 

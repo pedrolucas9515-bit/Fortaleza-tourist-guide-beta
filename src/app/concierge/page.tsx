@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -38,7 +37,7 @@ export default function ConciergePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f1315]">
+    <div className="min-h-screen bg-background">
       {/* HUD Header */}
       <header className="px-6 pt-12 pb-6 hud-gradient sticky top-0 z-20 flex justify-between items-start">
         <div className="flex items-center gap-4">
@@ -46,14 +45,14 @@ export default function ConciergePage() {
             <Image src={APP_LOGO} alt="Vela Logo" fill className="object-cover" />
           </div>
           <div>
-            <h1 className="font-headline text-3xl mb-0.5 text-white flex items-center gap-3">
+            <h1 className="font-headline text-3xl mb-0.5 text-foreground flex items-center gap-3">
               {t.concierge} <Sparkles className="w-5 h-5 text-primary animate-pulse" />
             </h1>
             <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Personal Guide</p>
           </div>
         </div>
-        <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
-          <Settings className="w-5 h-5 text-white" />
+        <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+          <Settings className="w-5 h-5 text-foreground" />
         </Link>
       </header>
 
@@ -64,15 +63,15 @@ export default function ConciergePage() {
              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
                <Bot className="w-6 h-6" />
              </div>
-             <Card className="flex-1 glass border-white/10 p-4 rounded-2xl rounded-tl-none">
-               <p className="text-sm text-white/90">{t.aiPrompt}</p>
+             <Card className="flex-1 bg-card/40 border-border p-4 rounded-2xl rounded-tl-none shadow-xl">
+               <p className="text-sm text-foreground/90 font-medium">{t.aiPrompt}</p>
              </Card>
            </div>
 
            <div className="relative mt-8">
              <Input 
                 placeholder={t.aiPlaceholder}
-                className="pr-16 h-14 bg-white/5 border-white/10 rounded-2xl focus:ring-primary text-white"
+                className="pr-16 h-14 bg-card/40 border-border rounded-2xl focus:ring-primary text-foreground"
                 value={mood}
                 onChange={(e) => setMood(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && getRecommendations()}
@@ -81,7 +80,7 @@ export default function ConciergePage() {
              <Button 
                onClick={getRecommendations}
                disabled={loading || !mood.trim()}
-               className="absolute right-2 top-2 h-10 w-10 p-0 rounded-xl bg-primary hover:bg-primary/90"
+               className="absolute right-2 top-2 h-10 w-10 p-0 rounded-xl bg-primary hover:bg-primary/90 transition-transform active:scale-90"
              >
                {loading ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <Send className="w-4 h-4" />}
              </Button>
@@ -91,19 +90,19 @@ export default function ConciergePage() {
         {/* Results Area */}
         {result && (
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
-             <h3 className="text-xs font-bold uppercase tracking-widest text-primary/80">Tailored Suggestions</h3>
+             <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/80">Tailored Suggestions</h3>
              {result.recommendations.map((rec, i) => (
-               <Card key={i} className="glass border-white/10 p-5 rounded-2xl group transition-all hover:border-primary/30">
+               <Card key={i} className="bg-card/40 border-border p-5 rounded-2xl group transition-all hover:border-primary/30">
                   <div className="flex items-start justify-between mb-3">
-                    <Badge className="bg-white/5 text-white/50 border-white/10 uppercase text-[8px] tracking-tighter">
+                    <Badge className="bg-primary/10 text-primary border-0 uppercase text-[8px] tracking-widest font-bold">
                       {rec.category}
                     </Badge>
-                    {rec.type === 'dish' ? <Utensils className="w-4 h-4 text-primary" /> : <MapPin className="w-4 h-4 text-secondary" />}
+                    {rec.type === 'dish' ? <Utensils className="w-4 h-4 text-primary" /> : <MapPin className="w-4 h-4 text-primary" />}
                   </div>
-                  <h4 className="font-headline text-2xl mb-2 text-white">{rec.name}</h4>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{rec.description}</p>
+                  <h4 className="font-headline text-2xl mb-2 text-foreground">{rec.name}</h4>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed font-medium">{rec.description}</p>
                   <div className="bg-primary/5 p-3 rounded-xl border border-primary/10">
-                    <p className="text-xs italic text-primary/80">" {rec.reason} "</p>
+                    <p className="text-xs italic text-primary/80 font-medium">" {rec.reason} "</p>
                   </div>
                </Card>
              ))}

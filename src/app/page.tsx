@@ -45,7 +45,7 @@ export default function HomePage() {
   const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 px-6 pt-12 pb-6 hud-gradient backdrop-blur-md">
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
@@ -53,12 +53,12 @@ export default function HomePage() {
               <Image src={APP_LOGO} alt="Fortaleza Tourist Guide Logo" fill className="object-cover" />
             </div>
             <div>
-              <h1 className="font-headline text-3xl mb-0.5 text-white leading-tight">{t.welcome}</h1>
+              <h1 className="font-headline text-3xl mb-0.5 text-foreground leading-tight">{t.welcome}</h1>
               <p className="text-muted-foreground text-[10px] tracking-[0.2em] uppercase font-bold">{t.subtitle}</p>
             </div>
           </div>
-          <Link href="/settings" className="glass p-3 rounded-full hover:bg-white/10 transition-colors">
-            <Settings className="w-5 h-5 text-white" />
+          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+            <Settings className="w-5 h-5 text-foreground" />
           </Link>
         </div>
         
@@ -66,7 +66,7 @@ export default function HomePage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input 
             placeholder={t.search}
-            className="pl-10 h-12 bg-white/5 border-white/10 rounded-xl focus:ring-primary text-white"
+            className="pl-10 h-12 bg-card/40 border-border rounded-xl focus:ring-primary text-foreground"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -79,7 +79,7 @@ export default function HomePage() {
               variant={activeCategory === cat ? "default" : "outline"}
               className={cn(
                 "cursor-pointer px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition-all whitespace-nowrap",
-                activeCategory === cat ? "bg-primary text-primary-foreground border-primary" : "bg-white/5 border-white/10 text-white hover:bg-white/10"
+                activeCategory === cat ? "bg-primary text-primary-foreground border-primary" : "bg-card/40 border-border text-foreground hover:bg-primary/10"
               )}
               onClick={() => setActiveCategory(cat)}
             >
@@ -106,7 +106,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   data-ai-hint={getHint(attraction.imageUrl)}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1315] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
               </Link>
               
               <button 
@@ -120,7 +120,7 @@ export default function HomePage() {
                 <Badge className="mb-2 bg-primary/20 text-primary backdrop-blur-sm border-0 font-bold tracking-widest text-[10px] uppercase">
                   {translatedCategory}
                 </Badge>
-                <h2 className="font-headline text-3xl text-white mb-2">{translatedCategory === t.beaches ? attraction.title[language] : attraction.title[language]}</h2>
+                <h2 className="font-headline text-3xl text-white mb-2 leading-tight">{attraction.title[language]}</h2>
                 <div className="flex items-center gap-4 text-white/80 text-sm">
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500 fill-current" /> {attraction.rating}</span>
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Fortaleza</span>
