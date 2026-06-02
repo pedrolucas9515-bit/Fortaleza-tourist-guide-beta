@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: 'Fortaleza Guide',
   },
+  applicationName: 'Fortaleza Guide',
+  authors: [{ name: 'Fortaleza Tourist Guide Team' }],
+  keywords: ['Fortaleza', 'Tourism', 'Guide', 'Brazil', 'Ceará', 'Travel'],
 };
 
 export const viewport: Viewport = {
