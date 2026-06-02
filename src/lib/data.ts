@@ -579,35 +579,99 @@ export const ATTRACTIONS: Attraction[] = [
     nearbyRestaurantIds: ['mercado']
   },
   {
-    id: 'assuncao',
+    id: 'tja',
     title: {
-      en: 'N. S. da Assunção Fortress',
-      pt: 'Fortaleza de N. S. da Assunção',
-      es: 'Fortaleza de N. S. da Assunção',
-      fr: 'Forteresse de N. S. da Assunção'
+      en: 'Theatro José de Alencar',
+      pt: 'Theatro José de Alencar',
+      es: 'Teatro José de Alencar',
+      fr: 'Théâtre José de Alencar'
     },
     description: {
-      en: 'The birthplace of the city, this historic fortress is now the headquarters of the 10th Military Region.',
-      pt: 'O berço da cidade, esta fortaleza histórica é hoje a sede da 10ª Região Militar.',
-      es: 'La cuna de la ciudad, esta fortaleza histórica es hoy la sede de la 10ª Región Militar.',
-      fr: 'Berceau de la ville, cette forteresse historique est aujourd\'hui le quartier général de la 10e région militaire.'
+      en: 'A historic theater and architectural landmark of Fortaleza, featuring a unique art nouveau iron structure.',
+      pt: 'Um teatro histórico e marco arquitetônico de Fortaleza, com uma estrutura de ferro art nouveau única.',
+      es: 'Un teatro histórico y referente arquitectónico de Fortaleza, con una estructura de hierro art nouveau única.',
+      fr: 'Un théâtre historique et un monument architectural de Fortaleza, doté d\'une structure en fer art nouveau unique.'
     },
     address: {
-      en: 'Alberto Nepomuceno Avenue, Centro',
-      pt: 'Av. Alberto Nepomuceno, Centro',
-      es: 'Avenida Alberto Nepomuceno, Centro',
-      fr: 'Avenue Alberto Nepomuceno, Centre'
+      en: '696 Liberato Barroso Street, Centro',
+      pt: 'Rua Liberato Barroso, 696, Centro',
+      es: 'Calle Liberato Barroso, 696, Centro',
+      fr: 'Rue Liberato Barroso, 696, Centre'
     },
     openingHours: {
-      en: '09:00 AM - 12:00 PM',
-      pt: '09:00 - 12:00',
-      es: '09:00 - 12:00',
-      fr: '09h00 - 12h00'
+      en: '09:00 AM - 05:00 PM',
+      pt: '09:00 - 17:00',
+      es: '09:00 - 17:00',
+      fr: '09h00 - 17h00'
+    },
+    rating: 4.9,
+    category: 'Culture',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Theatro_Jos%C3%A9_de_Alencar_-_Fortaleza%2C_Cear%C3%A1.jpg',
+    coords: { lat: -3.7288, lng: -38.5305 },
+    nearbyRestaurantIds: []
+  },
+  {
+    id: 'belchior',
+    title: {
+      en: 'Belchior Cultural Center',
+      pt: 'Centro Cultural Belchior',
+      es: 'Centro Cultural Belchior',
+      fr: 'Centre Culturel Belchior'
+    },
+    description: {
+      en: 'A cultural space dedicated to the local music scene and the legacy of the famous singer Belchior.',
+      pt: 'Um espaço cultural dedicado à cena musical local e ao legado do famoso cantor Belchior.',
+      es: 'Un espacio cultural dedicado a la escena musical local y al legado del famoso cantante Belchior.',
+      fr: 'Un espace culturel dédié à la scène musicale locale et à l\'héritage du célèbre chanteur Belchior.'
+    },
+    address: {
+      en: '440 Pacatuba Street, Iracema',
+      pt: 'Rua dos Pacatuba, 440, Iracema',
+      es: 'Calle Pacatuba, 440, Iracema',
+      fr: 'Rue Pacatuba, 440, Iracema'
+    },
+    openingHours: {
+      en: '10:00 AM - 09:00 PM',
+      pt: '10:00 - 21:00',
+      es: '10:00 - 21:00',
+      fr: '10h00 - 21h00'
+    },
+    rating: 4.7,
+    category: 'Culture',
+    imageUrl: 'https://www.ipatrimonio.org/wp-content/uploads/2019/04/Fortaleza-Centro-Cultural-Belchior-Imagem-Governo-do-Estado.jpg',
+    coords: { lat: -3.7215, lng: -38.5155 },
+    nearbyRestaurantIds: []
+  },
+  {
+    id: 'estoril',
+    title: {
+      en: 'Estoril',
+      pt: 'Estoril',
+      es: 'Estoril',
+      fr: 'Estoril'
+    },
+    description: {
+      en: 'A historic building on Iracema Beach that served as a casino and is now a cultural facility and landmark.',
+      pt: 'Um edifício histórico na Praia de Iracema que serviu como cassino e agora é um equipamento cultural e marco histórico.',
+      es: 'Un edificio histórico en la playa de Iracema que sirvió como casino y ahora es una instalación cultural y un hito.',
+      fr: 'Un bâtiment historique sur la plage d\'Iracema qui servait de casino et qui est aujourd\'hui une installation culturelle et un monument.'
+    },
+    address: {
+      en: '397 Tabajaras Street, Iracema',
+      pt: 'Rua dos Tabajaras, 397, Iracema',
+      es: 'Calle Tabajaras, 397, Iracema',
+      fr: 'Rue Tabajaras, 397, Iracema'
+    },
+    openingHours: {
+      en: '09:00 AM - 06:00 PM',
+      pt: '09:00 - 18:00',
+      es: '09:00 - 18:00',
+      fr: '09h00 - 18h00'
     },
     rating: 4.6,
-    category: 'Historical Places',
-    imageUrl: 'https://www.ipatrimonio.org/wp-content/uploads/2017/04/Fortaleza-de-Nossa-Senhora-da-Assun%C3%A7%C3%A3o-Imagem-Google-Street-View4.jpg',
-    coords: { lat: -3.7225, lng: -38.5245 },
-    nearbyRestaurantIds: ['mercado']
+    category: 'Culture',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Estoril_Fortaleza_2025.jpg',
+    coords: { lat: -3.7212, lng: -38.5185 },
+    nearbyRestaurantIds: []
   }
 ];

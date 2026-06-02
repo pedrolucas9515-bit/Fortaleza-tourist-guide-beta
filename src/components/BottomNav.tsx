@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Map, Utensils, Heart, Hotel } from 'lucide-react';
+import { Home, Map, Utensils, Heart, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { Language } from '@/lib/types';
@@ -14,7 +14,7 @@ export default function BottomNav({ lang }: { lang: Language }) {
   const items = [
     { href: '/', icon: Home, label: t.explore },
     { href: '/map', icon: Map, label: t.map },
-    { href: '/hotels', icon: Hotel, label: t.hotels },
+    { href: '/guide', icon: Info, label: t.guide },
     { href: '/restaurants', icon: Utensils, label: t.restaurants },
     { href: '/favorites', icon: Heart, label: t.favorites },
   ];
@@ -23,7 +23,7 @@ export default function BottomNav({ lang }: { lang: Language }) {
     <nav className="fixed bottom-0 left-0 right-0 z-50 glass border-t border-white/10 safe-bottom">
       <div className="flex justify-around items-center h-16 max-w-lg mx-auto">
         {items.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
           return (
             <Link
               key={item.href}
