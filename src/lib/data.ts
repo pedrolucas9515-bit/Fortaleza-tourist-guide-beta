@@ -16,7 +16,7 @@ export const HOTELS: Hotel[] = [
       fr: 'L\'hôtel de luxe le plus prestigieux de Fortaleza, situé dans le quartier élégant de Mucuripe avec une superbe piscine sur le toit.'
     },
     amenities: { en: ['Spa', 'Rooftop Pool', 'Fitness Center', 'Ocean View'], pt: ['Spa', 'Piscina na Cobertura', 'Academia', 'Vista Mar'], es: ['Spa', 'Piscina en la Azotea', 'Gimnasio', 'Vista al Mar'], fr: ['Spa', 'Piscine sur le toit', 'Salle de sport', 'Vue sur la mer'] },
-    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/602301878.jpg',
+    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/602301255.jpg?k=2bdd113d124105b61ac09fc6d431e7244d064bf804ca0b6f9ac4b8938895d0f8&o=',
     coords: { lat: -3.7275, lng: -38.4865 }
   },
   {
@@ -100,7 +100,7 @@ export const HOTELS: Hotel[] = [
     address: { en: '2343 Beira Mar Avenue', pt: 'Av. Beira Mar, 2343', es: 'Avenida Beira Mar, 2343', fr: 'Avenue Beira Mar, 2343' },
     description: { en: 'Modern flat-style hotel.', pt: 'Hotel moderno estilo flat.', es: 'Moderno hotel estilo apartamento.', fr: 'Hôtel moderne de style appartement.' },
     amenities: { en: ['Kitchenette', 'Gym', 'Business'], pt: ['Copa', 'Academia', 'Negócios'], es: ['Cocina', 'Gimnasio', 'Negocios'], fr: ['Kitchenette', 'Salle de sport', 'Affaires'] },
-    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/477172864.jpg',
+    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/477172864.jpg?k=82f6adebd4c091d18ccfed853d38ea94fd2473afbc27bc47d9e3bac9451f9dec&o=',
     coords: { lat: -3.7248, lng: -38.5002 }
   },
   {
@@ -148,7 +148,7 @@ export const HOTELS: Hotel[] = [
     address: { en: '100 Senador Machado Street', pt: 'Rua Sen. Machado, 100', es: 'Calle Sen. Machado, 100', fr: 'Rue Sen. Machado, 100' },
     description: { en: 'Colorful and creatively designed.', pt: 'Colorido e com design criativo.', es: 'Colorido y de diseño creativo.', fr: 'Coloré au design créatif.' },
     amenities: { en: ['Design', 'WiFi'], pt: ['Design', 'WiFi'], es: ['Diseño', 'WiFi'], fr: ['Design', 'WiFi'] },
-    imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/781605222.jpg',
+    imageUrl: 'https://www.ahstatic.com/photos/c2z2_ho_03_p_1024x768.jpg',
     coords: { lat: -3.7242, lng: -38.5082 }
   },
   {
@@ -271,7 +271,7 @@ export const RESTAURANTS: Restaurant[] = [
   {
     id: 'moleskine',
     name: { en: 'Moleskine Gastrobar', pt: 'Moleskine Gastrobar', es: 'Moleskine Gastrobar', fr: 'Moleskine Gastrobar' },
-    cuisine: { en: 'Contemporary & Bar', pt: 'Contemporânea e Bar', es: 'Contemporánea y Bar', fr: 'Contemporain et Bar' },
+    cuisine: { en: 'Contemporary & Bar', pt: 'Contemporânea e Bar', es: 'Contemporânea e Bar', fr: 'Contemporain et Bar' },
     category: 'Nightlife',
     rating: 4.7,
     address: { en: '542 Professor Dias da Rocha Street', pt: 'Rua Prof. Dias da Rocha, 542', es: 'Calle Prof. Dias da Rocha, 542', fr: 'Rue Prof. Dias da Rocha, 542' },
@@ -336,7 +336,7 @@ export const RESTAURANTS: Restaurant[] = [
   {
     id: 'balcone-resto',
     name: { en: 'Balcone Restô', pt: 'Balcone Restô', es: 'Balcone Restô', fr: 'Balcone Restô' },
-    cuisine: { en: 'Contemporary Italian', pt: 'Italiana Contemporânea', es: 'Italiana Contemporánea', fr: 'Italien Contemporain' },
+    cuisine: { en: 'Contemporary Italian', pt: 'Italiana Contemporânea', es: 'Italiana Contemporânea', fr: 'Italien Contemporain' },
     category: 'Italian',
     rating: 4.6,
     address: { en: '1000 Historiador Raimundo Girão Avenue', pt: 'Av. Hist. Raimundo Girão, 1000', es: 'Avenida Hist. Raimundo Girão, 1000', fr: 'Avenue Hist. Raimundo Girão, 1000' },
@@ -570,7 +570,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'igreja-rosario',
     title: { en: 'Rosary Church', pt: 'Igreja do Rosário', es: 'Iglesia del Rosario', fr: 'Église du Rosaire' },
-    description: { en: 'Oldest church in Fortaleza.', pt: 'Igreja mais antiga de Fortaleza.', es: 'Iglesia más antigua de Fortaleza.', fr: 'Plus ancienne église de Fortaleza.' },
+    description: { en: 'Oldest church in Fortaleza.', pt: 'Igreja mais antiga de Fortaleza.', es: 'Iglesia más antiga de Fortaleza.', fr: 'Plus ancienne église de Fortaleza.' },
     address: { en: 'Major Facundo Street', pt: 'Rua Major Facundo', es: 'Calle Major Facundo', fr: 'Rue Major Facundo' },
     openingHours: { en: '08:00 AM - 05:00 PM', pt: '08:00 - 17:00', es: '08:00 - 17:00', fr: '08h00 - 17h00' },
     rating: 4.7,
@@ -582,7 +582,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'joao-felipe',
     title: { en: 'João Felipe Station', pt: 'Estação João Felipe', es: 'Estación João Felipe', fr: 'Gare João Felipe' },
-    description: { en: 'Former main railway station.', pt: 'Antiga estação ferroviária principal.', es: 'Antigua estación de tren.', fr: 'Ancienne gare principale.' },
+    description: { en: 'Former main railway station.', pt: 'Antiga estação ferroviária principal.', es: 'Antiga estação de tren.', fr: 'Ancienne gare principale.' },
     address: { en: 'Castro e Silva Street', pt: 'Rua Castro e Silva', es: 'Calle Castro e Silva', fr: 'Rue Castro e Silva' },
     openingHours: { en: 'External viewing', pt: 'Visitação externa', es: 'Vista externa', fr: 'Vue externe' },
     rating: 4.4,
@@ -630,7 +630,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'jardim-japones',
     title: { en: 'Japanese Garden', pt: 'Jardim Japonês', es: 'Jardín Japonés', fr: 'Jardin Japonais' },
-    description: { en: 'Zen space with ocean view.', pt: 'Espaço Zen com vista para o mar.', es: 'Espacio Zen con vistas al mar.', fr: 'Espace Zen avec vue sur la mer.' },
+    description: { en: 'Zen space with ocean view.', pt: 'Espaço Zen com vista para o mar.', es: 'Espaço Zen con vistas al mar.', fr: 'Espace Zen avec vue sur la mer.' },
     address: { en: 'Beira Mar Avenue, Meireles', pt: 'Av. Beira Mar, Meireles', es: 'Avenida Beira Mar, Meireles', fr: 'Avenue Beira Mar, Meireles' },
     openingHours: { en: '08:00 AM - 10:00 PM', pt: '08:00 - 22:00', es: '08:00 - 22:00', fr: '08h00 - 22h00' },
     rating: 4.7,
