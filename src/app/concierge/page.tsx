@@ -51,12 +51,12 @@ export default function ConciergePage() {
             <p className="text-muted-foreground text-[10px] tracking-widest uppercase font-bold">Personal Guide</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Link href="/feedback" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
-            <MessageSquare className="w-5 h-5 text-foreground" />
-          </Link>
-          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors">
+        <div className="flex flex-col gap-2">
+          <Link href="/settings" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors active:scale-90">
             <Settings className="w-5 h-5 text-foreground" />
+          </Link>
+          <Link href="/feedback" className="glass p-3 rounded-full hover:bg-primary/10 transition-colors active:scale-90">
+            <MessageSquare className="w-5 h-5 text-foreground" />
           </Link>
         </div>
       </header>
