@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -8,12 +9,13 @@ import { Car, ShieldAlert, Sparkles, Music, ChevronRight, Settings, MessageSquar
 import Image from 'next/image';
 import Link from 'next/link';
 
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
+
 export default function GuidePage() {
   const { language, isLoaded } = useVelaStore();
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   const guideSections = [
     {

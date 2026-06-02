@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
+
 export default function DownloadPage() {
   const { language, isLoaded } = useVelaStore();
   const router = useRouter();
@@ -28,7 +30,6 @@ export default function DownloadPage() {
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="min-h-screen bg-[#0f1315] flex flex-col">

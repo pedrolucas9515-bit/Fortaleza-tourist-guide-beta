@@ -2,25 +2,67 @@
 {
   "name": "Fortaleza Tourist Guide",
   "short_name": "Fortaleza Guide",
-  "description": "O guia premium para turistas em Fortaleza, Ceará.",
+  "description": "Premium mobile tourism experience for Fortaleza, Ceará.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f1315",
-  "theme_color": "#53beec",
-  "orientation": "portrait",
-  "scope": "/",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any"
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "16x16",
+      "type": "image/jpeg"
     },
     {
-      "src": "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg",
-      "sizes": "512x512",
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "32x32",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "48x48",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "72x72",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "96x96",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "128x128",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "144x144",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "192x192",
       "type": "image/jpeg",
-      "purpose": "any"
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "256x256",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "384x384",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
     }
   ]
 }

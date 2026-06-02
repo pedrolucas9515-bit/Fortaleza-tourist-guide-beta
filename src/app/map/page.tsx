@@ -1,3 +1,4 @@
+
 'use client';
 
 import dynamic from 'next/dynamic';
@@ -7,6 +8,8 @@ import BottomNav from '@/components/BottomNav';
 import { Settings, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 // Dynamic import to handle Leaflet's window dependency
 const MapContainer = dynamic(() => import('./MapComponent'), {
@@ -26,7 +29,6 @@ export default function MapPage() {
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="h-screen relative overflow-hidden bg-background">

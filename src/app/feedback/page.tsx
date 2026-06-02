@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -8,13 +9,14 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
+
 export default function FeedbackPage() {
   const { language, isLoaded } = useVelaStore();
   const router = useRouter();
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
   const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfX__e23ss2y2rprwoVUMN_43FbczUIrIo0JgzwZ5HxWf7Hlw/viewform";
 
   return (

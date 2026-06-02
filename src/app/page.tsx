@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
@@ -13,6 +14,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import placeholderData from '@/app/lib/placeholder-images.json';
+
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 const AttractionCard = React.memo(({ 
   attraction, 
@@ -97,8 +100,6 @@ export default function HomePage() {
   }), [t]);
 
   if (!isLoaded) return <div className="h-screen flex items-center justify-center bg-background"><div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" /></div>;
-
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="min-h-screen bg-background">

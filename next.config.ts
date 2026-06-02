@@ -29,6 +29,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cf.bstatic.com' },
       { protocol: 'https', hostname: 'www.pacotestravel.com.br' },
       { protocol: 'https', hostname: 'i.pinimg.com' },
+      { protocol: 'https', hostname: 'i.ibb.co' },
       { protocol: 'https', hostname: 'img2.oastatic.com' },
       { protocol: 'https', hostname: 'visit-fortaleza.com' },
       { protocol: 'https', hostname: 'blog.rotacombo.com' },

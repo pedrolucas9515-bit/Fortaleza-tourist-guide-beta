@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -12,6 +13,8 @@ import { Search, Star, MapPin, Building, Bed, Settings, MessageSquare } from 'lu
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 export default function HotelsPage() {
   const { language, isLoaded } = useVelaStore();
@@ -37,8 +40,6 @@ export default function HotelsPage() {
     'Business': t.business,
     'Budget': t.budget
   };
-
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="min-h-screen bg-background">

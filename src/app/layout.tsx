@@ -1,9 +1,10 @@
+
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { VelaProvider } from '@/lib/store';
 
-const APP_ICON_URL = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
+const APP_ICON_URL = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 export const metadata: Metadata = {
   title: 'Fortaleza Tourist Guide | Your Premium Guide',
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: `${APP_ICON_URL}?v=3`, href: `${APP_ICON_URL}?v=3` },
+      { url: APP_ICON_URL, href: APP_ICON_URL },
     ],
-    shortcut: `${APP_ICON_URL}?v=3`,
-    apple: `${APP_ICON_URL}?v=3`,
+    shortcut: APP_ICON_URL,
+    apple: APP_ICON_URL,
   },
   appleWebApp: {
     capable: true,

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -10,13 +11,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
+const APP_LOGO = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
+
 export default function FavoritesPage() {
   const { language, favorites, isLoaded } = useVelaStore();
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
   const favoriteAttractions = ATTRACTIONS.filter(a => favorites.includes(a.id));
-  const APP_LOGO = "https://i.pinimg.com/736x/46/26/75/462675165eeac26a77e0d23157de6f09.jpg";
 
   return (
     <div className="min-h-screen bg-background">
