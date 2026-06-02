@@ -5,92 +5,26 @@
 
 @layer base {
   :root {
-    /* Dark Black (Default) */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 0 0% 7%;
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 0%;
     --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 198 84% 63%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 10%;
     --muted-foreground: 0 0% 70%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 198 84% 63%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 0 0% 100%;
+    --ring: 198 84% 63%;
     --radius: 1rem;
-  }
-
-  .theme-ocean {
-    --background: 217 63% 7%;
-    --foreground: 0 0% 100%;
-    --card: 211 53% 11%;
-    --card-foreground: 0 0% 100%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --border: 217 50% 20%;
-    --muted: 217 50% 15%;
-    --accent: 217 91% 60%;
-    --ring: 217 91% 60%;
-  }
-
-  .theme-emerald {
-    --background: 147 50% 5%;
-    --foreground: 0 0% 100%;
-    --card: 144 35% 10%;
-    --card-foreground: 0 0% 100%;
-    --primary: 159 84% 39%;
-    --primary-foreground: 0 0% 100%;
-    --border: 159 50% 20%;
-    --muted: 159 50% 15%;
-    --accent: 159 84% 39%;
-    --ring: 159 84% 39%;
-  }
-
-  .theme-purple {
-    --background: 268 53% 7%;
-    --foreground: 0 0% 100%;
-    --card: 263 43% 11%;
-    --card-foreground: 0 0% 100%;
-    --primary: 259 94% 66%;
-    --primary-foreground: 0 0% 100%;
-    --border: 259 50% 20%;
-    --muted: 259 50% 15%;
-    --accent: 259 94% 66%;
-    --ring: 259 94% 66%;
-  }
-
-  .theme-sunset {
-    --background: 0 45% 7%;
-    --foreground: 0 0% 100%;
-    --card: 0 38% 10%;
-    --card-foreground: 0 0% 100%;
-    --primary: 0 84% 60%;
-    --primary-foreground: 0 0% 100%;
-    --border: 0 50% 20%;
-    --muted: 0 50% 15%;
-    --accent: 0 84% 60%;
-    --ring: 0 84% 60%;
-  }
-
-  .theme-tropical {
-    --background: 30 43% 7%;
-    --foreground: 0 0% 100%;
-    --card: 28 44% 11%;
-    --card-foreground: 0 0% 100%;
-    --primary: 25 95% 53%;
-    --primary-foreground: 0 0% 100%;
-    --border: 25 50% 20%;
-    --muted: 25 50% 15%;
-    --accent: 25 95% 53%;
-    --ring: 25 95% 53%;
   }
 }
 
@@ -100,7 +34,6 @@
   }
   body {
     @apply bg-background text-foreground font-body overflow-x-hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

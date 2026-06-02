@@ -29,7 +29,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: 'cover',
-  themeColor: '#53beec',
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="font-body antialiased bg-background text-foreground">
         <VelaProvider>
-          <main className="min-h-screen pb-20">
+          <main className="min-h-screen">
             {children}
           </main>
           <Toaster />

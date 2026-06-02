@@ -1,7 +1,5 @@
 export type Language = 'en' | 'pt' | 'es' | 'fr';
 
-export type Theme = 'dark' | 'ocean' | 'emerald' | 'purple' | 'sunset' | 'tropical';
-
 export type Category = 'Beaches' | 'Restaurants' | 'Culture' | 'Parks' | 'Historical Places' | 'Nightlife';
 
 export type RestaurantCategory = 'Seafood' | 'Brazilian Food' | 'Cafés' | 'Beach Restaurants' | 'Fine Dining' | 'Fast Food' | 'Italian';
