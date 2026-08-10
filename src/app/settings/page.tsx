@@ -5,7 +5,7 @@ import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Language } from '@/lib/types';
-import { Globe, ArrowLeft, Download, Smartphone } from 'lucide-react';
+import { Globe, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -17,7 +17,8 @@ export default function SettingsPage() {
   const { language, updateLanguage, isLoaded } = useVelaStore();
   const router = useRouter();
 
-  if (!isLoaded) return null;
+  if (!isLoaded) return <div className="h-screen flex items-center justify-center bg-background"><div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" /></div>;
+  
   const t = TRANSLATIONS[language];
 
   const langs: { code: Language; label: string }[] = [
@@ -59,21 +60,6 @@ export default function SettingsPage() {
               </button>
             ))}
           </div>
-        </section>
-
-        <section>
-          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 flex items-center gap-2">
-            <Smartphone className="w-4 h-4" /> Install Application
-          </h3>
-          <Link href="/download">
-            <div className="flex items-center justify-between p-5 glass border-border bg-card/40 rounded-[1.5rem] hover:bg-primary/10 transition-colors">
-              <div>
-                <h4 className="text-sm font-bold text-foreground uppercase tracking-widest">{t.downloadApp}</h4>
-                <p className="text-xs text-muted-foreground font-medium">{t.downloadDesc}</p>
-              </div>
-              <Download className="w-5 h-5 text-muted-foreground" />
-            </div>
-          </Link>
         </section>
 
         <section className="pt-8 border-t border-border text-center">
