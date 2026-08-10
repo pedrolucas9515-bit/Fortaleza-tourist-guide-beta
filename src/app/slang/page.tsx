@@ -15,13 +15,41 @@ export default function SlangPage() {
   const t = TRANSLATIONS[language];
 
   const slangs = [
-    { term: "Arre égua!", meaning: t.slang1Meaning },
-    { term: "Eita!", meaning: t.slang2Meaning },
-    { term: "Vixe!", meaning: t.slang3Meaning },
-    { term: "Oxente!", meaning: t.slang4Meaning },
-    { term: "Macho", meaning: t.slang5Meaning },
-    { term: "Caba", meaning: t.slang6Meaning },
-    { term: "Abestado", meaning: t.slang7Meaning },
+    { 
+      term: "Arre égua!", 
+      equiv: (t as any).slang1Equiv, 
+      meaning: (t as any).slang1Meaning 
+    },
+    { 
+      term: "Eita!", 
+      equiv: (t as any).slang2Equiv, 
+      meaning: (t as any).slang2Meaning 
+    },
+    { 
+      term: "Vixe!", 
+      equiv: (t as any).slang3Equiv, 
+      meaning: (t as any).slang3Meaning 
+    },
+    { 
+      term: "Oxente!", 
+      equiv: (t as any).slang4Equiv, 
+      meaning: (t as any).slang4Meaning 
+    },
+    { 
+      term: "Macho", 
+      equiv: (t as any).slang5Equiv, 
+      meaning: (t as any).slang5Meaning 
+    },
+    { 
+      term: "Caba", 
+      equiv: (t as any).slang6Equiv, 
+      meaning: (t as any).slang6Meaning 
+    },
+    { 
+      term: "Abestado", 
+      equiv: (t as any).slang7Equiv, 
+      meaning: (t as any).slang7Meaning 
+    },
   ];
 
   return (
@@ -42,15 +70,35 @@ export default function SlangPage() {
               <MessageCircle className="w-16 h-16 text-primary" />
             </div>
             
-            <div className="flex flex-col gap-2">
-              <Badge className="w-fit bg-primary/20 text-primary border-0 font-bold uppercase text-[10px] tracking-widest">
-                Slang
-              </Badge>
-              <h2 className="text-2xl font-headline text-foreground">{item.term}</h2>
-              <div className="h-px w-full bg-border/50 my-2" />
-              <p className="text-sm text-foreground/80 leading-relaxed font-medium italic">
-                {item.meaning}
-              </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1">
+                <Badge className="w-fit bg-primary/20 text-primary border-0 font-bold uppercase text-[8px] tracking-[0.2em] mb-1">
+                  Slang
+                </Badge>
+                <h2 className="text-3xl font-headline text-foreground">{item.term}</h2>
+              </div>
+              
+              <div className="h-px w-full bg-border/50" />
+              
+              <div className="space-y-4">
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-1">
+                    {(t as any).naturalEquivalent}
+                  </p>
+                  <p className="text-lg text-foreground font-medium italic">
+                    "{item.equiv}"
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/40 mb-1">
+                    {(t as any).sense}
+                  </p>
+                  <p className="text-sm text-foreground/80 leading-relaxed font-medium">
+                    {item.meaning}
+                  </p>
+                </div>
+              </div>
             </div>
           </Card>
         ))}
