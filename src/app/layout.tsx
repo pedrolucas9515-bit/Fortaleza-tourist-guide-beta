@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -6,7 +7,7 @@ import { VelaProvider } from '@/lib/store';
 const APP_ICON_URL = "https://i.ibb.co/gLRCXsZC/draguinho.jpg";
 
 export const metadata: Metadata = {
-  title: 'Fortaleza Tourist Guide | Your Premium Guide',
+  title: 'Fortaleza For Foreigners | Your Premium Guide',
   description: 'The ultimate mobile tourism experience for Fortaleza, Ceará. Explore beaches, culture, and gastronomy with AI-powered tips.',
   manifest: '/manifest.json',
   metadataBase: new URL('https://fortaleza-tourist-guide.app'),
@@ -23,13 +24,13 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Fortaleza Guide',
+    title: 'Fortaleza For Foreigners',
   },
-  applicationName: 'Fortaleza Guide',
-  authors: [{ name: 'Fortaleza Tourist Guide Team' }],
+  applicationName: 'Fortaleza For Foreigners',
+  authors: [{ name: 'Fortaleza For Foreigners Team' }],
   keywords: ['Fortaleza', 'Tourism', 'Guide', 'Brazil', 'Ceará', 'Travel', 'PWA'],
   openGraph: {
-    title: 'Fortaleza Tourist Guide',
+    title: 'Fortaleza For Foreigners',
     description: 'Explore the land of light with our premium mobile guide.',
     images: [APP_ICON_URL],
     type: 'website',
