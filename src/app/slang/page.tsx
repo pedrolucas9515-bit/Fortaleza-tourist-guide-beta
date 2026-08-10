@@ -6,6 +6,7 @@ import { ArrowLeft, Languages, MessageCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import BottomNav from '@/components/BottomNav';
 
 export default function SlangPage() {
   const { language, isLoaded } = useVelaStore();
@@ -14,42 +15,33 @@ export default function SlangPage() {
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];
 
+  // Map of 25 slangs requested
   const slangs = [
-    { 
-      term: "Arre égua!", 
-      equiv: (t as any).slang1Equiv, 
-      meaning: (t as any).slang1Meaning 
-    },
-    { 
-      term: "Eita!", 
-      equiv: (t as any).slang2Equiv, 
-      meaning: (t as any).slang2Meaning 
-    },
-    { 
-      term: "Vixe!", 
-      equiv: (t as any).slang3Equiv, 
-      meaning: (t as any).slang3Meaning 
-    },
-    { 
-      term: "Oxente!", 
-      equiv: (t as any).slang4Equiv, 
-      meaning: (t as any).slang4Meaning 
-    },
-    { 
-      term: "Macho", 
-      equiv: (t as any).slang5Equiv, 
-      meaning: (t as any).slang5Meaning 
-    },
-    { 
-      term: "Caba", 
-      equiv: (t as any).slang6Equiv, 
-      meaning: (t as any).slang6Meaning 
-    },
-    { 
-      term: "Abestado", 
-      equiv: (t as any).slang7Equiv, 
-      meaning: (t as any).slang7Meaning 
-    },
+    { term: "Arretado", key: "slangArretado" },
+    { term: "Abestado", key: "slangAbestado" },
+    { term: "Caba", key: "slangCaba" },
+    { term: "Macho", key: "slangMacho" },
+    { term: "Égua", key: "slangEgua" },
+    { term: "Arre égua!", key: "slangArreEgua" },
+    { term: "Vixe!", key: "slangVixe" },
+    { term: "Eita!", key: "slangEita" },
+    { term: "Oxente!", key: "slangOxente" },
+    { term: "Aperreio", key: "slangAperreio" },
+    { term: "Aperreado", key: "slangAperreado" },
+    { term: "Mangar", key: "slangMangar" },
+    { term: "Mangar de alguém", key: "slangMangarDeAlguem" },
+    { term: "Leseira", key: "slangLeseira" },
+    { term: "Lesado", key: "slangLesado" },
+    { term: "Avexado", key: "slangAvexado" },
+    { term: "Quenga", key: "slangQuenga" },
+    { term: "Cagado", key: "slangCagado" },
+    { term: "Peba", key: "slangPeba" },
+    { term: "Ruma", key: "slangRuma" },
+    { term: "Bichinho", key: "slangBichinho" },
+    { term: "Botar boneco", key: "slangBotarBoneco" },
+    { term: "Dar o prego", key: "slangDarOPrego" },
+    { term: "Pegar o beco", key: "slangPegarOBeco" },
+    { term: "Tá de boa", key: "slangTaDeBoa" }
   ];
 
   return (
@@ -64,45 +56,52 @@ export default function SlangPage() {
       </header>
 
       <div className="px-6 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-        {slangs.map((item, idx) => (
-          <Card key={idx} className="glass border-border p-6 rounded-3xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-              <MessageCircle className="w-16 h-16 text-primary" />
-            </div>
-            
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1">
-                <Badge className="w-fit bg-primary/20 text-primary border-0 font-bold uppercase text-[8px] tracking-[0.2em] mb-1">
-                  Slang
-                </Badge>
-                <h2 className="text-3xl font-headline text-foreground">{item.term}</h2>
-              </div>
-              
-              <div className="h-px w-full bg-border/50" />
-              
-              <div className="space-y-4">
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-1">
-                    {(t as any).naturalEquivalent}
-                  </p>
-                  <p className="text-lg text-foreground font-medium italic">
-                    "{item.equiv}"
-                  </p>
-                </div>
+        {slangs.map((item, idx) => {
+          const equiv = (t as any)[`${item.key}Equiv`];
+          const sense = (t as any)[`${item.key}Sense`];
 
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/40 mb-1">
-                    {(t as any).sense}
-                  </p>
-                  <p className="text-sm text-foreground/80 leading-relaxed font-medium">
-                    {item.meaning}
-                  </p>
+          return (
+            <Card key={idx} className="glass border-border p-6 rounded-3xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <MessageCircle className="w-16 h-16 text-primary" />
+              </div>
+              
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                  <Badge className="w-fit bg-primary/20 text-primary border-0 font-bold uppercase text-[8px] tracking-[0.2em] mb-1">
+                    Gíria Original
+                  </Badge>
+                  <h2 className="text-3xl font-headline text-foreground">{item.term}</h2>
+                </div>
+                
+                <div className="h-px w-full bg-border/50" />
+                
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-primary/60 mb-1">
+                      {t.naturalEquivalent}
+                    </p>
+                    <p className="text-lg text-foreground font-medium italic">
+                      "{equiv}"
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-foreground/40 mb-1">
+                      {t.sense}
+                    </p>
+                    <p className="text-sm text-foreground/80 leading-relaxed font-medium">
+                      {sense}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          );
+        })}
       </div>
+      
+      <BottomNav lang={language} />
     </div>
   );
 }
