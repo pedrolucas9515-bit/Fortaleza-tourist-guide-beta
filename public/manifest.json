@@ -1,13 +1,14 @@
 {
   "name": "Fortaleza Tourist Guide",
   "short_name": "Fortaleza Guide",
-  "description": "The ultimate mobile tourism experience for Fortaleza, Ceará. Explore beaches, culture, and gastronomy with AI-powered tips and premium design.",
+  "description": "The ultimate mobile tourism experience for Fortaleza, Ceará. Explore beaches, culture, and gastronomy with AI-powered tips.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait",
-  "categories": ["travel", "entertainment", "guide"],
+  "scope": "/",
+  "categories": ["travel", "entertainment", "lifestyle"],
   "icons": [
     {
       "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
@@ -31,13 +32,9 @@
     },
     {
       "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
-      "sizes": "152x152",
-      "type": "image/jpeg"
-    },
-    {
-      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     },
     {
       "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
@@ -51,40 +48,36 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "https://picsum.photos/seed/mobile1/1080/1920",
-      "sizes": "1080x1920",
-      "type": "image/jpeg",
-      "label": "Home Screen - Mobile View",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "https://picsum.photos/seed/mobile2/1080/1920",
-      "sizes": "1080x1920",
-      "type": "image/jpeg",
-      "label": "Guide Section - Mobile View",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "https://picsum.photos/seed/desktop1/1920/1080",
-      "sizes": "1920x1080",
-      "type": "image/jpeg",
-      "label": "Home Screen - Desktop View",
-      "form_factor": "wide"
-    }
-  ],
   "shortcuts": [
     {
       "name": "Map",
+      "short_name": "Map",
+      "description": "Open interactive map",
       "url": "/map",
       "icons": [{ "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg", "sizes": "192x192" }]
     },
     {
       "name": "Favorites",
+      "short_name": "Favs",
+      "description": "View your saved spots",
       "url": "/favorites",
       "icons": [{ "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg", "sizes": "192x192" }]
     }
   ],
-  "prefer_related_applications": false
+  "screenshots": [
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Fortaleza Guide Mobile View"
+    },
+    {
+      "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Fortaleza Guide Desktop View"
+    }
+  ]
 }
