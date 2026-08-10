@@ -82,6 +82,8 @@ export const TRANSLATIONS = {
     sendFeedback: "Send Feedback",
     cearaSlang: "Ceará Slang",
     slangDesc: "Learn how the locals talk",
+    knowledgeHub: "Knowledge Hub",
+    knowledgeHubDesc: "Everything you need to navigate Fortaleza like a true local.",
     // Slang Translations EN
     slangArretadoEquiv: "Awesome / Brave",
     slangArretadoSense: "Used for something excellent or a person with a strong attitude.",
@@ -215,6 +217,8 @@ export const TRANSLATIONS = {
     sendFeedback: "Enviar Feedback",
     cearaSlang: "Gírias Cearenses",
     slangDesc: "Aprenda o linguajar local",
+    knowledgeHub: "Central de Conhecimento",
+    knowledgeHubDesc: "Tudo o que você precisa para navegar em Fortaleza como um local.",
     // Slang Translations PT
     slangArretadoEquiv: "Arretado",
     slangArretadoSense: "Expressão para algo excelente ou uma pessoa de atitude e coragem.",
@@ -348,6 +352,8 @@ export const TRANSLATIONS = {
     sendFeedback: "Enviar Comentarios",
     cearaSlang: "Jerga de Ceará",
     slangDesc: "Aprende el hablar local",
+    knowledgeHub: "Centro de Conocimiento",
+    knowledgeHubDesc: "Todo lo que necesitas para navegar por Fortaleza como un local.",
     // Slang Translations ES
     slangArretadoEquiv: "Chévere / Increíble",
     slangArretadoSense: "Expresión para algo excelente o una persona valiente y decidida.",
@@ -370,7 +376,7 @@ export const TRANSLATIONS = {
     slangAperreioEquiv: "Apuro / Lío",
     slangAperreioSense: "Situación difícil, estrés o preocupación.",
     slangAperreadoEquiv: "Estresado / Agobiado",
-    slangAperreadoSense: "Alguien que pasa por problemas o está impaciente.",
+    slangAperreadoSense: "Alguien que pasa por problemas or está impaciente.",
     slangMangarEquiv: "Burlarse",
     slangMangarSense: "Burlarse de algo o de una situación.",
     slangMangarDeAlguemEquiv: "Burlarse de alguien",
@@ -481,6 +487,8 @@ export const TRANSLATIONS = {
     sendFeedback: "Envoyer des commentaires",
     cearaSlang: "Argot de Ceará",
     slangDesc: "Apprenez le parler local",
+    knowledgeHub: "Centre de Connaissances",
+    knowledgeHubDesc: "Tout ce dont vous avez besoin pour naviguer à Fortaleza comme un local.",
     // Slang Translations FR
     slangArretadoEquiv: "Génial / Courageux",
     slangArretadoSense: "Expression pour quelque chose d'excellent ou une personne avec une attitude forte.",
@@ -515,7 +523,7 @@ export const TRANSLATIONS = {
     slangAvexadoEquiv: "Pressé / Impatient",
     slangAvexadoSense: "Une personne pressée ou très impatiente.",
     slangQuengaEquiv: "Prostituée [Vulgaire]",
-    slangQuengaSense: "Terme péjoratif pour une femme. À utiliser com prudence.",
+    slangQuengaSense: "Terme péjorativo pour une femme. À utiliser com prudence.",
     slangCagadoEquiv: "Chanceux",
     slangCagadoSense: "Au Ceará, cela signifie avoir beaucoup de chance (attention : vulgaire ailleurs).",
     slangPebaEquiv: "Camelote / Mauvaise qualité",

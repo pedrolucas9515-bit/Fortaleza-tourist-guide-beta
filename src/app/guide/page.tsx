@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
@@ -97,8 +96,8 @@ export default function GuidePage() {
              <Compass className="w-8 h-8 animate-spin-slow" />
            </div>
            <div>
-             <h3 className="text-sm font-black uppercase tracking-widest text-primary mb-1">Knowledge Hub</h3>
-             <p className="text-xs text-white/60 font-medium leading-relaxed">Everything you need to navigate Fortaleza like a true local.</p>
+             <h3 className="text-sm font-black uppercase tracking-widest text-primary mb-1">{t.knowledgeHub}</h3>
+             <p className="text-xs text-white/60 font-medium leading-relaxed">{t.knowledgeHubDesc}</p>
            </div>
         </div>
 
