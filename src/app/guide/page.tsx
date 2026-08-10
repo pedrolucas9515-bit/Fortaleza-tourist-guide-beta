@@ -1,11 +1,10 @@
-
 'use client';
 
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import BottomNav from '@/components/BottomNav';
 import { Card } from '@/components/ui/card';
-import { Car, ShieldAlert, Sparkles, Music, ChevronRight, Settings, MessageSquare } from 'lucide-react';
+import { Car, ShieldAlert, Sparkles, Music, ChevronRight, Settings, MessageSquare, Languages } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -49,6 +48,14 @@ export default function GuidePage() {
       desc: t.factsDesc,
       color: 'text-yellow-400',
       bg: 'bg-yellow-400/10'
+    },
+    {
+      href: '/slang',
+      icon: Languages,
+      title: t.cearaSlang,
+      desc: t.slangDesc,
+      color: 'text-emerald-400',
+      bg: 'bg-emerald-400/10'
     },
     {
       href: '/feedback',

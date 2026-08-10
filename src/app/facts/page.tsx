@@ -2,7 +2,7 @@
 
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
-import { ArrowLeft, Sparkles, ThermometerSun, UtensilsCrossed, Laugh } from 'lucide-react';
+import { ArrowLeft, Sparkles, ThermometerSun, UtensilsCrossed, Laugh, Music, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 
@@ -15,8 +15,10 @@ export default function FactsPage() {
 
   const facts = [
     { icon: ThermometerSun, text: t.fact1, color: 'text-primary' },
-    { icon: UtensilsCrossed, text: t.fact2, color: 'text-primary' },
-    { icon: Laugh, text: t.fact3, color: 'text-primary' }
+    { icon: Laugh, text: t.fact2, color: 'text-primary' },
+    { icon: UtensilsCrossed, text: t.fact3, color: 'text-primary' },
+    { icon: Music, text: t.fact4, color: 'text-primary' },
+    { icon: MapPin, text: t.fact5, color: 'text-primary' }
   ];
 
   return (
