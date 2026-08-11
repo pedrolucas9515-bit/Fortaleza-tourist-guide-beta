@@ -1,4 +1,3 @@
-
 {
   "name": "Fortaleza For Foreigners",
   "short_name": "Fortaleza For Foreigners",
@@ -62,15 +61,29 @@
     {
       "name": "Map",
       "url": "/map",
-      "icons": [{ "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Favorites",
       "url": "/favorites",
-      "icons": [{ "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "https://i.ibb.co/gLRCXsZC/draguinho.jpg",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
-  "categories": ["travel", "tourism", "guide"],
+  "categories": [
+    "travel",
+    "tourism",
+    "guide"
+  ],
   "screenshots": [
     {
       "src": "https://picsum.photos/seed/mobile1/1080/1920",
