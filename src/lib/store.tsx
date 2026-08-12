@@ -28,61 +28,62 @@ const INITIAL_PROGRESS: BadgeProgress = {
   unlockedBadgeIds: [],
 };
 
+// Utilizando ícones profissionais como placeholder para garantir que o sistema funcione visualmente
 export const BADGES: Badge[] = [
   {
     id: 'tourist-attractions',
     name: { en: 'Tourist Attractions', pt: 'Atrativos Turísticos', es: 'Atractivos Turísticos', fr: 'Attractions Touristiques' },
     description: { en: 'Explore 10 different tourist attractions.', pt: 'Explore 10 atrações turísticas diferentes.', es: 'Explora 10 atracciones turísticas diferentes.', fr: 'Explorez 10 attractions touristiques différentes.' },
-    imagePath: '/badges/tourist-attractions.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/854/854866.png',
     target: 10
   },
   {
     id: 'restaurants',
     name: { en: 'Restaurants', pt: 'Restaurantes', es: 'Restaurantes', fr: 'Restaurants' },
     description: { en: 'Explore 10 different restaurants.', pt: 'Explore 10 restaurantes diferentes.', es: 'Explora 10 restaurantes diferentes.', fr: 'Explorez 10 restaurants différents.' },
-    imagePath: '/badges/restaurants.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/3443/3443393.png',
     target: 10
   },
   {
     id: 'hotels',
     name: { en: 'Hotels', pt: 'Hotéis', es: 'Hoteles', fr: 'Hôtels' },
     description: { en: 'Explore 10 different hotels.', pt: 'Explore 10 hotéis diferentes.', es: 'Explora 10 hoteles diferentes.', fr: 'Explorez 10 hôtels différents.' },
-    imagePath: '/badges/hotels.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/2983/2983973.png',
     target: 10
   },
   {
     id: 'transport',
     name: { en: 'Means of Transport', pt: 'Meios de Transportes', es: 'Medios de Transporte', fr: 'Moyens de Transport' },
     description: { en: 'Complete the transportation guide.', pt: 'Complete o guia de transportes.', es: 'Completa la guía de transportes.', fr: 'Complétez le guide des transports.' },
-    imagePath: '/badges/transport.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/3063/3063822.png',
     target: 1
   },
   {
     id: 'cultural-spaces',
     name: { en: 'Cultural Spaces', pt: 'Espaços Culturais', es: 'Espacios Culturales', fr: 'Espaces Culturels' },
     description: { en: 'Explore 5 different cultural spaces.', pt: 'Explore 5 espaços culturais diferentes.', es: 'Explora 5 espacios culturales diferentes.', fr: 'Explorez 5 espaces culturels différents.' },
-    imagePath: '/badges/cultural-spaces.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/2982/2982054.png',
     target: 5
   },
   {
     id: 'local-curiosities',
     name: { en: 'Local Curiosities', pt: 'Curiosidades Locais', es: 'Curiosidades Locales', fr: 'Curiosités Locales' },
     description: { en: 'Complete the curiosities section.', pt: 'Complete a seção de curiosidades.', es: 'Completa la sección de curiosidades.', fr: 'Complétez la section des curiosités.' },
-    imagePath: '/badges/local-curiosities.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/1000/1000997.png',
     target: 1
   },
   {
     id: 'safety-guidelines',
     name: { en: 'Safety Guidelines', pt: 'Orientações de Segurança', es: 'Consejos de Seguridad', fr: 'Conseils de Sécurité' },
     description: { en: 'Read the safety guidelines.', pt: 'Leia as orientações de segurança.', es: 'Lee los consejos de seguridad.', fr: 'Lisez les conseils de sécurité.' },
-    imagePath: '/badges/safety-guidelines.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/1162/1162456.png',
     target: 1
   },
   {
     id: 'cearense-slang',
     name: { en: 'Cearense Slang', pt: 'Gírias Cearenses', es: 'Jerga de Ceará', fr: 'Argot du Ceará' },
     description: { en: 'Explore the local slang section.', pt: 'Explore a seção de gírias locais.', es: 'Explora la sección de jerga local.', fr: 'Explorez la section sur l\'argot local.' },
-    imagePath: '/badges/cearense-slang.png',
+    imagePath: 'https://cdn-icons-png.flaticon.com/512/2462/2462719.png',
     target: 1
   }
 ];
@@ -109,8 +110,8 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const checkBadgeUnlock = useCallback((newProgress: BadgeProgress) => {
-    const newlyUnlocked: string[] = [];
     const t = TRANSLATIONS[language];
+    let newlyUnlockedIds: string[] = [];
 
     BADGES.forEach(badge => {
       if (newProgress.unlockedBadgeIds.includes(badge.id)) return;
@@ -128,7 +129,7 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
       }
 
       if (currentVal >= badge.target) {
-        newlyUnlocked.push(badge.id);
+        newlyUnlockedIds.push(badge.id);
         toast({
           title: t.newBadge,
           description: badge.name[language],
@@ -136,10 +137,10 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
       }
     });
 
-    if (newlyUnlocked.length > 0) {
+    if (newlyUnlockedIds.length > 0) {
       const finalProgress = {
         ...newProgress,
-        unlockedBadgeIds: [...newProgress.unlockedBadgeIds, ...newlyUnlocked]
+        unlockedBadgeIds: [...newProgress.unlockedBadgeIds, ...newlyUnlockedIds]
       };
       setProgress(finalProgress);
       localStorage.setItem('vela_progress', JSON.stringify(finalProgress));
@@ -147,6 +148,8 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
   }, [language, toast]);
 
   const markAsVisited = useCallback((type: 'attraction' | 'restaurant' | 'hotel', id: string, category?: string) => {
+    if (!isLoaded) return;
+    
     setProgress(prev => {
       let updated = false;
       const next = { ...prev };
@@ -167,14 +170,17 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
 
       if (updated) {
         localStorage.setItem('vela_progress', JSON.stringify(next));
-        checkBadgeUnlock(next);
+        // Pequeno delay para garantir que o estado do React se estabilize antes da verificação
+        setTimeout(() => checkBadgeUnlock(next), 100);
         return next;
       }
       return prev;
     });
-  }, [checkBadgeUnlock]);
+  }, [checkBadgeUnlock, isLoaded]);
 
   const markSectionViewed = useCallback((section: 'transport' | 'curiosities' | 'safety' | 'slang') => {
+    if (!isLoaded) return;
+    
     setProgress(prev => {
       const next = { ...prev };
       let updated = false;
@@ -185,12 +191,12 @@ export function VelaProvider({ children }: { children: React.ReactNode }) {
 
       if (updated) {
         localStorage.setItem('vela_progress', JSON.stringify(next));
-        checkBadgeUnlock(next);
+        setTimeout(() => checkBadgeUnlock(next), 100);
         return next;
       }
       return prev;
     });
-  }, [checkBadgeUnlock]);
+  }, [checkBadgeUnlock, isLoaded]);
 
   const toggleFavorite = useCallback((id: string) => {
     setFavorites(prev => {

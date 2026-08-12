@@ -67,17 +67,17 @@ export default function BadgesPage() {
           return (
             <Card key={badge.id} className={cn(
               "p-6 rounded-[2rem] border transition-all duration-500 overflow-hidden relative group",
-              isUnlocked ? "bg-primary/10 border-primary/40" : "bg-white/5 border-white/10 opacity-70"
+              isUnlocked ? "bg-primary/10 border-primary/40 shadow-lg shadow-primary/10 scale-[1.02]" : "bg-white/5 border-white/10 opacity-70"
             )}>
               <div className="flex gap-6 items-center">
-                <div className="relative w-24 h-24 shrink-0">
+                <div className="relative w-20 h-20 shrink-0">
                   <Image 
                     src={badge.imagePath} 
                     alt={badge.name[language]} 
                     fill 
                     className={cn(
                       "object-contain transition-all duration-700",
-                      isUnlocked ? "grayscale-0 scale-100" : "grayscale opacity-30 scale-90"
+                      isUnlocked ? "grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(var(--primary),0.5)]" : "grayscale opacity-30 scale-90"
                     )}
                   />
                   {!isUnlocked && (
@@ -96,7 +96,7 @@ export default function BadgesPage() {
                       <span className="text-[10px] font-black uppercase text-primary/40">{current} / {badge.target}</span>
                     )}
                   </div>
-                  <p className="text-xs text-white/50 leading-relaxed font-medium">{badge.description[language]}</p>
+                  <p className="text-[10px] text-white/50 leading-tight font-medium">{badge.description[language]}</p>
                   
                   <div className="pt-2">
                     <Progress value={percent} className="h-1.5 bg-white/5" />
