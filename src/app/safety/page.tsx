@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { ArrowLeft, ShieldCheck, AlertTriangle, Moon, Sun, Smartphone } from 'lucide-react';
@@ -7,8 +8,14 @@ import { useRouter } from 'next/navigation';
 import { Card } from '@/components/ui/card';
 
 export default function SafetyPage() {
-  const { language, isLoaded } = useVelaStore();
+  const { language, isLoaded, markSectionViewed } = useVelaStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded) {
+      markSectionViewed('safety');
+    }
+  }, [isLoaded, markSectionViewed]);
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];

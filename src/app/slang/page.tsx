@@ -1,6 +1,6 @@
-
 'use client';
 
+import { useEffect } from 'react';
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { ArrowLeft, Languages, MessageCircle, Quote } from 'lucide-react';
@@ -10,8 +10,14 @@ import { Badge } from '@/components/ui/badge';
 import BottomNav from '@/components/BottomNav';
 
 export default function SlangPage() {
-  const { language, isLoaded } = useVelaStore();
+  const { language, isLoaded, markSectionViewed } = useVelaStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded) {
+      markSectionViewed('slang');
+    }
+  }, [isLoaded, markSectionViewed]);
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];

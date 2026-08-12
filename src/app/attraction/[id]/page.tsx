@@ -1,6 +1,6 @@
-
 'use client';
 
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useVelaStore } from '@/lib/store';
 import { ATTRACTIONS, RESTAURANTS } from '@/lib/data';
@@ -18,13 +18,18 @@ import placeholderData from '@/app/lib/placeholder-images.json';
 export default function AttractionDetail() {
   const { id } = useParams();
   const router = useRouter();
-  const { language, favorites, toggleFavorite, isLoaded } = useVelaStore();
+  const { language, favorites, toggleFavorite, isLoaded, markAsVisited } = useVelaStore();
   
-  if (!isLoaded) return null;
-  const t = TRANSLATIONS[language];
   const attraction = ATTRACTIONS.find(a => a.id === id);
 
-  if (!attraction) return <div className="p-10 text-center text-white">Not found</div>;
+  useEffect(() => {
+    if (isLoaded && attraction) {
+      markAsVisited('attraction', attraction.id, attraction.category);
+    }
+  }, [isLoaded, attraction, markAsVisited]);
+
+  if (!isLoaded || !attraction) return null;
+  const t = TRANSLATIONS[language];
 
   const isFav = favorites.includes(attraction.id);
   const nearbyRestaurants = RESTAURANTS.filter(r => attraction.nearbyRestaurantIds.includes(r.id));

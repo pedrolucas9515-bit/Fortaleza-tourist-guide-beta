@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useMemo, useCallback } from 'react';
@@ -9,7 +8,7 @@ import BottomNav from '@/components/BottomNav';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { Search, Star, MapPin, Heart, Settings, MessageSquare } from 'lucide-react';
+import { Search, Star, MapPin, Heart, Settings, MessageSquare, Trophy } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -115,11 +114,12 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex flex-col gap-3">
+            <Link href="/badges" className="glass p-3 rounded-2xl hover:bg-primary/20 transition-all active:scale-90 relative">
+              <Trophy className="w-6 h-6 text-white" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-ping" />
+            </Link>
             <Link href="/settings" className="glass p-3 rounded-2xl hover:bg-primary/20 transition-all active:scale-90">
               <Settings className="w-6 h-6 text-white" />
-            </Link>
-            <Link href="/feedback" className="glass p-3 rounded-2xl hover:bg-primary/20 transition-all active:scale-90">
-              <MessageSquare className="w-6 h-6 text-white" />
             </Link>
           </div>
         </div>

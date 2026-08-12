@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useVelaStore } from '@/lib/store';
 import { HOTELS } from '@/lib/data';
@@ -14,13 +15,18 @@ import { cn } from '@/lib/utils';
 export default function HotelDetail() {
   const { id } = useParams();
   const router = useRouter();
-  const { language, isLoaded } = useVelaStore();
+  const { language, isLoaded, markAsVisited } = useVelaStore();
   
-  if (!isLoaded) return null;
-  const t = TRANSLATIONS[language];
   const hotel = HOTELS.find(h => h.id === id);
 
-  if (!hotel) return <div className="p-10 text-center text-foreground">Hotel not found</div>;
+  useEffect(() => {
+    if (isLoaded && hotel) {
+      markAsVisited('hotel', hotel.id);
+    }
+  }, [isLoaded, hotel, markAsVisited]);
+
+  if (!isLoaded || !hotel) return null;
+  const t = TRANSLATIONS[language];
 
   const openInMaps = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(hotel.address[language])}`;
@@ -64,7 +70,7 @@ export default function HotelDetail() {
       <div className="px-6 mt-8 space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <section>
           <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-4 flex items-center gap-2">
-            <Info className="w-4 h-4" /> {t.aboutHotel}
+            <span className="w-4 h-4 flex items-center justify-center bg-primary/20 rounded-full"><Info className="w-3 h-3" /></span> {t.aboutHotel}
           </h3>
           <p className="text-foreground/80 leading-relaxed text-sm">
             {hotel.description[language]}
@@ -73,7 +79,7 @@ export default function HotelDetail() {
 
         <section>
           <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/70 mb-4 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4" /> {t.amenities}
+             <ShieldCheck className="w-4 h-4" /> {t.amenities}
           </h3>
           <div className="grid grid-cols-2 gap-3">
             {hotel.amenities[language].map((amenity, idx) => (

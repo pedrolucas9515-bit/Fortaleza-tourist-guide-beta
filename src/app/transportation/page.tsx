@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useVelaStore } from '@/lib/store';
 import { TRANSLATIONS } from '@/lib/i18n';
 import { ArrowLeft, Car, Bus, Footprints, DollarSign, CheckCircle2, Lightbulb } from 'lucide-react';
@@ -8,8 +9,14 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 export default function TransportationPage() {
-  const { language, isLoaded } = useVelaStore();
+  const { language, isLoaded, markSectionViewed } = useVelaStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded) {
+      markSectionViewed('transport');
+    }
+  }, [isLoaded, markSectionViewed]);
 
   if (!isLoaded) return null;
   const t = TRANSLATIONS[language];

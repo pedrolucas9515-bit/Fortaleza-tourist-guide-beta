@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useVelaStore } from '@/lib/store';
 import { RESTAURANTS } from '@/lib/data';
@@ -15,13 +16,18 @@ import placeholderData from '@/app/lib/placeholder-images.json';
 export default function RestaurantDetail() {
   const { id } = useParams();
   const router = useRouter();
-  const { language, isLoaded } = useVelaStore();
+  const { language, isLoaded, markAsVisited } = useVelaStore();
   
-  if (!isLoaded) return null;
-  const t = TRANSLATIONS[language];
   const restaurant = RESTAURANTS.find(r => r.id === id);
 
-  if (!restaurant) return <div className="p-10 text-center text-white">Restaurant not found</div>;
+  useEffect(() => {
+    if (isLoaded && restaurant) {
+      markAsVisited('restaurant', restaurant.id);
+    }
+  }, [isLoaded, restaurant, markAsVisited]);
+
+  if (!isLoaded || !restaurant) return null;
+  const t = TRANSLATIONS[language];
 
   const openInMaps = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(restaurant.address[language])}`;

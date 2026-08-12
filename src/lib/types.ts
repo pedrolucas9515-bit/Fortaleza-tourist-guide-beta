@@ -50,3 +50,23 @@ export interface Attraction {
   coords: Coords;
   nearbyRestaurantIds: string[];
 }
+
+export interface Badge {
+  id: string;
+  name: Record<Language, string>;
+  description: Record<Language, string>;
+  imagePath: string;
+  target: number;
+}
+
+export interface BadgeProgress {
+  visitedAttractions: string[];
+  visitedRestaurants: string[];
+  visitedHotels: string[];
+  visitedCultural: string[];
+  viewedTransport: boolean;
+  viewedCuriosities: boolean;
+  viewedSafety: boolean;
+  viewedSlang: boolean;
+  unlockedBadgeIds: string[];
+}
