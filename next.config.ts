@@ -60,6 +60,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'lirp.cdn-website.com' },
       { protocol: 'https', hostname: 'media.staticontent.com' },
       { protocol: 'https', hostname: 'www.ahstatic.com' },
+      { protocol: 'https', hostname: 'cdn-icons-png.flaticon.com' },
     ],
   },
 };
