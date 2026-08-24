@@ -38,6 +38,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'arteforadomuseu.com.br' },
       { protocol: 'https', hostname: 'diariodonordeste.verdesmares.com.br' },
       { protocol: 'https', hostname: 'galeriadaarquitetura.com.br' },
+      { protocol: 'https', hostname: 'www.galeriadaarquitetura.com.br' },
       { protocol: 'https', hostname: 'ce.gov.br' },
       { protocol: 'https', hostname: 'www.ce.gov.br' },
       { protocol: 'https', hostname: 'cocobambu.com.br' },
