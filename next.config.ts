@@ -61,6 +61,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'media.staticontent.com' },
       { protocol: 'https', hostname: 'www.ahstatic.com' },
       { protocol: 'https', hostname: 'cdn-icons-png.flaticon.com' },
+      { protocol: 'https', hostname: 'i.imgur.com' },
     ],
   },
 };
