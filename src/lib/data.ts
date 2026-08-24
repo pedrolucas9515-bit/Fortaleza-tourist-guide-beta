@@ -50,7 +50,7 @@ export const HOTELS: Hotel[] = [
     rating: 4.6,
     pricePerNight: 450,
     address: { en: '3080 Beira Mar Avenue, Meireles', pt: 'Av. Beira Mar, 3080, Meireles', es: 'Avenida Beira Mar, 3080, Meireles', fr: 'Avenue Beira Mar, 3080, Meireles' },
-    description: { en: 'Modern hotel offering high-quality service and a panoramic rooftop.', pt: 'Hotel moderno que oferece serviço de alta qualidade e cobertura panorâmica.', es: 'Hotel moderno que ofrece un servicio de alta calidad y una azotea panorámica.', fr: 'Hôtel moderne offrant un service de haute qualité et un toit panoramique.' },
+    description: { en: 'Modern hotel offering high-quality service and a panoramic rooftop.', pt: 'Hotel moderno que oferece serviço de alta qualidade e cobertura panorâmica.', es: 'Hotel moderno que ofrece un servicio de alta calidad y una azotea panorámica.', fr: 'Hôtel moderne offrant un service de haute qualidade et un toit panoramique.' },
     amenities: { en: ['Pool', 'Sauna', 'Business Center'], pt: ['Piscina', 'Sauna', 'Centro de Negócios'], es: ['Piscina', 'Sauna', 'Centro de Negocios'], fr: ['Piscine', 'Sauna', 'Centre d\'affaires'] },
     imageUrl: 'https://seara-praia-hotel.hoteis-noreste-de-brasil.com/data/Imgs/OriginalPhoto/15767/1576708/1576708481/img-seara-praia-hotel-fortaleza-ceara-15.JPEG',
     coords: { lat: -3.7248, lng: -38.4955 }
@@ -158,7 +158,7 @@ export const HOTELS: Hotel[] = [
     rating: 4.3,
     pricePerNight: 360,
     address: { en: '2323 Beira Mar Avenue', pt: 'Av. Beira Mar, 2323', es: 'Avenida Beira Mar, 2323', fr: 'Avenue Beira Mar, 2323' },
-    description: { en: 'Comfortable apartments with kitchen.', pt: 'Apartamentos confortáveis com cozinha.', es: 'Apartamentos confortables con cocina.', fr: 'Appartements confortables avec cuisine.' },
+    description: { en: 'Comfortable apartments with kitchen.', pt: 'Apartamentos confortáveis com cozinha.', es: 'Apartamentos confortables con cocina.', fr: 'Appartements confortáveis avec cuisine.' },
     amenities: { en: ['Kitchen', 'View', 'Pool'], pt: ['Cozinha', 'Vista', 'Piscina'], es: ['Cocina', 'Vista', 'Piscina'], fr: ['Cuisine', 'Vue', 'Piscine'] },
     imageUrl: 'https://media.staticontent.com/media/pictures/7bfda5d6-1baf-4f45-ad1d-b250472a3d8e/412x210',
     coords: { lat: -3.7245, lng: -38.5015 }
@@ -316,7 +316,7 @@ export const RESTAURANTS: Restaurant[] = [
     address: { en: 'Dom Luís Avenue, 665', pt: 'Av. Dom Luís, 665', es: 'Avenida Dom Luís, 665', fr: 'Avenue Dom Luís, 665' },
     openingHours: { en: '11:00 AM - 12:00 AM', pt: '11:00 - 00:00', es: '11:00 - 00:00', fr: '11:00 - 00:00' },
     priceRange: '$$',
-    description: { en: 'Classic picanha destination.', pt: 'Destino clássico para picanha.', es: 'Destino clásico de picanha.', fr: 'Destination classique pour la picanha.' },
+    description: { en: 'Classic picanha destination.', pt: 'Destino clássico para picanha.', es: 'Destino clásico de picanha.', fr: 'Destination classique para la picanha.' },
     imageUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/e3/24/ea/picanha-do-cowboy-riomar.jpg?w=900&h=500&s=1',
     coords: { lat: -3.7332, lng: -38.4902 }
   },
@@ -402,7 +402,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'meireles',
     title: { en: 'Meireles Beach', pt: 'Praia do Meireles', es: 'Playa de Meireles', fr: 'Plage de Meireles' },
-    description: { en: 'The most developed tourist area, famous for its craft market.', pt: 'A área turística mais desenvolvida, famosa por sua feirinha de artesanato.', es: 'La zona turística más desarrollada, famosa por su mercado artesanal.', fr: 'Le quartier touristique le plus développé, célèbre pour son marché artisanal.' },
+    description: { en: 'The most developed tourist area, famous for its craft market.', pt: 'A área turística mais desenvolvida, famosa por sua feirinha de artesanato.', es: 'La zona turística más desarrollada, famosa por su mercado artesanal.', fr: 'Le quartier touristique le plus développé, célèbre pour son mercado artisanal.' },
     address: { en: 'Beira Mar Avenue, Meireles', pt: 'Av. Beira Mar, Meireles', es: 'Avenida Beira Mar, Meireles', fr: 'Avenue Beira Mar, Meireles' },
     openingHours: { en: 'Open 24h', pt: 'Aberto 24h', es: 'Abierto 24h', fr: 'Ouvert 24h' },
     rating: 4.8,
@@ -522,7 +522,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'mis-ce',
     title: { en: 'Image and Sound Museum', pt: 'Museu da Imagem e do Som', es: 'Museo de Imagen y Sonido', fr: 'Musée de l\'Image et du Son' },
-    description: { en: 'Cultural space for digital art.', pt: 'Espaço cultural para arte digital.', es: 'Espacio cultural para el arte digital.', fr: 'Espace culturel dédié à l\'art numérique.' },
+    description: { en: 'Cultural space for digital art.', pt: 'Espaço cultural para arte digital.', es: 'Espacio cultural para el arte digital.', fr: 'Espace cultural dédié à l\'art numérique.' },
     address: { en: '441 Barão de Studart Avenue', pt: 'Av. Barão de Studart, 441', es: 'Avenida Barão de Studart, 441', fr: 'Avenue Barão de Studart, 441' },
     openingHours: { en: '10:00 AM - 08:00 PM', pt: '10:00 - 20:00', es: '10:00 - 20:00', fr: '10h00 - 20h00' },
     rating: 4.8,
@@ -623,7 +623,7 @@ export const ATTRACTIONS: Attraction[] = [
     openingHours: { en: 'Open 24h', pt: 'Aberto 24h', es: 'Abierto 24h', fr: 'Ouvert 24h' },
     rating: 4.8,
     category: 'Parks',
-    imageUrl: 'https://www.galeriadaarquitetura.com.br/img/projeto/SF1/6810/parque-rachel-de-queiroz231.jpg',
+    imageUrl: 'https://visit-fortaleza.com/wp-content/uploads/DJI_0734.jpg',
     coords: { lat: -3.7282, lng: -38.5532 },
     nearbyRestaurantIds: []
   },

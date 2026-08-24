@@ -40,8 +40,14 @@
     {
       "id": "coco",
       "description": "Parque do Coco Fortaleza",
-      "imageUrl": "https://semeia.org.br/wp-content/uploads/2025/03/celso-oliveira-sema-ceara-5.jpg",
+      "imageUrl": "https://www.ce.gov.br/wp-content/uploads/2024/08/Parque-do-Coco1-1.jpg",
       "imageHint": "coco park"
+    },
+    {
+      "id": "rachel-queiroz",
+      "description": "Parque Rachel de Queiroz",
+      "imageUrl": "https://visit-fortaleza.com/wp-content/uploads/DJI_0734.jpg",
+      "imageHint": "linear park"
     },
     {
       "id": "catedral",
