@@ -38,6 +38,9 @@ export default function RestaurantDetail() {
     return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'restaurant food';
   };
 
+  const priceLevelKey = `priceLevel${restaurant.priceRange.length}`;
+  const priceDescription = (t as any)[priceLevelKey] || '';
+
   return (
     <div className="min-h-screen bg-[#0f1315] pb-24">
       <div className="fixed top-12 left-6 right-6 z-30 flex justify-between items-center pointer-events-none">
@@ -60,12 +63,17 @@ export default function RestaurantDetail() {
             {restaurant.cuisine[language]}
           </Badge>
           <h1 className="font-headline text-4xl text-white mb-2">{restaurant.name[language]}</h1>
-          <div className="flex items-center gap-4 text-white/90">
+          <div className="flex items-center gap-6 text-white/90">
             <span className="flex items-center gap-1"><Star className="w-5 h-5 text-yellow-500 fill-current" /> {restaurant.rating}</span>
-            <div className="flex items-center text-primary">
-              {[...Array(4)].map((_, i) => (
-                <DollarSign key={i} className={cn("w-4 h-4", i >= restaurant.priceRange.length && "opacity-30")} />
-              ))}
+            <div className="flex flex-col">
+              <div className="flex items-center text-primary">
+                {[...Array(4)].map((_, i) => (
+                  <DollarSign key={i} className={cn("w-4 h-4", i >= restaurant.priceRange.length && "opacity-30")} />
+                ))}
+              </div>
+              <span className="text-[9px] font-black uppercase text-primary tracking-widest">
+                {priceDescription}
+              </span>
             </div>
           </div>
         </div>

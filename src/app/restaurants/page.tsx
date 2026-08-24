@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -24,6 +23,9 @@ const RestaurantCard = React.memo(({ res, language, t }: { res: any, language: a
   const getHint = (url: string) => {
     return placeholderData.placeholderImages.find(img => img.imageUrl === url)?.imageHint || 'restaurant food';
   };
+
+  const priceLevelKey = `priceLevel${res.priceRange.length}`;
+  const priceDescription = (t as any)[priceLevelKey] || '';
 
   return (
     <Link href={`/restaurant/${res.id}`}>
@@ -53,10 +55,15 @@ const RestaurantCard = React.memo(({ res, language, t }: { res: any, language: a
         <div className="p-6">
           <div className="flex justify-between items-start mb-3">
             <h3 className="font-headline text-2xl text-foreground font-bold tracking-tight">{res.name[language]}</h3>
-            <div className="flex items-center text-primary gap-0.5">
-              {[...Array(4)].map((_, i) => (
-                <DollarSign key={i} className={cn("w-3 h-3", i >= res.priceRange.length && "opacity-20")} />
-              ))}
+            <div className="flex flex-col items-end gap-1">
+              <div className="flex items-center text-primary gap-0.5">
+                {[...Array(4)].map((_, i) => (
+                  <DollarSign key={i} className={cn("w-3 h-3", i >= res.priceRange.length && "opacity-20")} />
+                ))}
+              </div>
+              <span className="text-[8px] font-black uppercase text-primary/60 tracking-wider">
+                {priceDescription}
+              </span>
             </div>
           </div>
           <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed font-medium">
