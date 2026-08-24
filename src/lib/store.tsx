@@ -55,7 +55,7 @@ export const BADGES: Badge[] = [
     id: 'transport',
     name: { en: 'Means of Transport', pt: 'Meios de Transportes', es: 'Medios de Transporte', fr: 'Moyens de Transport' },
     description: { en: 'Complete the transportation guide.', pt: 'Complete o guia de transportes.', es: 'Completa la guía de transportes.', fr: 'Complétez le guide des transports.' },
-    imagePath: 'https://i.imgur.com/HpBKwO.jpeg',
+    imagePath: 'https://i.imgur.com/HpZBKwO.jpeg',
     target: 1
   },
   {
