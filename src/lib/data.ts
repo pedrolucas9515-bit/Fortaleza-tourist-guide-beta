@@ -50,7 +50,7 @@ export const HOTELS: Hotel[] = [
     rating: 4.6,
     pricePerNight: 450,
     address: { en: '3080 Beira Mar Avenue, Meireles', pt: 'Av. Beira Mar, 3080, Meireles', es: 'Avenida Beira Mar, 3080, Meireles', fr: 'Avenue Beira Mar, 3080, Meireles' },
-    description: { en: 'Modern hotel offering high-quality service and a panoramic rooftop.', pt: 'Hotel moderno que oferece serviço de alta qualidade e cobertura panorâmica.', es: 'Hotel moderno que ofrece un servicio de alta calidad y una azotea panorámica.', fr: 'Hôtel moderne offrant un service de haute qualidade et un toit panoramique.' },
+    description: { en: 'Modern hotel offering high-quality service and a panoramic rooftop.', pt: 'Hotel moderno que oferece serviço de alta qualidade e cobertura panorâmica.', es: 'Hotel moderno que ofrece un servicio de alta calidad y una azotea panorámica.', fr: 'Hôtel moderno offrant un service de haute qualidade et un toit panoramique.' },
     amenities: { en: ['Pool', 'Sauna', 'Business Center'], pt: ['Piscina', 'Sauna', 'Centro de Negócios'], es: ['Piscina', 'Sauna', 'Centro de Negocios'], fr: ['Piscine', 'Sauna', 'Centre d\'affaires'] },
     imageUrl: 'https://seara-praia-hotel.hoteis-noreste-de-brasil.com/data/Imgs/OriginalPhoto/15767/1576708/1576708481/img-seara-praia-hotel-fortaleza-ceara-15.JPEG',
     coords: { lat: -3.7248, lng: -38.4955 }
@@ -486,7 +486,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     id: 'estoril',
     title: { en: 'Estoril', pt: 'Estoril', es: 'Estoril', fr: 'Estoril' },
-    description: { en: 'Historic building at Iracema Beach.', pt: 'Edifício histórico na Praia de Iracema.', es: 'Edificio histórico en la playa de Iracema.', fr: 'Bâtiment historique sur la plage d\'Iracema.' },
+    description: { en: 'Historic building at Iracema Beach.', pt: 'Edifício histórico na Praia de Iracema.', es: 'Edificio histórico en la playa de Iracema.', fr: 'Bâtiment histórico sur la plage d\'Iracema.' },
     address: { en: '397 Tabajaras Street', pt: 'Rua dos Tabajaras, 397', es: 'Calle Tabajaras, 397', fr: 'Rue Tabajaras, 397' },
     openingHours: { en: '09:00 AM - 06:00 PM', pt: '09:00 - 18:00', es: '09:00 - 18:00', fr: '09h00 - 18h00' },
     rating: 4.6,
@@ -623,7 +623,7 @@ export const ATTRACTIONS: Attraction[] = [
     openingHours: { en: 'Open 24h', pt: 'Aberto 24h', es: 'Abierto 24h', fr: 'Ouvert 24h' },
     rating: 4.8,
     category: 'Parks',
-    imageUrl: 'https://visit-fortaleza.com/wp-content/uploads/DJI_0734.jpg',
+    imageUrl: 'https://i.ibb.co/b5bzKZ1Z/DJI-0734.avif',
     coords: { lat: -3.7282, lng: -38.5532 },
     nearbyRestaurantIds: []
   },
@@ -659,7 +659,7 @@ export const ATTRACTIONS: Attraction[] = [
     openingHours: { en: '05:30 AM - 10:00 PM', pt: '05:30 - 22:00', es: '05:30 - 22:00', fr: '05h30 - 22h00' },
     rating: 4.7,
     category: 'Parks',
-    imageUrl: 'https://www.ce.gov.br/wp-content/uploads/2024/08/Parque-do-Coco1-1.jpg',
+    imageUrl: 'https://i.imgur.com/9TAj0Lf.jpeg',
     coords: { lat: -3.7468, lng: -38.4835 },
     nearbyRestaurantIds: []
   }
